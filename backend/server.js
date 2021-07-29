@@ -23,6 +23,7 @@ const PORT = 3003;
 // Router
 const LoginRouter = require('./router/LoginRouter');
 const AccountRouter = require('./router/AccountRouter');
+const ProductRouter = require('./router/ProductRouter');
 
 server.use(express.static('public'));
 server.use(cookieParser({secret: '83percent'}));
@@ -67,7 +68,12 @@ server.use('/account', (req, res, next) => {
         res.sendStatus(401);
     }
 },AccountRouter);
-
+server.use('/product', (req, res, next) => {
+    if(req.isAuthenticated()) next();
+    else {
+        res.sendStatus(401);
+    }
+},ProductRouter);
 
 
 server.listen(PORT, () => {

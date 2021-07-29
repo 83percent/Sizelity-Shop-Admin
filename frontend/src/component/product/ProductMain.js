@@ -7,6 +7,7 @@ import '../../contents/css/product/ProductMain.css';
 // Component
 import ProductSearch from './ProductSearch';
 import ProductAdd from './ProductAdd';
+import ProductSuccess from './ProductSuccess';
 
 const ProductMain = () => {
     return (
@@ -26,11 +27,18 @@ const ProductMain = () => {
                             <p>추가</p>
                         </NavLink>
                     </li>
+                    <li>
+                        <NavLink exact to="/product/list">
+                            <i className="material-icons">list</i>
+                            <p>목록</p>
+                        </NavLink>
+                    </li>
                 </ul>
             </header>
             <Switch>
                 <Route exact path={["/product", "/product/"]} component={ProductSearch} />
                 <Route path="/product/add" component={ProductAdd} />
+                <Route path="/product/success" component={ProductSuccess} />
             </Switch>
         </section>
     )

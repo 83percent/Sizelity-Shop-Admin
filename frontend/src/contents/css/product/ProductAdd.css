@@ -14,6 +14,7 @@ section#product-main > article.add > .add-wrapper > div {
     padding: 1rem;
     background: #ffffff;
     border: 1px solid #e3e8ee;
+    position: relative;
 }
 section#product-main > article.add > .add-wrapper > div:first-child {
     margin-right: 0rem;
@@ -67,15 +68,26 @@ section#product-main > article.add .url-input-frame > input {
     border-bottom: 2px solid #ccc;
     padding: 0 0.5rem;
 }
-section#product-main > article.add .url-input-frame > button {
+section#product-main > article.add .url-input-frame > input:focus {
+    border-color: #00966B;
+}
+section#product-main > article.add .url-input-wrapper {
+    position: relative;
+    height: 100%;
+}
+section#product-main > article.add .url-input-wrapper > button {
     all: unset;
     cursor: pointer;
+    position: absolute;
     background: #00966B;
+    bottom: -0.6rem;
+    right: 0;
     color: #ffffff;
     border-radius: 0.4rem;
     margin-left: 1rem;
-    padding: 0.3rem 0.6rem;
+    padding: 0.5rem 1.2rem;
     font-weight: 500;
+    font-size: 1.1rem;
 }
 section#product-main > article.add .url-input-wrapper > p {
     color: #ff6347;    
@@ -108,9 +120,11 @@ section#product-main > article.add .info-input-wrapper > ul > li > input {
     width: 60%;
     font-size: 1.1rem;
 }
+section#product-main > article.add .info-input-wrapper > ul > li > input:focus {
+    border-color: #00966B;
+}
 section#product-main > article.add .info-input-wrapper > ul > li > select {
     border: 2px solid #ccc;
-    outline: none;
     width: 62%;
     margin-top: 0.5rem;
     font-size: 1.0rem;
@@ -118,8 +132,12 @@ section#product-main > article.add .info-input-wrapper > ul > li > select {
     padding: 0.3rem 0.5rem;
 }
 section#product-main > article.add .info-input-wrapper > div.save-frame {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 }
 section#product-main > article.add .info-input-wrapper > div.save-frame > button {
     all: unset;
@@ -127,12 +145,13 @@ section#product-main > article.add .info-input-wrapper > div.save-frame > button
     background: #00966B;
     color: #ffffff;
     border-radius: 0.4rem;
-    padding: 0.4rem 0.7rem;
+    padding: 0.5rem 1.2rem;
     font-weight: 500;
+    font-size: 1.1rem;
 }
 section#product-main > article.add .info-input-wrapper > div.save-frame > p {
     color: #ff6347;
-    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 /*
     Size Input
@@ -145,4 +164,117 @@ section#product-main > article.add > .size-input-frame {
 }
 section#product-main > article.add > .size-input-frame.off {
     visibility: hidden;
+}
+section#product-main > article.add > .size-input-frame > .size-input-table {
+    overflow: auto;
+    padding: 1rem 0;
+}
+section#product-main > article.add > .size-input-frame table {
+    border-collapse: collapse;
+    text-align: center;
+    margin: 1rem 0;
+}
+section#product-main > article.add > .size-input-frame table > thead {
+    border-bottom: 2px solid #ccc;
+    padding: 0.3rem 0;
+}
+section#product-main > article.add > .size-input-frame table > thead > tr > th {
+    padding: 0.3rem 0;
+    font-size: 0.95rem;
+}
+section#product-main > article.add > .size-input-frame table td {
+    padding: 0 0.5rem;
+}
+section#product-main > article.add > .size-input-frame table input {
+    all: unset;
+    width: 7rem;
+    text-align: center;
+    font-size: 1.1rem;
+    font-family: 'Montserrat';
+    border-bottom: 2px solid #ddd;
+    padding: 0.3rem 0;
+}
+section#product-main > article.add > .size-input-frame table input:focus, section#product-main > article.add > .size-input-frame table input.on {
+    border-color: #00966B;
+}
+section#product-main > article.add > .size-input-frame > .size-input-table > p {
+    font-size: 1.1rem;
+    color: #00000080;
+    font-weight: 700;
+}
+section#product-main > article.add > .size-input-frame > .add > .btn-frame {
+    display: flex;
+}
+section#product-main > article.add > .size-input-frame > .add > .btn-frame > button {
+    
+    margin-right: 0.3rem;
+    width: 3rem;
+}
+section#product-main > article.add > .size-input-frame > .btn-wrapper {
+    display: flex;
+    align-items: center;
+}
+section#product-main > article.add > .size-input-frame > .btn-wrapper > div {
+    display: flex;
+}
+section#product-main > article.add > .size-input-frame > .btn-wrapper > div > button {
+    all: unset;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #ff6347;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section#product-main > article.add > .size-input-frame > .btn-wrapper > div > button > i {
+    font-size: 1.7rem;
+}
+section#product-main > article.add > .size-input-frame > .btn-wrapper > div > button.su {
+    background: #00966B;
+}
+section#product-main > article.add > .size-input-frame > .btn-wrapper > p {
+    margin-top: 0.5rem;
+    color: #ff6347;
+}
+section#product-main > article.add > .size-input-frame > .save-frame {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+section#product-main > article.add > .size-input-frame > .save-frame > p {
+    color: #ff6347;
+    margin-right: 0.5rem;
+    font-weight: 700;
+}
+section#product-main > article.add > .size-input-frame > .save-frame > .loader-frame {
+    margin-right: 0.5rem;
+    display: none;
+}
+section#product-main > article.add > .size-input-frame > .save-frame > .loader-frame.on {
+    display: unset;
+}
+section#product-main > article.add > .size-input-frame > .save-frame > .loader-frame > .loader {
+    padding: 0.7rem;
+    border: 2px solid #888;
+    border-bottom: 2px solid #88888800;
+}
+section#product-main > article.add > .size-input-frame > .save-frame > button {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00966B;
+    color: #ffffff;
+    padding: 0.7rem 1.8rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+section#product-main > article.add > .size-input-frame > .save-frame > button > p {
+    font-size: 1.1rem;
+    margin-left: 0.3rem;
+    font-weight: 500;
 }

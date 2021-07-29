@@ -30,8 +30,8 @@ section#product-main > header > ul > li > a {
     border-radius: 0.5rem;
 }
 section#product-main > header > ul > li > a.active {
-    color: #2665AE;
-    border-color: #2665AE;
+    color: #00966B;
+    border-color: #00966B;
 }
 section#product-main > header > ul > li > a > i {
     font-size: 1.8rem;

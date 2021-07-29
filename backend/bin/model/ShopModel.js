@@ -23,7 +23,7 @@ const ShopSchema = new Mongoose.Schema({
         address : {type: String}
     },
     product : {
-        length : {
+        count : {
             type: Number,
             default: 0
         },

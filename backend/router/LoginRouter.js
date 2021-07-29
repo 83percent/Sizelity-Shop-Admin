@@ -27,7 +27,6 @@ router.post('/', passport.authenticate('local'),
 
 passport.use(new LocalStrategy (
     function(username, password, done) {
-        console.log(username, password);
         ShopModel.findById(username, (err, user) => {
             if(err) return done(err);
             else {
@@ -60,11 +59,9 @@ passport.use(new LocalStrategy (
     }
 ));
 passport.serializeUser((user, done) => {
-    console.log(user);
     done(null, user._id);
 });
 passport.deserializeUser((id, done) => {
-    console.log("deserializeUser")
     ShopModel.findById(id, (err, user) => {
         done(err, user);
     })

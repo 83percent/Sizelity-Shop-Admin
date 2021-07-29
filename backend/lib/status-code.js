@@ -5,8 +5,11 @@ module.exports = {
     noData : 204,
 
     // 4xx
+    invalid : 400,
     auth : 401,
-
+    otherShopRequest: 403,
+    already : 419,
+    
     // 5xx
     error : 500
 }
