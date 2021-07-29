@@ -1,0 +1,84 @@
+aside {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 3rem;
+    height: 100vh;
+    background: #ffffff;
+    border-right: 1px solid #e3e8ee;
+    transition-duration: 0.3s;
+    z-index: 999;
+}
+aside:hover {
+    width: 12rem;
+}
+aside > div {
+    margin-top: 1.5rem;
+}
+aside > div > a {
+    all: unset;
+    width: 3rem;
+    height: 3rem;
+    /* background: #ffffff;
+    border-radius: 0.5rem; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+aside > div > a.logo > i {
+    color: #00966B;
+    font-size: 2.3rem;
+}
+aside > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    overflow-x: hidden;
+    padding-bottom: 4rem;
+    padding-left: 0.25rem;
+}
+aside > ul > li {
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+aside > ul > li.element > a {
+    all: unset;
+    display: flex;
+    align-items: center;
+}
+aside > ul > li.element > a > div {
+    width: 2.5rem;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    min-height: 2.5rem;
+    background: #ccc;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition-duration: 0.3s;
+}
+aside > ul > li.element:hover > a > div, aside > ul > li.element > a.active > div  {
+    background: #00966B;
+}
+aside > ul > li.element > a > div > i {
+    font-size: 1.6rem;
+}
+
+aside > ul > li.element > a > p {
+    opacity: 0;
+    transition-duration: 0.5s;
+    min-width: 7rem;
+    margin-left: 1rem;
+}
+aside:hover > ul > li.element > a > p {
+    opacity: 1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

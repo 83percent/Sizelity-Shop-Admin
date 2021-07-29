@@ -1,0 +1,148 @@
+section#product-main > article.add {
+    
+}
+section#product-main > article.add > .add-wrapper {
+    display: flex;
+    width: 100%;
+}
+section#product-main > article.add > .add-wrapper > div {
+    flex-grow: 1;
+    width: 50%;
+    max-width: 50%;
+    height: 24rem;
+    margin: 0 1rem 1rem 1rem;
+    padding: 1rem;
+    background: #ffffff;
+    border: 1px solid #e3e8ee;
+}
+section#product-main > article.add > .add-wrapper > div:first-child {
+    margin-right: 0rem;
+}
+section#product-main > article.add > .add-wrapper > div.off {
+    visibility: hidden;
+}
+
+section#product-main > article.add .title > div {
+    display: flex;
+    align-items: center;
+}
+section#product-main > article.add .title > div > div {
+    position: relative;
+    top: -2px;
+    margin-right: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 1.2rem;
+    height: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+section#product-main > article.add .title > div > .fail {
+    background: #ff6347;
+    border: none;
+}
+section#product-main > article.add .title > div > .pass {
+    background: #00966B;
+    border: none;
+}
+section#product-main > article.add .title > div > div > i {
+    font-size: 1.0rem;
+}
+section#product-main > article.add .title > div >  h2 {
+    font-size: 1.7rem;
+}
+section#product-main > article.add .title > p {
+    color: #555;
+}
+section#product-main > article.add .url-input-frame {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+section#product-main > article.add .url-input-frame > input {
+    all: unset;
+    width: 100%;
+    border-bottom: 2px solid #ccc;
+    padding: 0 0.5rem;
+}
+section#product-main > article.add .url-input-frame > button {
+    all: unset;
+    cursor: pointer;
+    background: #00966B;
+    color: #ffffff;
+    border-radius: 0.4rem;
+    margin-left: 1rem;
+    padding: 0.3rem 0.6rem;
+    font-weight: 500;
+}
+section#product-main > article.add .url-input-wrapper > p {
+    color: #ff6347;    
+}
+
+/*
+    info input
+*/
+section#product-main > article.add .info-input-wrapper  {
+    
+}
+section#product-main > article.add .info-input-wrapper > ul {
+    margin-top: 0.5rem;
+}
+section#product-main > article.add .info-input-wrapper > ul > li {
+    margin-bottom: 1rem;
+}
+section#product-main > article.add .info-input-wrapper > ul > li > h3 {
+    font-size: 1.4rem;
+}
+section#product-main > article.add .info-input-wrapper > ul > li > p {
+    color: #888;
+    font-size: 0.9rem;
+}
+section#product-main > article.add .info-input-wrapper > ul > li > input {
+    all: unset;
+    margin-top: 0.5rem;
+    border-bottom: 2px solid #ccc;
+    padding: 0 0.5rem;
+    width: 60%;
+    font-size: 1.1rem;
+}
+section#product-main > article.add .info-input-wrapper > ul > li > select {
+    border: 2px solid #ccc;
+    outline: none;
+    width: 62%;
+    margin-top: 0.5rem;
+    font-size: 1.0rem;
+    border-radius: 0.4rem;
+    padding: 0.3rem 0.5rem;
+}
+section#product-main > article.add .info-input-wrapper > div.save-frame {
+    display: flex;
+    align-items: center;
+}
+section#product-main > article.add .info-input-wrapper > div.save-frame > button {
+    all: unset;
+    cursor: pointer;
+    background: #00966B;
+    color: #ffffff;
+    border-radius: 0.4rem;
+    padding: 0.4rem 0.7rem;
+    font-weight: 500;
+}
+section#product-main > article.add .info-input-wrapper > div.save-frame > p {
+    color: #ff6347;
+    margin-left: 0.5rem;
+}
+/*
+    Size Input
+*/
+section#product-main > article.add > .size-input-frame {
+    padding: 1rem;
+    background: #ffffff;
+    margin: 0 1rem 1rem 1rem;
+    border: 1px solid #e3e8ee;
+}
+section#product-main > article.add > .size-input-frame.off {
+    visibility: hidden;
+}

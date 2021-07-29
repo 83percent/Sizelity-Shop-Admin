@@ -1,0 +1,60 @@
+main#login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+main#login > header {
+    margin-top: 3rem;
+}
+main#login > header > div {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: #00966B;
+    border-radius: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main#login > header > div > i {
+    color: #ffffff;
+    font-size: 2.0rem;
+}
+main#login > article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main#login > article > label {
+    margin-top: 1rem;
+}
+main#login > article > label > p {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+main#login > article > label > input {
+    width: 15rem;
+    font-size: 1.1rem;
+    padding: 0.3rem 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    outline: none;
+}
+main#login > article > button {
+    all: unset;
+    background: #00966B;
+    margin-top: 0.5rem;
+    text-align: center;
+    color: #ffffff;
+    padding: 0.5rem 7rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+main#login > article > p {
+    margin-top: 0.3rem;
+    font-size: 0.9rem;
+    color: tomato;
+}
+main#login > footer {
+    margin-top: 1rem;
+}

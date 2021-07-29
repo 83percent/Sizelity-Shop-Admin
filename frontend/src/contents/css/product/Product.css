@@ -1,0 +1,41 @@
+section#product-main {
+    min-height: 100vh;
+}
+section#product-main > header {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 4rem 1rem 2.5rem;
+}
+section#product-main > header > .title {
+    font-size: 3.0rem;
+    font-weight: 600;
+    flex-grow: 1;
+}
+section#product-main > header > ul {
+    display: flex;
+    align-items: center;
+}
+section#product-main > header > ul > li {
+    margin-left: 0.8rem
+}
+section#product-main > header > ul > li > a {
+    all: unset;
+    display: flex;
+    align-items: center;
+    color: #00000050;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    border: 2px solid #00000020;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+}
+section#product-main > header > ul > li > a.active {
+    color: #2665AE;
+    border-color: #2665AE;
+}
+section#product-main > header > ul > li > a > i {
+    font-size: 1.8rem;
+}
+section#product-main > header > ul > li > a > p {
+    font-size: 1.2rem;
+}

@@ -1,8 +1,14 @@
 * {
   margin: 0;
   padding: 0;
+  word-break: keep-all;
 }
-
+html, body, #root {
+  width: 100%;
+  min-height: 100vh;
+  background: #f0f2f5;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: 'AppleSDGothicNeo',-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

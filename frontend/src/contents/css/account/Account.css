@@ -1,0 +1,16 @@
+article#home {
+    padding-left: 5rem;
+    min-height: 100vh;
+    
+}
+article#home > .loader-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+article#home > .loader-frame > .loader {
+    padding-top: 3rem;
+    padding: 1.5rem;
+    border: 3px solid #aaa;
+    border-bottom: 3px solid #00000000;
+}
