@@ -13,11 +13,14 @@ import ProductMain from '../component/product/ProductMain';
 
 const HomeRouter = ({history}) => {
     const {user:userInfo} = useContext(UserContext);
-    const __active = userInfo.status;
-    if(__active === undefined) {
-        history.replace("/wrong");        
+    console.log(userInfo);
+    const __active = userInfo?.status;
+    if(__active === undefined || !userInfo?.id) {
+        history.replace("/wrong");
+        return (<div></div>);
     } else if(__active === 0) {
         history.replace("/init");
+        return (<div></div>);
     }
     return (
         <>

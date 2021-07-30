@@ -60,3 +60,8 @@ section#product-main > article.search > .search-wrapper > ul > li > select {
     border: 1px solid #aaa;
     padding: 0.3rem 0.4rem;
 }
+section#product-main > article.search > .search-wrapper > p {
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    color: #ff6347;
+}

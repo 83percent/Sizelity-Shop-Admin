@@ -10,6 +10,8 @@ import { ServerContext, UserContext } from '../../App';
 
 let urlModule = null;
 const ProductAdd = ({history}) => {
+    
+
     // State
     const [_productURL, _setProductURL] = useState(undefined);
     const [_productInfo, _setProductInfo] = useState(undefined);
@@ -18,7 +20,7 @@ const ProductAdd = ({history}) => {
     const server = useContext(ServerContext);
     const { user } = useContext(UserContext);
 
-
+    
     // Ref
     const urlInputRef = useRef(null);
     const cautionRef = useRef(null);

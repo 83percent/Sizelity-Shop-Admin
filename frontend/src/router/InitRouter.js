@@ -10,7 +10,7 @@ import { ServerContext, UserContext } from '../App';
 
 const InitRouter = ({history}) => {
     const { user } = useContext(UserContext);
-    if(!user.id || user.status === 1) history.replace("/home");
+    if(!user?.id || user?.status === 1) history.replace("/home");
 
 
     const server = useContext(ServerContext);

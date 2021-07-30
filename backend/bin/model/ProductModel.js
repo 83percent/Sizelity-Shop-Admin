@@ -55,6 +55,6 @@ const ProductSchema = new Mongoose.Schema({
     sname : 1,
     code : 1
 }, {
-    unique : true
+    unique : true   
 }); */
 module.exports = Mongoose.model(COLL_NAME, ProductSchema);
