@@ -11,7 +11,6 @@ const StatusCode = require("../lib/status-code");
 
 router.post('/', passport.authenticate('local'),
     function(req, res) {
-        console.log("cll")
         if(req.user) {
             res.send({
                 _id: req.user._id,

@@ -1,0 +1,303 @@
+#event {
+    min-height: 100vh;
+}
+#event > header {
+    padding: 1rem 2rem;
+}
+#event > header > h1 {
+    font-size: 3.0rem;
+    font-weight: 700;
+}
+#event > header > p {
+    font-size: 1.1rem;
+}
+
+/*
+    article
+*/
+#event > article {
+    display: flex;
+    margin: 0 1.5rem;
+}
+#event > article > section {
+    margin: 1rem 0.5rem;
+}
+#event > article > .handler-wrapper > .list-wrapper > .title {
+    display: flex;
+    align-items: center;
+}
+#event > article > .handler-wrapper > .list-wrapper > .title > p {
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    font-weight: 500;
+}
+#event > article > .handler-wrapper > .list-wrapper > ul {
+    width: 30rem;
+    height: 68vh;
+    max-height: 68vh;
+    margin-top: 1rem;
+    background-color: #fff;
+    border: 1px solid #e3e8ee;
+    
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#event > article > .handler-wrapper > .list-wrapper > ul > li {
+    background-color: #ffffff;
+    position: relative;
+    border: 2px solid #00966B00;
+    border-bottom: 1px solid #e3e8ee;
+}
+#event > article > .handler-wrapper > .list-wrapper > ul > li.active {
+    border: 2px solid #00966B70;
+}
+#event > article > .handler-wrapper > .list-wrapper > ul > li.none {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 99%;
+    border: none
+    
+}
+#event > article > .handler-wrapper > .list-wrapper > ul > li.none > p {
+    font-size: 1rem;
+}
+#event > article > .handler-wrapper > .list-wrapper > ul > li.none > button {
+    all: unset;
+    background-color: #00966B;
+    color: #ffffff;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1.3rem;
+    text-align: center;
+    border-radius: 3rem;
+    cursor: pointer;
+}
+
+/*
+    element
+*/
+#event > article > .handler-wrapper > .list-wrapper > ul > li > .newDot {
+    position: absolute;
+    top: 0.3rem;
+    left: 0.3rem;
+    padding: 3px;
+    border-radius: 50%;
+    background: #dd1818;
+}
+#event > article > .handler-wrapper > .list-wrapper > ul > li > .info {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    cursor: pointer;
+
+}
+#event > article > .handler-wrapper > .list-wrapper > ul > li > .info > div {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding: 0.5rem 1rem;
+}
+#event > article > .handler-wrapper > .list-wrapper > ul > li > .info > div > h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+#event > article > .handler-wrapper > .list-wrapper > ul > li > .info > div > p {
+    color: #ffffff;
+    padding: 0.2rem 0.6rem;
+    margin-left: 0.7rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+}
+#event > article > .handler-wrapper > .list-wrapper > ul > li > .info > i {
+    margin-left: 0.5rem;
+    transition-duration: 0.3s;
+}
+#event > article > .handler-wrapper > .list-wrapper > ul > li.active > .info > i {
+    transform: rotate(180deg);
+}
+#event > article > .handler-wrapper > .list-wrapper > ul > li > .text {
+    height: 0;
+    overflow: hidden;
+    margin: 0 1rem;
+    font-size: 0.9rem;
+    color: #666;
+    
+}
+#event > article > .handler-wrapper > .list-wrapper > ul > li.active > .text {
+    height: 100%;
+    border-top: 1px solid #dbdbdb;
+    padding-top: 0.5rem;
+}
+#event > article > .handler-wrapper > .list-wrapper > ul > li > .text > h3 {
+    font-size: 1.2rem;
+}
+#event > article > .handler-wrapper > .list-wrapper > ul > li > .text > p:last-of-type {
+    margin-bottom: 0.5rem;
+}
+#event > article > .handler-wrapper > .list-wrapper > ul > li > .text > div.explain {
+    max-height: 6rem;
+    overflow: hidden;
+}
+#event > article > .handler-wrapper > .list-wrapper > ul > li > .text.on > div.explain {
+    max-height: unset;
+}
+#event > article > .handler-wrapper > .list-wrapper > ul > li > .text > button {
+    all: unset;
+    width: 100%;
+    text-align: center;
+    margin: 0.3rem 0;
+    cursor: pointer;
+}
+#event > article > .handler-wrapper > .list-wrapper > ul > li > .text.on > button > i {
+    transform: rotate(180deg);
+}
+#event > article > .handler-wrapper > .list-wrapper > ul > li > .text > div.btn {
+    text-align: right;
+    margin-bottom: 0.5rem;
+}
+#event > article > .handler-wrapper > .list-wrapper > ul > li > .text > div.btn > a {
+    all: unset;
+    cursor: pointer;
+    padding: 0.4rem 1rem;
+    background-color: #00966B;
+    color: #ffffff;
+    border-radius: 5px;
+}
+/*
+    Handler
+*/
+#event > article > .handler-wrapper > .list-wrapper > .handler {
+    margin-top: 1rem;
+}
+#event > article > .handler-wrapper > .list-wrapper > .handler > button {
+    all: unset;
+    width: 100%;
+    background-color: #00966B;
+    color: #ffffff;
+    height: 2.7rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+/*
+    detail Wrapper
+*/
+#event > article > .none {
+    content: "";
+    width: 2px;
+    margin: 0 1rem;
+    background: #e3e8ee;
+}
+#event > article > .detail-wrapper {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+}
+#event > article > .detail-wrapper > .detail-frame {
+    width: 28vw;
+    min-width: 28rem;
+    height: 74vh;
+    background: #ffffff;
+    border: 1px solid #e3e8ee;
+    padding: 1rem;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+#event > article > .detail-wrapper > .detail-frame > div {
+    margin-bottom: 1.5rem;
+}
+#event > article > .detail-wrapper > .detail-frame > div > .title {
+    margin-bottom: 0.5rem;
+}
+#event > article > .detail-wrapper > .detail-frame > div > .title > h3 {
+    font-size: 1.3rem;
+}
+#event > article > .detail-wrapper > .detail-frame > div > .title > p {
+    color: #555;
+    font-size: 0.9rem;
+}
+#event > article > .detail-wrapper > .detail-frame > div > .input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#event > article > .detail-wrapper > .detail-frame > div > .input-wrapper > label {
+    width: 100%;
+    text-align: center;
+    border: 1px solid #888888;
+    border-right: none;
+    cursor: pointer;
+}
+#event > article > .detail-wrapper > .detail-frame > div > .input-wrapper > label:hover, #event > article > .detail-wrapper > .detail-frame > div > .input-wrapper > label.active {
+    background-color: #00966B;
+    color: #ffffff;
+}
+#event > article > .detail-wrapper > .detail-frame > div > .input-wrapper > label:last-of-type {
+    border-right: 1px solid #888888;
+}
+#event > article > .detail-wrapper > .detail-frame > div > .input-wrapper > label > input {
+    display: none;
+}
+#event > article > .detail-wrapper > .detail-frame > div > .input-wrapper > label > p {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+}
+#event > article > .detail-wrapper > .detail-frame > div input {
+    all: unset;
+    width: 100%;
+    border-bottom: 1px solid #888888;
+    padding: 0.3rem 0;
+    font-size: 1.1rem;
+}
+#event > article > .detail-wrapper > .detail-frame > div > textarea {
+    all: unset;
+    border: 1px solid #888888;
+    width: 100%;
+    height: 8rem;
+}
+#event > article > .detail-wrapper > .detail-frame > div > .input-wrapper > p {
+    margin: 0 1rem;
+}
+#event > article > .detail-wrapper > .detail-frame > div > .input-wrapper > input {
+    width: 100%;
+    text-align: center;
+}
+#event > article > .detail-wrapper > .detail-frame > button {
+    all: unset;
+    color: #06c;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin: 1rem 0;
+}
+#event > article > .detail-wrapper > .detail-frame > button:hover {
+    text-decoration: underline;
+}
+
+
+
+#event > article > .detail-wrapper > .btn-frame {
+    display: flex;
+    justify-content: space-evenly;
+}
+#event > article > .detail-wrapper > .btn-frame > button {
+    all: unset;
+    width: 50%;
+    height: 2.7rem;
+    color: #fff;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0 2rem;
+    cursor: pointer;
+}
+#event > article > .detail-wrapper > .btn-frame > button.delete {
+    background-color: #dd1818;
+    opacity: 0.5;
+    transition-duration: 0.3s;
+}
+#event > article > .detail-wrapper > .btn-frame > button.delete:hover {
+    opacity: 1;
+}
+#event > article > .detail-wrapper > .btn-frame > button {
+    background-color: #00966B;
+}

@@ -20,4 +20,17 @@ router.post("/", async (req, res) => {
     }
 });
 
+router.post("/search", async (req, res) => {
+    try {
+        const result = await Product.search(req.user.id, req.body);
+        console.log(result);
+        if(typeof result != 'number') {
+            res.send(result);
+        } else {
+            res.sendStatus(result);
+        }
+    } catch {
+        res.sendStatus(StatusCode.error);
+    } 
+});
 module.exports = router;

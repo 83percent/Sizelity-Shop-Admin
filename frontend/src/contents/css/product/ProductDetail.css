@@ -1,0 +1,54 @@
+/*
+    Detail
+*/
+nav.detail-wrapper {
+    display: flex;
+    position: fixed;
+    bottom: -100%;
+    right: 1rem;
+    width: 100%;
+    transition-duration: 0.5s ease;
+    -o-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+}
+nav.detail-wrapper.on {
+    bottom: 0;
+}
+nav.detail-wrapper > div {
+    z-index: 999;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem 1.5rem;
+    background: #ffffff;
+    border: 1px solid #e3e8ee;
+    position: relative;
+    box-shadow: 2px -3px 1.5rem #00000010;
+}
+nav.detail-wrapper > div > button {
+    all: unset;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+nav.detail-wrapper > div > button > i {
+    font-size: 1.7rem;
+}
+nav.detail-wrapper > div > div.title {
+    padding-right: 7rem;
+}
+nav.detail-wrapper > div > div.time {
+    text-align: right;
+}
+nav.detail-wrapper > div > .size-wrapper {
+    margin: 0.5rem 0;
+}
+nav.detail-wrapper > div > .size-wrapper > table {
+    border-collapse: collapse;
+}
+nav.detail-wrapper > div > .size-wrapper > table td, nav.detail-wrapper > div > .size-wrapper > table th {
+    padding: 0.2rem 1.5rem;
+    text-align: center;
+    border: 1px solid #ccc;
+    font-size: 1.1rem;
+}

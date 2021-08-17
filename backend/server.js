@@ -8,7 +8,7 @@
 // Middle Ware
 const express = require('express');
 const cors = require('cors');
-const __Mongoose = require('./lib/db/Mongo');
+const __Mongoose = require('./config/db/Mongo');
 
 const passport = require('passport');
 const session = require('express-session');
@@ -24,6 +24,9 @@ const PORT = 3003;
 const LoginRouter = require('./router/LoginRouter');
 const AccountRouter = require('./router/AccountRouter');
 const ProductRouter = require('./router/ProductRouter');
+const RequestRouter = require('./router/RequestRouter');
+const EventRouter = require('./router/EventRouter');
+const PopupRouter = require('./router/PopupRouter');
 
 server.use(express.static('public'));
 server.use(cookieParser({secret: '83percent'}));
@@ -75,6 +78,24 @@ server.use('/product', (req, res, next) => {
     }
 },ProductRouter);
 
+server.use('/request', (req, res, next) => {
+    if(req.isAuthenticated()) next();
+    else {
+        res.sendStatus(401);
+    }
+},RequestRouter);
+server.use('/event', (req, res, next) => {
+    if(req.isAuthenticated()) next();
+    else {
+        res.status(401).send({error: "로그인 후 이용해주세요."});
+    }
+},EventRouter);
+server.use('/popup', (req, res, next) => {
+    if(req.isAuthenticated()) next();
+    else {
+        res.status(401).send({error: "로그인 후 이용해주세요."});
+    }
+},PopupRouter);
 
 server.listen(PORT, () => {
     console.log(" Start Server.js PORT : ",PORT);

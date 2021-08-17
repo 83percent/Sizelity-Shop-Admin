@@ -1,0 +1,150 @@
+#ad {
+    display: flex;
+    min-height: 100vh;
+    margin-left: 2rem;
+}
+#ad > .line {
+    background-color: #dbdbdb;
+    width: 2px;
+    margin: 2rem;
+}
+#ad > article {
+    margin: 1rem 0;
+}
+#ad > article > header {
+    height: 5rem;
+}
+#ad > article.dashboard > header > h1 {
+    font-size: 3.0rem;
+    font-weight: 700;
+}
+/*
+    Menu
+*/
+#ad > article.dashboard > #menu {
+    width: 24rem;
+}
+#ad > article.dashboard > #menu > div {
+    padding: 1rem;
+    background-color: #ffffff;
+    border: 1px solid #dbdbdb;
+}
+#ad > article.dashboard > #menu > div.pay {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+}
+#ad > article.dashboard > #menu > div.pay > h2 {
+    width: 100%;
+    font-size: 1.1rem;
+}
+#ad > article.dashboard > #menu > div.pay > div.money {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#ad > article.dashboard > #menu > div.pay > div.money {
+    margin-bottom: 0.5rem;
+}
+#ad > article.dashboard > #menu > div.pay > div.money > h3 {
+    font-family: 'Montserrat';
+    font-size: 2.0rem;
+    font-weight: 600;
+}
+#ad > article.dashboard > #menu > div.pay > div.money > p {
+    margin-left: 0.5rem;
+    font-weight: 400;
+}
+#ad > article.dashboard > #menu > div.pay > div > a {
+    all: unset;
+    display: flex;
+    align-items: center;
+    color: #06c;
+    cursor: pointer;
+}
+#ad > article.dashboard > #menu > div.pay > div > a > P {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+#ad > article.dashboard > #menu > div.pay > div > a:hover > p {
+    text-decoration: underline;
+}
+#ad > article.dashboard > #menu > div.pay > div > a > i {
+    position: relative;
+    top: -1px;
+}
+#ad > article.dashboard > #menu > div#freetier {
+    background-color: #00966B;
+    color: #ffffff;
+}
+#ad > article.dashboard > #menu > ul {
+    background-color: #ffffff;
+    border: 1px solid #dbdbdb;
+}
+#ad > article.dashboard > #menu > ul > li {
+    border-bottom: 1px solid #dbdbdb;
+}
+#ad > article.dashboard > #menu > ul > li > a {
+    all: unset;
+    color: #000;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 1rem 0.5rem;
+    transition-duration: 0.3s;
+}
+#ad > article.dashboard > #menu > ul > li:last-of-type {
+    border-bottom: none;
+}
+#ad > article.dashboard > #menu > ul > li > a:hover, #ad > article.dashboard > #menu > ul > li > a.active {
+    background: #00966B;
+    color: #ffffff;
+}
+#ad > article.dashboard > #menu > ul > li > a > p {
+    padding-left: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    flex-grow: 1;
+}
+
+
+#ad > article.content-main {
+    width: 100%;
+}
+#ad > article.content-main > header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#ad > article.content-main > header > h1 {
+    font-size: 1.7rem;
+}
+#ad > article.content-main > section.start > div.explain > h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+#ad > article.content-main > section.start > div.explain > p {
+    margin-bottom: 0.1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #666;
+}
+#ad > article.content-main > section.start > div.explain > h4 {
+    margin-top: 0.7rem;
+    font-size: 1.1rem;
+}
+#ad > article.content-main > section.start > div.explain > div {
+    margin-top: 1rem;
+}
+#ad > article.content-main > section.start > div.explain > div > a {
+    all: unset;
+    margin-top: 0.2rem;
+    font-size: 1.2rem;
+    padding: 0.7rem 2rem;
+    color: #fff;
+    background-color: #00966B;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}

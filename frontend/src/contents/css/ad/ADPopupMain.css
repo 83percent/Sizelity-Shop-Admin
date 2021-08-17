@@ -1,0 +1,142 @@
+
+#ad-popup .dot {
+    background-color: #00966B;
+    padding: 0.2rem;
+}
+/*
+    Create
+*/
+#ad-popup > .create {
+    display: flex;
+    flex-direction: column;
+}
+#ad-popup > .create > section {
+    width: 100%;
+    margin-bottom: 4rem;
+}
+#ad-popup > .create > section > article {
+    display: flex;
+    align-items: flex-start;
+}
+#ad-popup > .create > section > article > div {
+    width: 100%;
+    margin-right: 2rem;
+}
+#ad-popup > .create > section > article > div > .title {
+    margin-bottom: 0.5rem;
+}
+#ad-popup > .create > section > article > div > .title > h2 {
+    font-size: 1.5rem;
+}
+#ad-popup > .create > section > article > .input-wrapper > ul {
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 1rem;
+}
+#ad-popup > .create > section > article > div > ul > li {
+    margin-bottom: 1rem;
+}
+#ad-popup > .create > section > article > div > ul > li > h3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.2rem;
+}
+#ad-popup > .create > section > article > div > ul > li > h3 > span {
+    margin-right: 0.5rem;
+}
+#ad-popup > .create > section > article > .input-wrapper > ul > li > .input-image > p {
+    margin-top: 0.5rem;
+    background: #00966B;
+    color: #fff;
+    width: 100%;
+    padding: 0.7rem 0;
+    border-radius: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+}
+#ad-popup > .create > section > article > .input-wrapper > ul > li > .input-image > input {
+    display: none;
+}
+#ad-popup > .create > section > article > .input-wrapper > ul > li > .input-link, #ad-popup > .create > section > article > .input-wrapper > ul > li > .input-bid > input {
+    all: unset;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.3rem 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #888888;
+}
+
+#ad-popup > .create > section> article > .explain-wrapper {
+    border-left: 2px solid #dbdbdb;
+    padding-left: 2rem;
+}
+#ad-popup > .create > section> article > .explain-wrapper > .preview {
+    width: 100%;
+}
+#ad-popup > .create > section> article > .explain-wrapper > .preview > img, #ad-popup > .create > section> article > .explain-wrapper > .preview > div {
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    width: 25rem;
+    height: 25rem;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+#ad-popup > .create > section > article > .input-wrapper > ul > li > .input-bid {
+    display: flex;
+    align-items: center;
+}
+#ad-popup > .create > section > article > .input-wrapper > ul > li > .input-bid > input {
+    text-align: right;
+}
+#ad-popup > .create > section > article > .input-wrapper > ul > li > .input-bid > p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+}
+#ad-popup > .create > section > article > .input-wrapper > ul > li > .caution {
+    margin-top: 0.5rem;
+}
+#ad-popup > .create > section > article > .input-wrapper > ul > li > .caution > h4 {
+    color: #dd1818;
+}
+#ad-popup > .create > section > article > .create-wrapper > p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+#ad-popup > .create > section > article > .create-wrapper > button {
+    all: unset;
+    text-align: center;
+    width: 100%;
+    background-color: #00966B;
+    padding: 0.7rem 0;
+    border-radius: 0.5rem;
+    color: #fff;
+    cursor: pointer;
+}
+#ad-popup > .create > section > article > .create-wrapper > .result-frame {
+    margin-bottom: 1rem;
+    padding: 1rem 1rem 0 1rem;
+    background-color: #ffffff;
+    border: 1px solid #dbdbdb;
+}
+#ad-popup > .create > section > article > .create-wrapper > .result-frame > li {
+    display: flex;
+    text-align: right;
+}
+#ad-popup > .create > section > article > .create-wrapper > .result-frame > li > div {
+    width: 100%;
+}
+#ad-popup > .create > section > article > .create-wrapper > .result-frame > li h3 {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 2.1rem;
+}
+#ad-popup > .create > section > article > .create-wrapper > .result-frame > div {
+    background-color: #00000050;
+    width: 100%;
+    height: 2px;
+    margin-bottom: 1rem;
+}

@@ -8,7 +8,7 @@ section#product-main > header {
 }
 section#product-main > header > .title {
     font-size: 3.0rem;
-    font-weight: 600;
+    font-weight: 700;
     flex-grow: 1;
 }
 section#product-main > header > ul {

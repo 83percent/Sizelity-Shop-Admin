@@ -1,0 +1,78 @@
+section#request {
+
+}
+section#request > header {
+    padding: 1rem 2rem;
+}
+section#request > header > h1 {
+    font-size: 3.0rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+section#request > header > p {
+    font-size: 1.1rem;
+}
+section#request > article {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+section#request > article > ul {
+    background-color: #fff;
+    border: 1px solid #e3e8ee;
+    margin: 1rem 2rem;
+    padding: 1rem;
+}
+section#request > article > ul > li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.3rem;
+    padding: 0.3rem 0;
+    border-radius: 3rem;
+}
+section#request > article > ul > li:hover {
+    background: #00966B40;
+}
+section#request > article > ul > li > p {
+    text-align: center;
+    width: 5rem;
+    font-size: 1.1rem;
+}
+section#request > article > ul > li > h3 {
+    width: 40rem;
+    font-weight: 400;
+    font-size: 1.2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+section#request > article > ul > li > h3 > p {
+    all: unset;
+    cursor: pointer;
+}
+section#request > article > ul > li > div {
+    width: 10rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section#request > article > ul > li > div > button {
+    all: unset;
+    cursor: pointer;
+    padding: 0.1rem;
+    margin: 0 0.2rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #888;
+    border-radius: 50%;
+}
+section#request > article > ul > li > div > button > i {
+    opacity: 0.5;
+}
+section#request > article > ul > li > div > button:hover > i {
+    opacity: 1;
+}

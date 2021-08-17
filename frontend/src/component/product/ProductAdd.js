@@ -9,8 +9,7 @@ import '../../contents/css/product/ProductAdd.css';
 import { ServerContext, UserContext } from '../../App';
 
 let urlModule = null;
-const ProductAdd = ({history}) => {
-    
+const ProductAdd = ({history, location}) => {
 
     // State
     const [_productURL, _setProductURL] = useState(undefined);
@@ -86,7 +85,8 @@ const ProductAdd = ({history}) => {
                 _setProductInfo(null);
                 return;
             }
-            if(data.subtype.subtype === "") {
+            console.log(data.subtype)
+            if(data.subtype === "") {   
                 this.setInfoCaution("세부 분류를 입력해주세요.");
                 _setProductInfo(null);
                 return;
@@ -183,7 +183,7 @@ const ProductAdd = ({history}) => {
                             <p>추가하려는 상품 상세보기 화면의 주소를 밑에 붙여넣어주세요.</p>
                         </div>
                         <div className="url-input-frame">
-                            <input type="text" ref={urlInputRef} onKeyUp={(e) => {if(e.key === 'Enter') event.getProductURL(e.target.value)}}/>
+                            <input type="text" ref={urlInputRef} defaultValue={location.state?.url ? location.state.url : null} onKeyUp={(e) => {if(e.key === 'Enter') event.getProductURL(e.target.value)}}/>
                         </div>
                         <p ref={cautionRef}></p>
                         <button onClick={() => event.getProductURL(urlInputRef.current.value)}>적용</button>

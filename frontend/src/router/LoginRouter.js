@@ -17,7 +17,6 @@ const LoginRouter = ({history, match}) => {
     const server = useContext(ServerContext)
     const { setUser } = useContext(UserContext);
 
-    console.log(server);
     // Field
     const __id = match.params.id;
     if(__id.length < 20) history.replace("/wrong");

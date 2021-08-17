@@ -10,7 +10,20 @@ const ptype = [
 ];
 
 const sizeName = ['XS','S','M','L','XL','직접입력'];
+function getTypeName(value) {
+    switch(value) {
+        case 'set' : return "세트"
+        case 'outer' : return "아우터"
+        case 'top' : return "상의"
+        case 'suit' : return "한벌 옷"
+        case 'onepiece' : return "원피스"
+        case 'bottom' : return "하의"
+        case 'skirt' : return "치마"
+        case 'shoes' : return "신발"
+        default : return "알 수 없음"
+    }
 
+}
 const getSizeRateName = function(name) {
     const _d = {
         shoulder : "어깨",
@@ -143,6 +156,6 @@ const getSizeRate = (name) => {
     }
 } */
 module.exports = {
-    ptype, sizeName, getSizeRate, getSizeRateName
+    ptype, sizeName, getSizeRate, getSizeRateName, getTypeName
     /* subtype : subtype */
 }

@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { memo, useContext } from 'react';
 import { Link, NavLink, Route, Switch } from 'react-router-dom';
 
 // CSS
@@ -10,17 +10,19 @@ import {UserContext} from '../App';
 // Component
 import AccountMain from '../component/account/AccountMain';
 import ProductMain from '../component/product/ProductMain';
+import RequestMain from '../component/request/Request';
+import EventMain from '../component/event/EventMain';
+import ADMain from '../component/ad/ADMain';
 
 const HomeRouter = ({history}) => {
     const {user:userInfo} = useContext(UserContext);
-    console.log(userInfo);
     const __active = userInfo?.status;
     if(__active === undefined || !userInfo?.id) {
         history.replace("/wrong");
-        return (<div></div>);
+        return null;
     } else if(__active === 0) {
         history.replace("/init");
-        return (<div></div>);
+        return null;
     }
     return (
         <>
@@ -51,7 +53,7 @@ const HomeRouter = ({history}) => {
                         </NavLink>
                     </li>
                     <li className="element">
-                        <NavLink to="/home/request">
+                        <NavLink to="/request">
                             <div>
                                 <i className="material-icons">priority_high</i>
                             </div>
@@ -59,19 +61,19 @@ const HomeRouter = ({history}) => {
                         </NavLink>
                     </li>
                     <li className="element">
-                        <NavLink to="/home/event">
+                        <NavLink to="/event">
                             <div>
-                                <i className="material-icons">payments</i>
+                                <i className="material-icons">celebration</i>
                             </div>
-                            <p>진행중인 이벤트</p>
+                            <p>쇼핑몰 이벤트</p>
                         </NavLink>
                     </li>
                     <li className="element">
-                        <NavLink to="/home/ad">
+                        <NavLink to="/advertisement">
                             <div>
                                 <i className="material-icons">paid</i>
                             </div>
-                            <p>광고</p>
+                            <p>광고 관리</p>
                         </NavLink>
                     </li>
                 </ul>
@@ -80,9 +82,12 @@ const HomeRouter = ({history}) => {
                 <Switch>
                     <Route path="/account" component={AccountMain} />
                     <Route path="/product" component={ProductMain} />
+                    <Route path="/request" component={RequestMain} />
+                    <Route path="/advertisement" component={ADMain} />
+                    <Route path="/event" component={EventMain} />
                 </Switch>
             </article>
         </>
     )
 }
-export default HomeRouter;
+export default memo(HomeRouter);

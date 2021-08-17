@@ -65,3 +65,174 @@ section#product-main > article.search > .search-wrapper > p {
     padding-bottom: 1rem;
     color: #ff6347;
 }
+/*
+    loader
+*/
+section#product-main > article.search > .loader-frame {
+    width: 100%;
+    height: 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    margin: 0.5rem 0;    
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+    -moz-transition-duration: 0.4s;
+    -o-transition-duration: 0.4s;
+    overflow: hidden;
+}
+section#product-main > article.search > .loader-frame.on {
+    height: 5rem;
+    border: 1px solid #e3e8ee;
+}
+section#product-main > article.search > .loader-frame > div {
+    width: 2rem;
+    height: 2rem;
+    margin: auto;
+    border: 1px solid #00966B;
+    border-bottom: 1px solid #00000000;
+    opacity: 0;
+    transition-duration: 0.6s;
+    -webkit-transition-duration: 0.6s;
+    -moz-transition-duration: 0.6s;
+    -o-transition-duration: 0.6s;
+}
+section#product-main > article.search > .loader-frame.on > div {
+    opacity: 1;
+}
+
+/*
+    Result
+*/
+section#product-main > article.search > .no-result-frame {
+    width: 100%;
+    padding: 2rem 0;
+    background-color: #ffffff;
+    border: 1px solid #e3e8ee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+section#product-main > article.search > .no-result-frame > h3 {
+    font-size: 2.0rem;
+}
+section#product-main > article.search > .no-result-frame > a {
+    all: unset;
+    color: #00966B;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+section#product-main > article.search > .no-result-frame > a > p {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+section#product-main > article.search > .no-result-frame > a > i {
+    position: relative;
+    top: -1px;
+}
+section#product-main > article.search > .result-wrapper {
+    background: #ffffff;
+    border: 1px solid #e3e8ee;
+    padding: 1rem;
+    margin-bottom: 20rem;
+}
+/*
+    table
+*/
+section#product-main > article.search > .result-wrapper > table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 1rem;
+    font-size: 1.1rem;
+}
+
+section#product-main > article.search > .result-wrapper > table > tbody > tr:hover {
+    border-radius: 3rem;
+    background: #00966B40;
+}
+section#product-main > article.search > .result-wrapper > table > tbody > tr.check {
+    background: #00966B;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+section#product-main > article.search > .result-wrapper > table > tbody > tr > td:first-child {
+    border-radius: 2rem 0 0 2rem;
+}
+section#product-main > article.search > .result-wrapper > table > tbody > tr > td:last-child {
+    border-radius: 0 2rem 2rem 0;
+}
+section#product-main > article.search > .result-wrapper > table th, section#product-main > article.search > .result-wrapper > table td {
+    padding: 0 2rem;
+    min-width: 2rem;
+    text-align: center;
+}
+section#product-main > article.search > .result-wrapper > table th.check, section#product-main > article.search > .result-wrapper > table td.check,
+section#product-main > article.search > .result-wrapper > table th.no, section#product-main > article.search > .result-wrapper > table td.no,
+section#product-main > article.search > .result-wrapper > table th.option, section#product-main > article.search > .result-wrapper > table td.option {
+    width: 2rem;
+    min-width: unset;
+    padding: 0 1rem;
+}
+section#product-main > article.search > .result-wrapper > table td.check > input[type="checkbox"] {
+    cursor: pointer;
+}
+section#product-main > article.search > .result-wrapper > table th.pname, section#product-main > article.search > .result-wrapper > table td.pname {
+    width: 40vw;
+    padding: 0 1rem;
+}
+section#product-main > article.search > .result-wrapper > table td.pname {
+    text-align: left;
+    cursor: pointer;
+    
+}
+section#product-main > article.search > .result-wrapper > table td.option > button {
+    all: unset;
+    cursor: pointer;
+    opacity: 0.4;
+    padding: 0 1rem;
+}
+section#product-main > article.search > .result-wrapper > table td.option > button:hover {
+    opacity: 1;
+}
+section#product-main > article.search > .result-wrapper > table td {
+    padding: 0.5rem 0;
+}
+section#product-main > article.search > .result-wrapper > .more-btn {
+    width: 100%;
+    text-align: center;
+}
+section#product-main > article.search > .result-wrapper > .more-btn > button {
+    all: unset;
+    width: auto;
+    cursor: pointer;
+    padding: 0.5rem 2rem;
+    font-size: 1.1rem;
+    opacity: 0.7;
+}
+section#product-main > article.search > .result-wrapper > .more-btn > button:hover {
+    opacity: 1.0;
+    text-decoration: underline;
+}
+section#product-main > article.search > .result-wrapper > .delete-btn {
+    text-align: right;
+}
+section#product-main > article.search > .result-wrapper > .delete-btn > button {
+    all: unset;
+    padding: 0.3rem 3rem 0.2rem 3rem;
+    border-radius: 0.3rem;
+    opacity: 0.3;
+    color: #fff;
+    text-align: center;
+    background: #dd1818;
+    transition-duration: 0.4s;
+    cursor: default;
+}
+section#product-main > article.search > .result-wrapper > .delete-btn > button.active {
+    cursor: pointer;
+    opacity: 0.9;
+}

@@ -2,6 +2,7 @@
 module.exports = {
     // 2xx
     success : 200,
+    noCraete : 202,
     noData : 204,
 
     // 4xx

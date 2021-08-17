@@ -1,7 +1,12 @@
 import { useContext, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
-import ProductType from '../../contents/js/ProductType';
+import { getTypeName } from '../../contents/js/ProductType';
 import URLModule from '../../contents/js/URL';
+import { transformDate } from '../../contents/js/DateFormat';
+
+// Component
+import ProductDetail from './ProductDetail';
 
 // Context
 import { ServerContext, UserContext } from '../../App';
@@ -14,95 +19,130 @@ const ProductSearch = ({history}) => {
 
     // State
     const [loader, setLoader] = useState(false);
-
+    const [detail, setDetail] = useState(null);
+    const [resultDatas, setResultDatas] = useState(undefined);
+    const [moreBtn, setMoreBtn] = useState(true);
     // Context
     const server = useContext(ServerContext);
     const { user } = useContext(UserContext);
 
     // ref
     const cautionRef = useRef(null);
+    const choiceCount = useRef(0);
+    const deleteRef = useRef(null);
     const SearchData = useRef({
         value : undefined,
         way : "pname",
         ptype : "all",
         date : "all"
-    })
-    
+    });
+    const lastSearchQuery = useRef(null);
+
     const event = {
         search : async function(sendData) {
-            setLoader(true);
             let {value, way, ptype, date} = sendData;
             const _sd = {way, ptype, date};
-            if(!value) {
-                this.setCautionToggle("검색어가 너무 짧습니다.")
-                return;
-            } else {
-                switch(way) {
-                    case 'pname' : {
-                        if(value.length < 3) {
+            switch(way) {
+                case 'pname' : {
+                    console.log("검색어 : ", value);
+                    if(value === undefined || value.length === 0 ) {
+                        // 검색어 없음 = 전체 검색
+                        _sd.value = "";
+                    } else {
+                        if(value.length < 2) {
                             this.setCautionToggle("검색어가 너무 짧습니다. (2~20자)")
                             return;
-                        } else if(value.length < 20) {
-                            this.setCautionToggle("검색어가 너무 깁니다. (2~20자)")
-                        }
-                        const isURL = ((value) => {
-                            let regex = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!]))?/;
-                            return regex.test(value);
-                        })(value);
-                        if(isURL) {
-                            this.setCautionToggle("검색 방식을 '상품 주소'로 변경해주세요.");
-                            return;
-                        }
-                        _sd.value = value;
-                        break;
-                    }
-                    case 'url' : {
-                        const isURL = ((value) => {
-                            if(value.indexOf("http") === -1) {
-                                value = "http://"+value;
-                            }
-                            let regex = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!]))?/;
+                        } else if(value.length > 20) {
+                            const isURL = ((value) => {
+                                let regex = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!]))?/;
                                 return regex.test(value);
                             })(value);
-                            // 주소 형식 확인
-                            if(!isURL) {
-                                this.setCautionToggle("주소 형식이 아닙니다. (ex. www.example.com/path?query=1234)");
+                            if(isURL) {
+                                this.setCautionToggle("검색 방식을 '상품 주소'로 변경해주세요.");
+                                return;
+                            } else {
+                                this.setCautionToggle("검색어가 너무 깁니다. (2~20자)")
                                 return;
                             }
-                            if(!urlModule) urlModule = new URLModule();
-                            const _u = urlModule.get(value);
-                            if(_u === null) {
-                                this.setCautionToggle("지원하지 않는 주소 형식입니다.");
-                                return;
-                            }
-                            if(_u.domain !== user.domain) {
-                                // 로그인 된 쇼핑몰과 같은 쇼핑몰 상품을 검색하는지 확인
-                                this.setCautionToggle(`가입하신 '${user.domain}' 쇼핑몰의 상품만 검색 가능합니다.`);
-                                return;
-                            }
-                            _sd.domain = _u.domain;
-                            _sd.code = _u.code;
-                            break;
                         }
-                    default : {
-                        this.setCautionToggle("잘못된 접근입니다.");
+                        _sd.value = value;
+                    }
+                    break;
+                }
+                case 'url' : {
+                    if(value.length <= 15) {
+                        this.setCautionToggle("검색할 주소가 너무 짧습니다.");
                         return;
                     }
-                } // swtich
-                this.setCautionToggle("",false)
-            } // 검색 조건 확인.
+                    const isURL = ((value) => {
+                        if(value.indexOf("http") === -1) {
+                            value = "http://"+value;
+                        }
+                        let regex = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!]))?/;
+                        return regex.test(value);
+                    })(value);
+                    // 주소 형식 확인
+                    if(!isURL) {
+                        this.setCautionToggle("주소 형식이 아닙니다. (ex. www.example.com/path?query=1234)");
+                        return;
+                    }
+                    if(!urlModule) urlModule = new URLModule();
+                    const _u = urlModule.get(value);
+                    if(_u === null) {
+                        this.setCautionToggle("지원하지 않는 주소 형식입니다.");
+                        return;
+                    }
+                    if(_u.domain !== user.domain) {
+                        // 로그인 된 쇼핑몰과 같은 쇼핑몰 상품을 검색하는지 확인
+                        this.setCautionToggle(`가입하신 '${user.domain}' 쇼핑몰의 상품만 검색 가능합니다.`);
+                        return;
+                    }
+                    _sd.domain = _u.domain;
+                    _sd.code = _u.code;
+                    break;
+                }
+                default : {
+                    this.setCautionToggle("잘못된 접근입니다.");
+                    return;
+                }
+            } // swtich
+            this.setCautionToggle("",false);
+            lastSearchQuery.current = _sd;
+            this._send(_sd);
+            
+        }, // search(sendData)
+        setCautionToggle : function(msg, toggle) {
+            if(toggle === false) {
+                cautionRef.current.innerHTML = "";
+            } else {
+                cautionRef.current.innerHTML = msg;
+            }
+        }, // setCautionToggle(msg, toggle)
+        getMoreDatas : function() {
+            lastSearchQuery.current.count = resultDatas.length;
+            this._send(lastSearchQuery.current, true);
+        }, // getMoreDatas()
+        _send : async function(query, isMore) {
+            setLoader(true);
             await axios({
                 method : "post",
                 url : server + "/product/search",
-                data : _sd,
+                data : query,
                 withCredentials: true,
-                timeout: 10000
+                timeout: 15000
             }).then(response => {
                 switch(response?.status) {
                     case 200 : {
+                        if(isMore) {
+                            setResultDatas([...resultDatas, ...response.data]);
+                        } else {
+                            setResultDatas(response.data);
+                        }
+                        if(!moreBtn) setMoreBtn(true);
                         break;
                     }
                     case 204 : {
+                        setResultDatas([]);
                         break;
                     }
                     default : {
@@ -111,6 +151,7 @@ const ProductSearch = ({history}) => {
                     }
                 }
             }).catch(err => {
+                if(isMore) {setMoreBtn(false);}
                 switch(err?.response?.status) {
                     case 400 : {
                         window.alert("잘못된 접근입니다.");
@@ -131,16 +172,30 @@ const ProductSearch = ({history}) => {
                     }
                 }
             }).finally(() => {
-                setLoader(false);
+                setTimeout(() => {
+                    setLoader(false);
+                }, 400);
             });
-        }, // search(sendData)
-        setCautionToggle : function(msg, toggle) {
-            if(toggle === false) {
-                cautionRef.current.innerHTML = "";
+        }, // async function _send(query)
+        deleteCountHandler : function(target) {
+            if(target.checked) {
+                deleteRef.current.classList.add("active");
+                choiceCount.current++;
+                target.parentElement.parentElement.classList.add("check");
             } else {
-                cautionRef.current.innerHTML = msg;
+                choiceCount.current--;
+                target.parentElement.parentElement.classList.remove("check");
+                if(Number(choiceCount.current) === 0) {
+                    deleteRef.current.classList.remove("active");
+                }
             }
-        }, // setCautionToggle(msg, toggle)
+        }, // deleteCountHandler()
+        delete : function() {
+            if(Number(choiceCount.current) <= 0) {
+                window.alert("선택된 상품이 없습니다.");
+                return;
+            }
+        }, // delete
     }
     return (
         <article className="search">
@@ -183,14 +238,94 @@ const ProductSearch = ({history}) => {
                         <select onChange={e => SearchData.current.date = e.target.value}>
                             <option value="all">전체기간</option>
                             <option value="today">오늘</option>
-                            <option value="week">이번 주</option>
-                            <option value="month">이번 달</option>
-                            <option value="year">올해</option>
+                            <option value="week">일주일 이내</option>
+                            <option value="month">1개월 이내</option>
+                            <option value="quarterYear">3개월 이내</option>
+                            <option value="halfYear">6개월 이내</option>
+                            <option value="year">1년 이내</option>
                         </select>
                     </li>
                 </ul>
                 <p ref={cautionRef}></p>
             </div>
+            <div className={`loader-frame ${loader ? "on" : ""}`}>
+            {
+                loader ? (
+                        <div className="loader"></div>
+                ) : null
+            }
+            </div>
+            {
+                resultDatas === undefined ? null : resultDatas.length === 0 ? (
+                    <div className="no-result-frame">
+                        <h3>검색 결과 없습니다.</h3>
+                        <Link to="/product/add">
+                            <p>상품 추가</p>
+                            <i className="material-icons">chevron_right</i>
+                        </Link>
+                    </div>
+                ) : (
+                    <div className="result-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th className="check"></th>
+                                    <th className="no">no.</th>
+                                    <th className="pname">상품명</th>
+                                    <th>종류</th>
+                                    <th>세부분류</th>
+                                    <th>등록날짜</th>
+                                    <th className="option"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {
+                                resultDatas.map((element, index) => (
+                                    <tr key={index}>
+                                        <td className="check">
+                                            <input type="checkbox" onChange={(e) => event.deleteCountHandler(e.target)}/>
+                                        </td>
+                                        <td className="no">
+                                            <p>{index+1}</p>
+                                        </td>
+                                        <td className="pname" onClick={() => setDetail(element)}>
+                                            <p>{element.info.pname}</p>
+                                        </td>
+                                        <td>
+                                            <p>{getTypeName(element.info.ptype)}</p>
+                                        </td>
+                                        <td>
+                                            <p>{element.info.subtype}</p>
+                                        </td>
+                                        <td>
+                                            <p>{transformDate(element.reg_date)}</p>
+                                        </td>
+                                        <td className="option">
+                                            <button title="수정하기">
+                                                <i className="material-icons">edit</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))
+                            }        
+                            </tbody>
+                        </table>
+                        {
+                            (resultDatas === undefined || resultDatas.length === 0) ? null : (resultDatas.length%20 === 0 && moreBtn) ? (
+                                <div className="more-btn">
+                                    <button onClick={() => event.getMoreDatas()}>더 보기</button>
+                                </div>
+                            ) : null
+                        }
+                        <div className="delete-btn">
+                            <button ref={deleteRef} onClick={() => event.delete()}>
+                                <i className="material-icons">delete</i>
+                            </button>
+                        </div>
+                    </div>
+                )
+            }
+            <ProductDetail detail={detail} setDetail={setDetail}/>
         </article>
     )
 }
