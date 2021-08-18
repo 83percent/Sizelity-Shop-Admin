@@ -1,4 +1,5 @@
 function transformDate(value) {
+    if(value === undefined) return null;
     if(value.constructor !== Date)  value = new Date(value);
     return `${value.getFullYear()}-${value.getMonth() >= 9 ? value.getMonth()+1 : "0"+(value.getMonth()+1)}-${value.getDate() >= 10 ? value.getDate() : "0"+value.getDate()}`
 }

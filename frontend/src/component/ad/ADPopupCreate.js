@@ -6,7 +6,7 @@ import ADPopupModule from '../../contents/js/ADPopup';
 import { ServerContext, UserContext } from '../../App';
 import { ADUserContext } from './ADMain';
 
-const ADPopupCreate = () => {
+const ADPopupCreate = ({history}) => {
     // State
     const [previewImage, setPreviewImage] = useState(null)
     const [adPopupData, setADPopupData] = useState({
@@ -37,6 +37,10 @@ const ADPopupCreate = () => {
             e.preventDefault();
             let reader = new FileReader();
             let file = e.target.files[0];
+            if(file.type !== 'image/png') {
+                window.alert("'PNG' 파일이 아닙니다.");
+                return;
+            }
             if(file.size > 102400) {
                 window.alert("이미지가 100KB를 초과합니다.");
                 return;
@@ -66,9 +70,6 @@ const ADPopupCreate = () => {
         },
         checkBid : function(value) {
             value = Number(value);
-
-            console.log("희망가 : ",value);
-
             if(!value) return false;
             else {
                 if(value < 1400) {
@@ -91,9 +92,6 @@ const ADPopupCreate = () => {
         },
         checkPlan : function(value) {
             value = Number(value);
-
-            console.log("예산 : ",value);
-
             if(!value) return false;
             else {
                 if(value < 30000) {
@@ -125,14 +123,12 @@ const ADPopupCreate = () => {
             if(!file) {
                 window.alert("광고 이미지를 생성해주세요.");
                 return;
-            } else if(file.size > 102400) {
-                window.alert("이미지가 100KB를 초과합니다.");
+            } else if(file.size > 204800) {
+                window.alert("이미지가 200KB를 초과합니다.");
                 return;
             }
 
-            console.log(file)
-
-            const { url, bid, plan } = data;
+            let { url, bid, plan } = data;
 
             if(!url) {
                 window.alert("'연결된 링크'를 입력해주세요.");
@@ -141,17 +137,38 @@ const ADPopupCreate = () => {
             if(bid === 0) {
                 window.alert("'희망 입찰가'를 입력해주세요.")
                 return;
+            } else {
+                bid = (bid + (bid / 10))/1000;
             }
             if(plan === 0) {
                 window.alert("'일일 예산'을 입력해주세요.")
                 return;
+            } else {
+                data.maxCount = this.getMaxCount(plan, bid);
             }
-            const formData = new FormData();
-            formData.append('uploadImage', {file : file});
-            formData.append('info', data);  
             
-            const response = await new ADPopupModule(server).set(formData);
-            console.log("응답 결과 : ", response);
+            const adPopupModule = new ADPopupModule(server);
+            const response = await adPopupModule.set({
+                file : file,
+                info : {
+                    url, bid, plan, 
+                    maxCount : this.getMaxCount(plan, bid)
+                }
+            });
+            switch(response.type) 
+            {
+                case 'success' : {
+                    history.replace('/advertisement/popup');
+                    break;
+                }
+                case 'error' : {
+                    window.alert(response.msg);
+                    break;
+                }
+                default : {
+                    window.alert("광고 생성에 실패했습니다.\n잠시 후 시도해주세요.");
+                }
+            }
         }
     }
 
@@ -168,13 +185,13 @@ const ADPopupCreate = () => {
                         <ul>
                             <li>
                                 <h3><span className="dot"></span>이미지</h3>
-                                <p>*100kb 이하의 1:1 비율의 이미지를 등록해주세요.</p>
-                                <p>권장 파일 형식 : '.png'</p>
+                                <p>*200kb 이하의 1:1 비율의 이미지를 등록해주세요.</p>
+                                <p>파일 형식 : '.png'</p>
                                 <label className="input-image">
                                     <p>광고 이미지 등록</p>
                                     <input 
                                         type="file" 
-                                        accept="image/*"
+                                        accept="image/png"
                                         onChange={(e) => event.imageChange(e)}/>
                                 </label>
                             </li>

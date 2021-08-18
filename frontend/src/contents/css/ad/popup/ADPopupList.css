@@ -1,0 +1,109 @@
+#ad-popup > #list > div {
+    margin-bottom: 1rem;
+}
+#ad-popup > #list > div > .title {
+    margin-bottom: 0.5rem;
+}
+#ad-popup > #list > div > ul {
+    background: #ffffff;
+    border: 1px solid #dbdbdb;
+}
+#ad-popup > #list > div > ul > li {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #dbdbdb;
+    cursor: pointer;
+}
+#ad-popup > #list > div > ul > li:last-of-type {
+    border-bottom: none;
+}
+#ad-popup > #list > div > ul > li > h3 {
+    min-width: 20rem;
+}
+#ad-popup > #list > div > ul > li > p {
+    font-size: 1.1rem;
+    text-align: center;
+    width: 100%;
+}
+#ad-popup > #list > div > ul > .none {
+    text-align: center;
+}
+#ad-popup > #list > nav {
+    position: fixed;
+    top: 0;
+    right: -50%;
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    border-left: 1px solid #dbdbdb;
+    background-color: #f0f2f5;
+    box-shadow: -8px 0px 10px #88888810;
+    transition-duration: 0.6s;
+}
+#ad-popup > #list > nav.on {
+    right: 0;
+}
+#ad-popup > #list > nav > .back-btn {
+    background-color: #ffffff;
+    text-align: right;
+}
+#ad-popup > #list > nav > .back-btn > button {
+    all: unset;
+    padding: 0.3rem 0.7rem;
+    cursor: pointer;
+}
+#ad-popup > #list > nav > .back-btn > button > i {
+    font-size: 1.8rem;
+}
+#ad-popup > #list > nav > .preview {
+    height: 25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00000010;
+    border-bottom: 1px solid #dbdbdb;
+}
+#ad-popup > #list > nav > .preview > img {
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+#ad-popup > #list > nav > ul {
+    background-color: #fff;
+    flex-grow: 1;
+    padding-top: 0.5rem;
+}
+#ad-popup > #list > nav > ul > li {
+    margin-bottom: 0.5rem;
+    padding: 0 1rem;
+}
+#ad-popup > #list > nav > ul > li > h3 {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 1.8rem;
+    text-align: right;
+}
+#ad-popup > #list > nav > .btn-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+#ad-popup > #list > nav > .btn-wrapper > button {
+    all: unset;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    padding: 0.5rem 0;
+    cursor: pointer;
+}
+#ad-popup > #list > nav > .btn-wrapper > button.edit {
+    background-color: #00966B;
+}
+#ad-popup > #list > nav > .btn-wrapper > button.remove {
+    background-color: #dd1818;
+    opacity: 0.6;
+}
+#ad-popup > #list > nav > .btn-wrapper > button.remove:hover {
+    opacity: 1;
+}

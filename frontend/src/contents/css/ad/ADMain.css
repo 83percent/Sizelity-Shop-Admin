@@ -148,3 +148,17 @@
     border-radius: 0.4rem;
     cursor: pointer;
 }
+#ad > article > section {
+    margin-right: 2rem;
+}
+#ad > article > section > .loader-frame {
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#ad > article > section > .loader-frame > .loader {
+    padding: 1rem;
+    border: 1px solid #888888;
+    border-bottom: 1px solid #88888800;
+}

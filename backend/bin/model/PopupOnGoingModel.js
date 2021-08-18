@@ -1,7 +1,7 @@
 const Mongoose = require('mongoose');
-const COLL_NAME = 'ad_popup';
+const COLL_NAME = 'ad_ongoing_popup';
 
-const ADPopupModel = new Mongoose.Schema({
+const onADPopupModel = new Mongoose.Schema({
     shopRef : {
         type : Mongoose.Schema.Types.ObjectId,
         ref : 'shop',
@@ -26,6 +26,7 @@ const ADPopupModel = new Mongoose.Schema({
         type: Number,
         required : true
     },
+    countData : [],
     reg_date : {
         type: Date,
         default : Date.now()
@@ -34,4 +35,4 @@ const ADPopupModel = new Mongoose.Schema({
     versionKey : false
 });
 
-module.exports = Mongoose.model(COLL_NAME, ADPopupModel);
+module.exports = Mongoose.model(COLL_NAME, onADPopupModel);

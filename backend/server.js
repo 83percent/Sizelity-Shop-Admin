@@ -10,6 +10,7 @@ const express = require('express');
 const cors = require('cors');
 const __Mongoose = require('./config/db/Mongo');
 
+const bodyParser = require('body-parser');
 const passport = require('passport');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
