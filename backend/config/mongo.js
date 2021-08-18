@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
+const path = require('path');
+const ENV_PATH = path.resolve(__dirname, "../../.env");
+require('dotenv').config({path : ENV_PATH});
 
 // local
-const __url = 'mongodb://127.0.0.1:27017/sizelity?poolSize=20&writeConcern=majority';
+const __url = process.env.DB_LOCAL;
 // Atlas
-//const __url = 'mongodb+srv://83percent:9J4mKCBRJy8mXweB@cluster0.ige9k.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+//const __url = process.env.DB_URL;
 
 mongoose.connect(
     __url, 

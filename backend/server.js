@@ -8,7 +8,7 @@
 // Middle Ware
 const express = require('express');
 const cors = require('cors');
-const __Mongoose = require('./config/db/Mongo');
+const __Mongoose = require('./config/Mongo');
 
 const bodyParser = require('body-parser');
 const passport = require('passport');

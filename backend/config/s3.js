@@ -1,29 +1,24 @@
 const multer = require("multer");
 const multerS3 = require("multer-s3");
 const AWS = require("aws-sdk");
-AWS.config.loadFromPath(__dirname + '/awsconfig.json')
 
-const s3 = new AWS.S3();
+const path = require("path");
+const ENV_PATH = path.resolve(__dirname, "../../.env");
+require('dotenv').config({path : ENV_PATH});
 
-/* S3.listBuckets(function(err, data) {
+const s3 = new AWS.S3({
+    accessKeyId : process.env.ACCESS_KEY,
+    secretAccessKey : process.env.ACCESS_SECRET,
+    region : process.env.REGION
+});
+
+/* s3.listBuckets(function(err, data) {
+    console.log("CHECK START");
     if (err) {
         console.log("Error", err);
       } else {
         console.log("Success", data.Buckets);
       }
-}) */
-
-/* const storage = multerS3({
-    s3 : s3,
-    bucket : BUCKET_NAME,
-    contentType : multerS3.AUTO_CONTENT_TYPE,
-    acl: 'public-read',
-    metadata: function (req, file, cb) {
-        cb(null, {fieldName: file.fieldname});
-    },
-    key : function(req, file, cd) {
-        cd(null, `popup/${req.params.id}.png`);
-    }
 }) */
 
 /*
@@ -62,4 +57,3 @@ const Popup =  {
 module.exports = {
     Popup
 }
-//exports.upload = multer({storage : storage})

@@ -2,3 +2,4 @@
 
 # dependencies
 backend/config/*.json
+.env
