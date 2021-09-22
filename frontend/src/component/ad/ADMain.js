@@ -1,10 +1,10 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { Link, NavLink, Route, Switch } from 'react-router-dom';
+import AccountModule from '../../contents/js/Account';
 
 // Component
-import ADProductMain from './ADProductMain';
-import ADEventMain from './ADEventMain';
-import ADPopupMain from './ADPopupMain';
+import ADEventMain from './Event/ADEventMain';
+import ADPopupMain from './Popup/ADPopupMain';
 
 // CSS
 import '../../contents/css/ad/ADMain.css';
@@ -12,29 +12,55 @@ import '../../contents/css/ad/ADMain.css';
 // Context
 import { ServerContext } from '../../App';
 export const ADUserContext = createContext(null);
-const testData = {
-    pay : {
-        credit : 1730402,
-        freetier : 200000.00
-    },
-    plan : {
-        popup : 0,
-        event : 0,
-        product : 0
-    }
-}
 const ADMain = () => {
     // State
     const [ADUser, setADUser] = useState(null);
-
+    
     // Context
     const server = useContext(ServerContext);
+
+    // Memo
+    const accountModule = useMemo(() => {
+        return new AccountModule(server);
+    }, [server]);
+
+    const event = {
+        sumCredit : function ({credit=0, freetier=0}) {
+            return credit + freetier;
+        },
+        sumPlan : function(data) {
+            const result = Object.entries(data).reduce((acc,e) => {
+                return acc += e[1];
+            }, 0);
+            return isFinite(result) ? result : 0;
+        },
+    }
+
     useEffect(() => {
-        setADUser(testData);
-    }, [server])
+        if(ADUser === null) {
+            (async () => {
+                const response = await accountModule.get();
+                switch(response.type) {
+                    case 'success' : {
+                        setADUser({
+                            pay : response.data.pay,
+                            plan : response.data.plan
+                        });
+                        break;
+                    }
+                    case 'error' : {
+                        window.alert("쇼핑몰 정보를 불러올 수 없습니다.");
+                        break;
+                    }
+                    default : {
+                        window.alert("쇼핑몰 정보를 불러올 수 없습니다.");
+                    }
+                }
+            })();
+        }
+    }, [ADUser, accountModule])
     return (
         <section id="ad">
-            
                 {
                     ADUser ? (
                         <>
@@ -68,6 +94,33 @@ const ADMain = () => {
                                         </div>
                                     ) : null
                                 }
+                                <div className="plan">
+                                    <h2>예산</h2>
+                                    <ul>
+                                        <li>
+                                            <p>전체 잔액</p>
+                                            <div className="money">
+                                                <h3>{event.sumCredit(ADUser?.pay).toLocaleString()}</h3>
+                                                <p>원</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p>편성된 예산</p>
+                                            <div className="money">
+                                                <h3>{event.sumPlan(ADUser?.plan).toLocaleString()}</h3>
+                                                <p>원</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p>사용가능한 예산</p>
+                                            <div className="money">
+                                                <h3>{(event.sumCredit(ADUser?.pay)-event.sumPlan(ADUser?.plan)).toLocaleString()}</h3>
+                                                <p>원</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    
+                                </div>
                                 <h2>목록</h2>
                                 <ul>
                                     <li>
@@ -82,12 +135,6 @@ const ADMain = () => {
                                             <i className="material-icons">chevron_right</i>
                                         </NavLink>   
                                     </li>
-                                    <li>
-                                        <NavLink to="/advertisement/product">
-                                            <p>상품 추천</p>
-                                            <i className="material-icons">chevron_right</i>
-                                        </NavLink>   
-                                    </li>
                                 </ul>
                             </section>
                         </article>
@@ -96,7 +143,6 @@ const ADMain = () => {
                             <Switch>
                                 <Route path="/advertisement/popup" component={ADPopupMain} />
                                 <Route path="/advertisement/event" component={ADEventMain} />
-                                <Route path="/advertisement/product" component={ADProductMain} />
                             </Switch>
                         </ADUserContext.Provider>
                         </>

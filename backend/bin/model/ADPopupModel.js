@@ -18,6 +18,10 @@ const ADPopupModel = new Mongoose.Schema({
         type: Number,
         required : true
     },
+    target : {
+        type: String,
+        required: true
+    },
     plan : {
         type: Number,
         required : true

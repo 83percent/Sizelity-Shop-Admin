@@ -5,6 +5,7 @@ function transformDate(value) {
 }
 
 function eventDay(date) {
+    if(!date) return null;
     // D-Day 날짜 지정
     const setDate = new Date(date);
     // D-day 날짜의 연,월,일 구하기
@@ -31,7 +32,7 @@ function eventDateCheck(year, month, day) {
     const now = new Date();
     const _year = now.getFullYear();
 
-    if(year < _year || year > _year+2 || month < 0 || month > 12 || day < 0 || day > 31) {
+    if(year < _year || year > _year+2 || month <= 0 || month > 12 || day <= 0 || day > 31) {
         return {type : 'error', msg: '올바른 날짜를 입력해주세요.'};
     }
     const setDate = new Date(`${year}-${month}-${day}`);

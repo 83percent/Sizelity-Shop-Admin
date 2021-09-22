@@ -1,0 +1,72 @@
+#ad-event > .create > section > article > .preview {
+    background-color: #f0f2f5;
+    border: 1px solid #dbdbdb;
+    width: 25rem;
+    overflow: hidden;
+    position: relative;
+    margin-top: 2rem;
+}
+#ad-event > .create > section > article > .preview > i {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+#ad-event > .create > section > article > .preview > h2 {
+    padding: 2rem 1rem 1rem 1rem;
+    font-size: 1.5rem;
+}
+#ad-event > .create > section > article > .preview > div {
+    background-color: #ffffff;
+    border-top: 1px solid #e3e8ee;
+    border-bottom: 1px solid #e3e8ee;
+}
+#ad-event > .create > section > article > .preview > p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.3rem 0;
+    margin-left: 1rem;
+}
+#ad-event > .create > section > article > .preview > div > ul {
+    padding: 1rem 0;
+}
+#ad-event > .create > section > article > .preview > div > ul > li {
+    position: relative;
+    margin: 0 1rem;
+    margin-bottom: 1rem;
+}
+#ad-event > .create > section > article > .preview > div > ul > li:last-of-type {
+    margin-bottom: 0;
+}
+#ad-event > .create > section > article > .preview > div > ul > li > .info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+#ad-event > .create > section > article > .preview > div > ul > li > .info > h3 {
+    font-size: 1.3rem;
+}
+#ad-event > .create > section > article > .preview > div > ul > li > .info > h4 {
+    flex-grow: 1;
+    font-weight: 400;
+    text-align: right;
+}
+#ad-event > .create > section > article > .preview > div > ul > li > .info > p {
+    padding: 0.2rem 0.6rem;
+    color: #ffffff;
+    margin-left: 0.7rem;
+    font-size: 0.9rem;
+    border-radius: 1rem;
+}
+#ad-event > .create > section > article > .preview > div > ul > li > .image {
+    height: 7vw;
+}
+#ad-event > .create > section > article > .preview > div > ul > li > .image > .image-frame {
+    width: 100%;
+    height: 7vw;
+    border-radius: 0.6rem;  
+    object-fit: cover;
+    object-position: 50% 50%;
+    min-width: 7vw;
+    max-height: 7vw;
+    background: #dbdbdb;
+}

@@ -5,7 +5,7 @@ import ADPopupList from './ADPopupList';
 import ADPopupCreate from './ADPopupCreate';
 
 // CSS
-import '../../contents/css/ad/ADPopupMain.css';
+import '../../../contents/css/ad/ADPopupMain.css';
 
 const ADPopupMain = () => {
     return (

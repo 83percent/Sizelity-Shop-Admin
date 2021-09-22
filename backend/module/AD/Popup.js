@@ -1,6 +1,8 @@
-const PopupModel = require("../../bin/model/PopupModel");
+const PopupModel = require("../../bin/model/ADPopupModel");
 const onPopupModel = require("../../bin/model/PopupOnGoingModel");
 const StatusCode = require("../../lib/status-code");
+
+const AccountModule = require("../Account");
 
 
 async function getAll(shopID) {
@@ -25,7 +27,10 @@ async function setInfo(shopID, {url, bid, plan, maxCount}) {
             url, bid, plan, maxCount
         });
         popup = await popup.save();
-        if(popup._id) return popup; // Object
+        if(popup._id) { 
+            await AccountModule.Plan.add(shopID, plan, 'popup');
+            return popup;
+        } // Object
         else return StatusCode.error; // 500
     } catch(err) {
         console.log(err);
@@ -33,17 +38,18 @@ async function setInfo(shopID, {url, bid, plan, maxCount}) {
     };
     
 }
-
 async function setImage(popupID, location) {
     const popup = await PopupModel.findByIdAndUpdate(popupID, {image : location});
     if(popup._id) return StatusCode.success;
     else return StatusCode.error;
 }
-
 async function remove(popupID) {
     try {
         const popup = await PopupModel.findByIdAndDelete(popupID).exec();
-        if(popup._id) return StatusCode.success;
+        if(popup._id) {
+            await AccountModule.Plan.minus(popup.shopRef, popup.plan, 'popup')
+            return StatusCode.success;
+        }
         else return StatusCode.error
     } catch {
         return StatusCode.error

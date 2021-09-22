@@ -1,22 +1,20 @@
 import { useContext, useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import ADPopupModule from '../../contents/js/ADPopup';
-import DateFormat from '../../contents/js/DateFormat';
+import ADPopupModule from '../../../contents/js/ADPopup';
+import DateFormat from '../../../contents/js/DateFormat';
 
 
 // Context
-import { ServerContext } from '../../App';
+import { ServerContext } from '../../../App';
 
 // CSS
-import '../../contents/css/ad/popup/ADPopupList.css';
+import '../../../contents/css/ad/popup/ADPopupList.css';
 
-const ADPopupList = () => {
+const ADPopupList = ({history}) => {
     // State
     const [loader, setLoader] = useState(true);
     const [data, setData] = useState(null);
     const [activeData, setActiveData] = useState(null);
-
-    console.log(JSON.parse(JSON.stringify(data)));
 
     // Context
     const server = useContext(ServerContext);
@@ -30,7 +28,6 @@ const ADPopupList = () => {
     const event = {
         onActive : function(adData, index) {
             setActiveData({data : adData, index: index});
-            console.log(activeWrapperRef)
             activeWrapperRef.current.classList.add("on")
         },
         offActive : function() {
@@ -43,7 +40,10 @@ const ADPopupList = () => {
                 case 'success' : {
                     window.alert("삭제되었습니다.");
                     const _d = JSON.parse(JSON.stringify(data));
-                    setData(_d?.bid?.filter((_,i) => i !== index));
+                    _d.bid = _d?.bid?.filter((_,i) => i !== index);
+                    setData(_d);
+                    this.offActive();
+                    setActiveData(null);
                     break;
                 }
                 case 'error' : {
@@ -103,7 +103,7 @@ const ADPopupList = () => {
                             <ul>
                                 {
                                     data?.ongoing?.length > 0 ? (
-                                        <li></li>
+                                        <li style={{cursor : 'pointer'}}></li>
                                     ) : (
                                         <li className="none" style={{color: "#dd1818"}}>
                                             <p>진행중인 광고가 없습니다.</p>
@@ -127,7 +127,7 @@ const ADPopupList = () => {
                                 </li>
                                 {
                                     data?.bid.map((element, index) => (
-                                        <li key={index} onClick={() => event.onActive(element, index)}>
+                                        <li key={index} onClick={() => event.onActive(element, index)} style={{cursor : 'pointer'}}>
                                             <h3>팝업 배너 광고</h3>
                                             <p className="bid">{(element?.bid*1000)?.toLocaleString()}원</p>
                                             <p className="plan">{element?.plan.toLocaleString()}원</p>
@@ -137,6 +137,9 @@ const ADPopupList = () => {
                                     ))
                                 }
                             </ul>
+                            <div className="btn-wrapper">
+                                <button onClick={() => history.push("/advertisement/popup/create")}>광고 생성</button>
+                            </div>
                         </div>
                         <nav ref={activeWrapperRef}>
                             {

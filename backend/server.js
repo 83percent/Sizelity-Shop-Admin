@@ -27,7 +27,8 @@ const AccountRouter = require('./router/AccountRouter');
 const ProductRouter = require('./router/ProductRouter');
 const RequestRouter = require('./router/RequestRouter');
 const EventRouter = require('./router/EventRouter');
-const PopupRouter = require('./router/PopupRouter');
+const ADPopupRouter = require('./router/ADPopupRouter');
+const ADEventRouter = require('./router/ADEventRouter');
 
 server.use(express.static('public'));
 server.use(cookieParser({secret: '83percent'}));
@@ -69,7 +70,7 @@ server.use("/login", LoginRouter);
 server.use('/account', (req, res, next) => {
     if(req.isAuthenticated()) next();
     else {
-        res.sendStatus(401);
+        res.status(401).send({error: "로그인 후 이용해주세요."});
     }
 },AccountRouter);
 server.use('/product', (req, res, next) => {
@@ -91,12 +92,20 @@ server.use('/event', (req, res, next) => {
         res.status(401).send({error: "로그인 후 이용해주세요."});
     }
 },EventRouter);
-server.use('/popup', (req, res, next) => {
+
+// AD Router
+server.use('/ad/popup', (req, res, next) => {
     if(req.isAuthenticated()) next();
     else {
         res.status(401).send({error: "로그인 후 이용해주세요."});
     }
-},PopupRouter);
+},ADPopupRouter);
+server.use('/ad/event', (req, res, next) => {
+    if(req.isAuthenticated()) next();
+    else {
+        res.status(401).send({error: "로그인 후 이용해주세요."});
+    }
+},ADEventRouter);
 
 server.listen(PORT, () => {
     console.log(" Start Server.js PORT : ",PORT);

@@ -44,6 +44,20 @@ const ShopSchema = new Mongoose.Schema({
         freetier: {
             type: Number,
             default: 0
+        },
+    },
+    plan : {
+        popup : {
+            type: Number,
+            default : 0
+        },
+        event : {
+            type: Number,
+            default : 0
+        },
+        product : {
+            type: Number,
+            default : 0
         }
     },
     reg_date : {

@@ -24,6 +24,7 @@ const s3 = new AWS.S3({
 /*
     Popup
 */
+
 const Popup =  {
     BUCKET_NAME : 'sizelityimagebucket',
     upload : multer({
@@ -41,7 +42,7 @@ const Popup =  {
         try  {
             return await s3.deleteObject({
                 Bucket : this.BUCKET_NAME,
-                Key : `popup/${ADID}.png`
+                Key : `ad/popup/${ADID}.png`
             }).promise().then(() => {
                 return true;
             }).catch(err => {
@@ -54,6 +55,39 @@ const Popup =  {
     }
 }
 
+const Event = {
+    BUCKET_NAME : 'sizelityimagebucket',
+    upload : multer({
+        storage : multerS3({
+            s3: s3,
+            bucket : 'sizelityimagebucket',
+            contentType : multerS3.AUTO_CONTENT_TYPE,
+            acl: 'public-read',
+            key : function(req, file, cd) {
+                cd(null, `ad/event/${req.params.id}.png`);
+            }
+        })
+    }),
+    remove : async function(ADID) {
+        try  {
+            return await s3.deleteObject({
+                Bucket : this.BUCKET_NAME,
+                Key : `ad/event/${ADID}.png`
+            }).promise().then(() => {
+                return true;
+            }).catch(err => {
+                return false;
+            });
+        } catch(err) {
+            console.log(err);
+            return false;
+        }
+    },
+    copy : {
+
+    }
+}
 module.exports = {
-    Popup
+    Popup,
+    Event
 }

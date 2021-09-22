@@ -1,0 +1,7 @@
+.create-btn-component {
+    display: flex;
+}
+.create-btn-component > div > p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}

@@ -10,7 +10,7 @@ export default class ADPopup {
     async getAll() {
         return await axios({
             method : 'GET',
-            url : `${this.server}/popup`,
+            url : `${this.server}/ad/popup`,
             withCredentials: true,
             timeout: 5500
         }).then(response => {
@@ -42,7 +42,7 @@ export default class ADPopup {
     async __setInfo(info) {
         return await axios({
             method: 'POST',
-            url : `${this.server}/popup/info`,
+            url : `${this.server}/ad/popup/info`,
             data : info,
             withCredentials: true,
             timeout: 5500
@@ -60,7 +60,7 @@ export default class ADPopup {
         formData.append('image', file);        
         return await axios({
             method : 'POST',
-            url : `${this.server}/popup/image/${ADID}`,
+            url : `${this.server}/ad/popup/image/${ADID}`,
             data : formData,
             withCredentials: true,
             timeout: 5500,
@@ -76,7 +76,7 @@ export default class ADPopup {
     async remove(ADID) {
         return await axios({
             method: 'DELETE',
-            url : `${this.server}/popup/${ADID}`,
+            url : `${this.server}/ad/popup/${ADID}`,
             withCredentials : true,
             timeout: 5500
         }).then(response => {

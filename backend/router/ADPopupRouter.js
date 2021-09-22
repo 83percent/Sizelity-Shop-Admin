@@ -25,8 +25,8 @@ router.get('/', async (req,res) => {
 // 최소 예산 = 30,000
 // 최소 설정 노출 수 = 19480
 router.post('/info', async (req, res) => {
-    const { bid, plan, maxCount } = req.body;
-    if(bid < 1.540 || plan < 30000 || maxCount < 19480) return res.status(StatusCode.invalid).send({'error' : "형식에 맞지 않는 요청입니다."});
+    const { bid, plan } = req.body;
+    if(bid < 1.540 || plan < 30000) return res.status(StatusCode.invalid).send({'error' : "형식에 맞지 않는 요청입니다."});
     const result = await PopupModule.setInfo(req.user.id, req.body);
     if(result._id) {
         res.send(result._id);
