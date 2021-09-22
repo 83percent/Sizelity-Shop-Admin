@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Router } from 'react-router-dom';
 import './App.css';
 
 // Font
@@ -12,6 +12,7 @@ import WrongAccess from './router/WrongAccess';
 import HelpRouter from './router/HelpRouter';
 import HomeRouter from './router/HomeRouter';
 import InitRouter from './router/InitRouter';
+import MainBlankRouter from './router/MainBlankRouter';
 
 // Context
 export const ServerContext = createContext(null);
@@ -34,6 +35,7 @@ function App() {
           <Route exact path="/help" component={HelpRouter} />
           <Route exact path="/init" component={InitRouter} />
           <Route exact path="/:id" component={LoginRouter} />
+          <Route exact path="/" component={MainBlankRouter} />
         </Switch>
       </ServerContext.Provider>
     </UserContext.Provider>

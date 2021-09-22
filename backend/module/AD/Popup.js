@@ -39,9 +39,13 @@ async function setInfo(shopID, {url, bid, plan, maxCount}) {
     
 }
 async function setImage(popupID, location) {
-    const popup = await PopupModel.findByIdAndUpdate(popupID, {image : location});
-    if(popup._id) return StatusCode.success;
-    else return StatusCode.error;
+    try {
+        const popup = await PopupModel.findByIdAndUpdate(popupID, {image : location});
+        if(popup._id) return StatusCode.success;
+        else return StatusCode.error;
+    } catch {
+        return StatusCode.error;
+    }
 }
 async function remove(popupID) {
     try {

@@ -49,6 +49,8 @@ const ADEventModel = Mongoose.Schema({
             required: true
         },
     },
-})
+}, {
+    versionKey : false
+});
 
 module.exports = Mongoose.model(COLL_NAME, ADEventModel);

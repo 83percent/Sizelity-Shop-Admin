@@ -1,3 +1,6 @@
+/*
+    마지막 수정 : 2021-08-23 이재훈
+*/
 const Mongoose = require('mongoose');
 const COLL_NAME = 'event';
 const EventModel = new Mongoose.Schema({
@@ -22,6 +25,10 @@ const EventModel = new Mongoose.Schema({
         required: true
     },
     url : {
+        type: String,
+        required: true
+    },
+    target : {
         type: String,
         required: true
     }

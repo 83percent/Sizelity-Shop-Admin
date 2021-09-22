@@ -14,27 +14,33 @@ async function get(shopID) {
 }
 
 async function setInfo(shopID, data) {
+    console.log(data);
     try {
         let event = await ADEventModel.find({shopRef : shopID});
         if(event?.length >= 10) return StatusCode.noCraete; // 202 Maximum 
         
         event = new ADEventModel({
-
+            ShopRef : shopID,
+            info : data.info,
+            config : data.config
         });
-        const reuslt = await event.save();
+        const result = await event.save();
         if(result._id) {
-            await AccountModule.Plan.add(ShopID, plan, 'event');
+            await AccountModule.Plan.add(shopID, data.config.plan, 'event');
             return result;
         }
         else StatusCode.error;
-    } catch {
+    } catch(err) {
+        console.error(err);
         return StatusCode.error;
     }
 }
 
 async function setImage(EventID, location) {
     try {
-
+        const event = await ADEventModel.findByIdAndUpdate(EventID, {'info.image' : location});
+        if(event._id) return StatusCode.success;
+        else return StatusCode.error;
     } catch {
         return StatusCode.error;
     }
