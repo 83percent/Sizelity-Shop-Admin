@@ -8,9 +8,6 @@ export default class ADEvent {
         
     }
     async set({event, image}) {
-        const {type, url, expire, bid, plan} = event;
-
-
         let response = await this.#setInfo(event);
         console.log(response);
     }

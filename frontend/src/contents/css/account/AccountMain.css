@@ -12,7 +12,7 @@ section#account-main > .title > h1 {
     
 }
 section#account-main > .info-wrapper {
-    width: 35rem;
+    min-width: 35rem;
 }
 section#account-main > .info-wrapper > div {
     display: flex;
@@ -38,4 +38,19 @@ section#account-main > .info-wrapper > ul > li {
 }
 section#account-main > .info-wrapper.on > ul {
     display: block;
+}
+section#account-main > .btn-frame {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+section#account-main > .btn-frame > button {
+    all: unset;
+    font-size: 1.5rem;
+    font-weight: 600;
+    opacity: 0.6;
+    cursor: pointer;
+}
+section#account-main > .btn-frame > button:hover {
+    opacity: 1;
 }

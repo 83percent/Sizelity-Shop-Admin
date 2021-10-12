@@ -1,0 +1,160 @@
+article#Share {
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #00000060;
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+article#Share.active {
+    display: flex;
+}
+article#Share > div {
+    position: relative;
+    top: 100%;
+    width: 50vw;
+    min-width: 39rem;
+    margin: 0 auto;
+    max-height: 90vh;
+    overflow-y: auto;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    border: 1px solid #dbdbdb;
+    padding: 1rem 1.5rem;
+    transition: 0.5s;
+}
+article#Share > div.active {
+    top: 0%;
+}
+article#Share > div > h1 {
+    font-size: 2.5rem;
+}
+article#Share > div > button {
+    all: unset;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+article#Share > div > button > i {
+    font-size: 2.0rem;
+}
+article#Share > div > ul{
+    margin-top: 1rem;
+}
+article#Share > div > ul > li {
+    border-bottom: 2px solid #555;
+    margin-bottom: 1rem;
+}
+article#Share > div > ul > li > div.title {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+article#Share > div > ul > li > div.title > i {
+    font-size: 1.8rem;
+    color: #888;
+    margin-right: 0.5rem;
+}
+article#Share > div > ul > li > div.title > h2 {
+    flex-grow: 1;
+}
+article#Share > div > ul > li > div.info {
+    overflow: hidden;
+    height: 0;
+}
+article#Share > div > ul > li.on > div.info {
+    height: auto;
+}
+article#Share > div > ul > li > div.info > .link {
+    background-color: #dddddd90;
+    padding: 0.6rem 0.5rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+}
+article#Share > div > ul > li > div.info > .link > textarea {
+    all: unset;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0.7rem;
+    text-align: center;
+    word-break: break-all;
+}
+article#Share > div > ul > li > div.info > div > button {
+    all: unset;
+    white-space: nowrap;
+    width: 100%;
+    text-align: center;
+    background-color: var(--base-color);
+    color: #ffffff;
+    padding: 0.5rem 0;
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 6px;
+}
+article#Share > div > ul > li > div.info > .qr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+}
+article#Share > div > ul > li > div.info > .html {
+    background-color: #dddddd90;
+    padding: 0.6rem 0.5rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+}
+article#Share > div > ul > li > div.info > pre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+article#Share > div > ul > li > div.info > pre > div > img {
+    width: 500px;
+    height: auto;
+    border: 1px solid #ccc;
+    vertical-align: bottom;
+}
+article#Share > div > ul > li > div.info > pre > d_b {
+    overflow:hidden;
+    padding:12px 11px;
+    border:1px solid #dfdfdf;
+    border-color:rgba(0,0,0,.1);
+    border-radius:0 0 2px 2px;
+    background-color:#f9f9f9;
+    width:479px;
+}
+article#Share > div > ul > li > div.info > pre > div._b  {
+    overflow:hidden;padding:12px 11px;border:1px solid #dfdfdf;border-color:rgba(0,0,0,.1);border-radius:0 0 2px 2px;background-color:#f9f9f9;width:479px;
+}
+article#Share > div > ul > li > div.info > pre > div._b > p {
+    margin: 0 0 0 3px;
+    font-size: 0.9rem;
+}
+article#Share > div > ul > li > div.info > pre > div._b > h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+article#Share > div > ul > li > div.info > .html > textarea {
+    all: unset;
+    width: 100%;
+    word-break: break-all;
+    height: 10rem;
+    font-size: 0.9rem;
+}
+article#Share > div > ul > li > div.info > p {
+    font-size: 1.1rem;
+    margin: 1rem 0 0.5rem 0;
+}

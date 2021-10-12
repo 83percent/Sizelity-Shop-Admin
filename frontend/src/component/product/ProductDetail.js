@@ -38,7 +38,7 @@ const ProductDetail = ({detail, setDetail}) => {
                                                 <td>{element.name}</td>
                                                 {
                                                     rateNameArray.map((rate,index2) => (
-                                                        <td className={index2}>{element[rate[0]]}</td>
+                                                        <td key={index2}>{element[rate[0]]}</td>
                                                     ))
                                                 }
                                             </tr>

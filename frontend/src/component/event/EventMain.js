@@ -235,7 +235,7 @@ const EventMain = () => {
                             modifyCheck={modifyCheck}
                             cardSave={card.save}
                             cardRemove={card.remove}/>
-                    ) : null
+                    ) : null    
                 }
             </article>
         </section>

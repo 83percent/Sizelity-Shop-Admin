@@ -8,6 +8,8 @@ import '../../contents/css/product/ProductMain.css';
 import ProductSearch from './ProductSearch';
 import ProductAdd from './ProductAdd';
 import ProductSuccess from './ProductSuccess';
+import ProductList from './ProductList';
+import ProductEdit from './ProductEdit';
 
 const ProductMain = () => {
     return (
@@ -36,9 +38,12 @@ const ProductMain = () => {
                 </ul>
             </header>
             <Switch>
+                
                 <Route exact path={["/product", "/product/"]} component={ProductSearch} />
                 <Route path="/product/add" component={ProductAdd} />
                 <Route path="/product/success" component={ProductSuccess} />
+                <Route path="/product/list" component={ProductList} />
+                <Route path="/product/edit" component={ProductEdit} />
             </Switch>
         </section>
     )

@@ -9,6 +9,7 @@ const EventDetail = ({activeData, modifyCheck, cardSave, cardRemove}) => {
 
     // Ref
     const typeRef = useRef(null);
+    const targetRef = useRef(null);
     const frameRef = useRef(null);
     const _activeData = useMemo(() => JSON.parse(JSON.stringify(activeData)), [activeData]);
 
@@ -31,6 +32,20 @@ const EventDetail = ({activeData, modifyCheck, cardSave, cardRemove}) => {
             _activeData.data.type = value;
 
         }, // typeSelect(target, value)
+        targetSelect : function(target, value) {
+            if(activeData?.data?.target === value) return;
+            this.setModifyCheck();
+
+            if(targetRef.current !== null) {
+                targetRef.current.classList.remove("active");
+            }
+            target = target.parentElement;
+            if(target.nodeName !== "LABEL") return;
+            target.classList.add("active");
+            targetRef.current = target;
+            
+            _activeData.data.target = value;
+        }, // targetSelect(target, value)
         setEventName : function(value) {
             this.setModifyCheck();
             _activeData.data.name = value.trim();
@@ -48,9 +63,13 @@ const EventDetail = ({activeData, modifyCheck, cardSave, cardRemove}) => {
                 window.alert("변경 내용이 없습니다.");
                 return;
             }
-            const {type:afterType, name:afterName, text:afterText, url:afterURL} = _activeData.data;
+            const {type:afterType, target:afterTarget,name:afterName, text:afterText, url:afterURL} = _activeData.data;
             if(!afterType) {
                 window.alert("이벤트 종류를 선택해주세요.");
+                return;
+            }
+            if(!afterTarget) {
+                window.alert("이벤트 타겟를 선택해주세요.");
                 return;
             }
             if(!afterName) {
@@ -72,7 +91,6 @@ const EventDetail = ({activeData, modifyCheck, cardSave, cardRemove}) => {
                 window.alert("연결된 페이지가 주소형식이 아닙니다.\nEx. http://www.example.com");
                 return;
             } else {
-                
                 const host = ((value) => {
                     try {
                         if(value.indexOf("http") === -1) {
@@ -111,9 +129,10 @@ const EventDetail = ({activeData, modifyCheck, cardSave, cardRemove}) => {
             }
             if(activeData.data._id) {
                 // 수정
-                const {type:beforeType, name:beforeName, text:beforeText, url:beforeURL, date:beforeDate} = activeData.data;
+                const {type:beforeType, target:beforeTarget,name:beforeName, text:beforeText, url:beforeURL, date:beforeDate} = activeData.data;
                 const _d = {}
                 if(beforeType !== afterType) _d.type = afterType;
+                if(beforeTarget !== afterTarget) _d.target = afterTarget;
                 if(beforeName !== afterName) _d.name = afterName;
                 if(beforeText !== afterText) _d.text = afterText;
                 if(beforeURL !== afterURL) _d.url = afterURL;
@@ -160,6 +179,18 @@ const EventDetail = ({activeData, modifyCheck, cardSave, cardRemove}) => {
                     typeRef.current = frame.parentElement;
                 }
             }
+            // Target
+            if(targetRef.current?.nodeName === 'LABEL') {
+                targetRef.current.classList.remove("active");
+                targetRef.current = targetRef.current.parentElement;
+            }
+            if(activeData.data?.target) {
+                const frame = targetRef.current.querySelector(`input[value=${activeData.data.target}]`);
+                if(frame.parentElement.nodeName === "LABEL") {
+                    frame.parentElement.classList.add("active");
+                    targetRef.current = frame.parentElement;
+                }
+            }
             // Name
             if(name !== undefined) frameRef.current.name.value = name;
             
@@ -185,8 +216,11 @@ const EventDetail = ({activeData, modifyCheck, cardSave, cardRemove}) => {
     return (
         <>
             <section className="none"></section>
-            <section className="detail-wrapper" ref={frameRef}>
+            <section className="detail-wrapper">
                 <div className="detail-frame">
+                    <div>
+                        <h2>이벤트 노출 설정</h2>
+                    </div>
                     <div>
                         <div className="title">
                             <h3>이벤트 종류*</h3>
@@ -214,6 +248,30 @@ const EventDetail = ({activeData, modifyCheck, cardSave, cardRemove}) => {
                                 <input type="radio" name="type" value="etc" onClick={(e) => event.typeSelect(e.target, e.target.value)}/>
                             </label>
                         </div>
+                    </div>
+                    <div>
+                        <div className="title">
+                            <h3>타겟*</h3>
+                            <p>이벤트가 노출될 타겟을 설정해주세요.</p>
+                        </div>
+                        <div className="input-wrapper" ref={targetRef}>
+                            <label>
+                                <p>남성</p>
+                                <input type="radio" name="target" value="male" onClick={(e) => event.targetSelect(e.target, e.target.value)}/>
+                            </label>
+                            <label>
+                                <p>여성</p>
+                                <input type="radio" name="target" value="female" onClick={(e) => event.targetSelect(e.target, e.target.value)}/>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="none"></section>
+            <section className="detail-wrapper"  ref={frameRef}>
+                <div className="detail-frame">
+                    <div>
+                        <h2>이벤트 상세내용</h2>
                     </div>
                     <div>
                         <div className="title">
@@ -254,6 +312,7 @@ const EventDetail = ({activeData, modifyCheck, cardSave, cardRemove}) => {
                         <div className="title">
                             <h3>종료 날짜*</h3>
                             <p>이벤트 종료 날짜를 입력해주세요.</p>
+                            <p>입력한 날짜가 지나면 자동삭제가 되지 않아요. 다만, 고객의 이벤트 창에 표시되지 않습니다.</p>
                         </div>
                         <div className="input-wrapper">
                             <input type="number" name="year" placeholder="YYYY" onBlur={() => event.setModifyCheck()}/>

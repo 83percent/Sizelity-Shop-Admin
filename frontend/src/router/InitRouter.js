@@ -9,9 +9,9 @@ import { ServerContext, UserContext } from '../App';
 
 
 const InitRouter = ({history}) => {
-    const { user } = useContext(UserContext);
-    if(!user?.id || user?.status === 1) history.replace("/home");
-
+    const { user, setUser } = useContext(UserContext);
+    
+    if(user?.status === 1) history.replace("/home");
 
     const server = useContext(ServerContext);
     // Ref
@@ -66,13 +66,16 @@ const InitRouter = ({history}) => {
                 timeout: 5500
             }).then(response => {
                 if(response.status === 200) {
+                    const _copyUser = JSON.parse(JSON.stringify(user));
+                    _copyUser.status = 1;
+                    if(user) setUser(_copyUser);
                     history.replace("/home", {status: 1});
                 }
             }).catch(err => {
                 switch(err?.response?.status) {
                     case 500 :
                     default : {
-                        this.setCaution("잠시 후 다시 시도 해주세요.")
+                        this.setCaution("서버에 문제가 발생했습니다.\n잠시 후 다시 시도 해주세요.")
                         break;
                     }
                 }
@@ -113,7 +116,7 @@ const InitRouter = ({history}) => {
                     <h3>이메일</h3>
                     <input type="email" onChange={(e) => data.current.info.email = e.target.value} />
 
-                    <h3>쇼핑몰 주소지</h3>
+                    <h3>사업지 주소</h3>
                     <input type="text" onChange={(e) => data.current.info.address = e.target.value} />
 
                     <h3>사업자 번호</h3>

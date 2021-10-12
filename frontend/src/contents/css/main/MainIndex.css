@@ -1,0 +1,79 @@
+/*
+    Logo
+*/
+#main > .logo-frame {
+    width: 100%;
+    padding: 1rem 0;
+}
+#main > .logo-frame > .logo {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.4rem;
+    background-color: var(--base-color);
+}
+#main > .logo-frame > .logo > i {
+    font-size: 1.9rem;
+    color: #ffffff;
+}
+#main.index > div.row {
+    display: flex;
+    align-items: flex-start;
+}
+#main.index > div.row > article {
+    width: 100%;
+}
+#main.index > div.row > article:nth-of-type(2) {
+    border-left: 1px solid #000;
+}
+/*
+    autoHelp
+*/
+#main.index .autoHelp {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem 0;
+}
+#main.index .autoHelp:hover {
+    opacity: 1;
+}
+#main.index .autoHelp > i, #main.index .autoHelp > p {
+    font-size: 5.0rem;
+    margin-right: 1rem;
+    font-weight: 500;
+}
+#main.index .autoHelp > div > p {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+#main.index .autoHelp > div > p > i {
+    font-size: 1.0rem;
+    margin-left: 5px;
+}
+#main.index .autoHelp > div > a {
+    all: unset;
+    display: flex;
+    align-items: center;
+    color: #06c;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+#main.index .autoHelp > div > a > p {
+    position: relative;
+    top: 1px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-right: 5px;
+}
+#main.index .autoHelp > div > a:hover > p {
+    text-decoration: underline;
+}
+#main.index .autoHelp > div > a > i {
+    font-size: 1.6rem;
+}

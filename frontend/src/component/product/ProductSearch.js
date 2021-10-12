@@ -4,6 +4,8 @@ import axios from 'axios';
 import { getTypeName } from '../../contents/js/ProductType';
 import URLModule from '../../contents/js/URL';
 import { transformDate } from '../../contents/js/DateFormat';
+import ProductModule from '../../contents/js/product/Product'
+import ShareViewer from '../ShareViewer';
 
 // Component
 import ProductDetail from './ProductDetail';
@@ -22,6 +24,10 @@ const ProductSearch = ({history}) => {
     const [detail, setDetail] = useState(null);
     const [resultDatas, setResultDatas] = useState(undefined);
     const [moreBtn, setMoreBtn] = useState(true);
+    const [share, setShare] = useState(null);
+
+    console.log(resultDatas);
+
     // Context
     const server = useContext(ServerContext);
     const { user } = useContext(UserContext);
@@ -70,7 +76,7 @@ const ProductSearch = ({history}) => {
                     break;
                 }
                 case 'url' : {
-                    if(value.length <= 15) {
+                    if(!value || value?.length <= 15) {
                         this.setCautionToggle("검색할 주소가 너무 짧습니다.");
                         return;
                     }
@@ -190,12 +196,38 @@ const ProductSearch = ({history}) => {
                 }
             }
         }, // deleteCountHandler()
-        delete : function() {
+        delete : async function() {
             if(Number(choiceCount.current) <= 0) {
                 window.alert("선택된 상품이 없습니다.");
                 return;
+            } else {
+                const elements = document.querySelectorAll("input[type='checkbox']");
+                const deletes = [];
+                for(let index in elements) {
+                    if(elements[index]?.checked) deletes.push(resultDatas[index]._id);
+                }
+                if(deletes.length > 0) {
+                    const response = await new ProductModule(server).removes(deletes);
+
+                    switch(response.type) {
+                        case 'success' : {
+                            window.alert("삭제가 완료되었습니다.(새로고침 후 반영)");
+                            break;
+                        }
+                        case 'error' :
+                        default : {
+                            window.alert(response?.msg || "문제가 발생했습니다.");
+                            break;
+                        }
+                    }
+                } else return window.alert("선택된 상품이 없습니다.");
             }
+            
         }, // delete
+        edit : function(data) {
+            if(!window.confirm("상품 정보를 수정할까요?")) return;
+            history.push("/product/edit", {data})
+        } // edit(data)
     }
     return (
         <article className="search">
@@ -301,13 +333,20 @@ const ProductSearch = ({history}) => {
                                             <p>{transformDate(element.reg_date)}</p>
                                         </td>
                                         <td className="option">
-                                            <button title="수정하기">
-                                                <i className="material-icons">edit</i>
-                                            </button>
+                                            <div>
+                                                <button title="QR코드 생성">
+                                                    <i
+                                                        className="material-icons"
+                                                        onClick={() => setShare({shop: element.praw.domain, no: element.praw.code, pname: element.info.pname, sname: element.info.sname})}>share</i>
+                                                </button>
+                                                <button title="수정하기">
+                                                    <i className="material-icons" onClick={() => event.edit(element)}>edit</i>
+                                                </button>
+                                            </div>
                                         </td>
                                     </tr>
                                 ))
-                            }        
+                            }           
                             </tbody>
                         </table>
                         {
@@ -324,6 +363,11 @@ const ProductSearch = ({history}) => {
                         </div>
                     </div>
                 )
+            }
+            {
+                share ? (
+                    <ShareViewer value={share} setValue={setShare}/>
+                ) : null
             }
             <ProductDetail detail={detail} setDetail={setDetail}/>
         </article>

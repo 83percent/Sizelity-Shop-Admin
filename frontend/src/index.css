@@ -11,7 +11,7 @@ html, body, #root {
 }
 body {
   margin: 0;
-  font-family: 'AppleSDGothicNeo',-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'AppleSDGothicNeo', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -23,6 +23,22 @@ body {
 li, ul, ol {
   list-style: none;
 }
+
+:root {
+  --base-background : #f0f2f5;
+  --base-red : #dd1818;
+  --base-color: #00966B;
+  --font-en: 'Montserrat';
+
+  /*  GRAY  */
+  --system-gray-1 : #cccccc60;
+  --system-gray-2 : #cccccc70;
+  --system-gray-3 : #cccccc80;
+
+  /* Link */
+  --system-link-1 : #06c;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

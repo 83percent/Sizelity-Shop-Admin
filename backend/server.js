@@ -29,6 +29,8 @@ const RequestRouter = require('./router/RequestRouter');
 const EventRouter = require('./router/EventRouter');
 const ADPopupRouter = require('./router/ADPopupRouter');
 const ADEventRouter = require('./router/ADEventRouter');
+const ADRouter = require('./router/ADRouter');
+const NoticeRouter = require('./router/NoticeRouter');
 
 server.use(express.static('public'));
 server.use(cookieParser({secret: '83percent'}));
@@ -93,7 +95,11 @@ server.use('/event', (req, res, next) => {
     }
 },EventRouter);
 
+server.use("/notice", NoticeRouter);
+
 // AD Router
+server.use('/ad/main', ADRouter);
+
 server.use('/ad/popup', (req, res, next) => {
     if(req.isAuthenticated()) next();
     else {

@@ -1,0 +1,145 @@
+#product.list {
+    background-color: #ffffff;
+    padding: 2rem 1rem;
+    border: 1px solid #dbdbdb;
+    margin: 0 2rem 2rem 2rem;
+}
+#product.list > .loader-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#product.list > .loader-frame > .loader {
+    padding-top: 3rem;
+    padding: 1.5rem;
+    border: 3px solid #aaa;
+    border-bottom: 3px solid #00000000;
+}
+/*
+    No Product Data
+*/
+#product.list > .none {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 0;
+    border: 1px solid #dbdbdb;
+    justify-content: center;
+    align-items: center;
+}
+#product.list > .none > h2 {
+    font-size: 2.1rem;
+}
+#product.list > .none > a {
+    all: unset;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--base-color);
+}
+#product.list > .none > a > p {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+#product.list > .none > a:hover > p {
+    text-decoration: underline;
+}
+#product.list > .none > a > i {
+    font-size: 2.0rem;
+}
+#product.list > table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 1rem;
+    font-size: 1.1rem;
+}
+
+#product.list > table > tbody > tr:hover {
+    border-radius: 3rem;
+    background: #00966B40;
+}
+#product.list > table > tbody > tr.check {
+    background: #00966B;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+
+#product.list > table th, #product.list > table td {
+    padding: 0 2rem;
+    min-width: 2rem;
+    text-align: center;
+}
+#product.list > table th.check, #product.list > table td.check,
+#product.list > table th.no, #product.list > table td.no,
+#product.list > table th.option, #product.list > table td.option {
+    width: 2rem;
+    min-width: unset;
+    padding: 0 1rem;
+}
+#product.list > table td.option > div {
+    display: flex;
+}
+#product.list > table td.check > input[type="checkbox"] {
+    cursor: pointer;
+}
+#product.list > table th.pname, #product.list > table td.pname {
+    width: 40vw;
+    padding: 0 1rem;
+}
+#product.list > table td.pname {
+    text-align: left;
+    cursor: pointer;
+    
+}
+#product.list > table td.option > div > button {
+    all: unset;
+    cursor: pointer;
+    opacity: 0.4;
+    padding: 0 0.3rem;
+}
+#product.list > table td.option > div > button:hover {
+    opacity: 1;
+}
+#product.list > table td.option > div > button > i {
+    font-size: 1.6rem;
+}
+#product.list > table td {
+    padding: 0.5rem 0;
+}
+#product.list > .more-btn {
+    width: 100%;
+    text-align: center;
+}
+#product.list > .more-btn > button {
+    all: unset;
+    width: auto;
+    cursor: pointer;
+    padding: 0.5rem 2rem;
+    font-size: 1.1rem;
+    opacity: 0.7;
+}
+#product.list > .more-btn > button:hover {
+    opacity: 1.0;
+    text-decoration: underline;
+}
+#product.list > .delete-btn {
+    text-align: right;
+    margin-top: 2rem;
+}
+#product.list > .delete-btn > button {
+    all: unset;
+    padding: 0.3rem 3rem 0.2rem 3rem;
+    border-radius: 0.3rem;
+    opacity: 0.3;
+    color: #fff;
+    text-align: center;
+    background: #dd1818;
+    transition-duration: 0.4s;
+    cursor: default;
+}
+#product.list > .delete-btn > button.active {
+    cursor: pointer;
+    opacity: 0.9;
+}

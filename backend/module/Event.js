@@ -13,7 +13,7 @@ async function get(id) {
 
 async function set(id, data) {
     try {
-        const {name, text, type, date, url} = data;
+        const {name, text, type, target,date, url} = data;
 
         let _event = await EventModel.find({shopRef : id}, ["_id"]);
         if(_event.length > 10) {
@@ -22,7 +22,7 @@ async function set(id, data) {
 
         _event = new EventModel({
             shopRef : id,
-            name, text, type, date, url
+            name, text, type, date, url, target
         });
         const result = await _event.save();
         if(result._id) return result; // object

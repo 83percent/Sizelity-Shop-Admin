@@ -1,5 +1,5 @@
 import { memo, useContext } from 'react';
-import { Link, NavLink, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 // CSS
 import '../contents/css/home/HomeRouter.css';
@@ -8,11 +8,17 @@ import '../contents/css/home/HomeRouter.css';
 import {UserContext} from '../App';
 
 // Component
-import AccountMain from '../component/account/AccountMain';
+import Menu from '../component/Menu';
+
+import AccountRouter from './AccountRouter';
 import ProductMain from '../component/product/ProductMain';
 import RequestMain from '../component/request/Request';
 import EventMain from '../component/event/EventMain';
-import ADMain from '../component/ad/ADMain';
+
+/* import ADMain from '../component/ad/ADMain'; */
+import ADMain2 from '../component/ad2/ADIndex';
+import MainIndex from '../component/main/MainIndex';
+import ConnectRouter from './ConnectRouter';
 
 const HomeRouter = ({history}) => {
     const {user:userInfo} = useContext(UserContext);
@@ -26,65 +32,17 @@ const HomeRouter = ({history}) => {
     }
     return (
         <>
-            <header>
-
-            </header>
-            <aside>
-                <div>
-                    <Link to="/home" className="logo">
-                        <i className="material-icons">sell</i>
-                    </Link>
-                </div>
-                <ul>
-                    <li className="element">
-                        <NavLink to="/account">
-                            <div>
-                                <i className="material-icons">person</i>
-                            </div>
-                            <p>가입정보</p>
-                        </NavLink>
-                    </li>
-                    <li className="element">
-                        <NavLink to="/product">
-                            <div>
-                                <i className="material-icons">checkroom</i>
-                            </div>
-                            <p>쇼핑몰 상품</p>
-                        </NavLink>
-                    </li>
-                    <li className="element">
-                        <NavLink to="/request">
-                            <div>
-                                <i className="material-icons">priority_high</i>
-                            </div>
-                            <p>요청 상품</p>
-                        </NavLink>
-                    </li>
-                    <li className="element">
-                        <NavLink to="/event">
-                            <div>
-                                <i className="material-icons">celebration</i>
-                            </div>
-                            <p>쇼핑몰 이벤트</p>
-                        </NavLink>
-                    </li>
-                    <li className="element">
-                        <NavLink to="/advertisement">
-                            <div>
-                                <i className="material-icons">paid</i>
-                            </div>
-                            <p>광고 관리</p>
-                        </NavLink>
-                    </li>
-                </ul>
-            </aside>
+            <Menu />
             <article id="home">
                 <Switch>
-                    <Route path="/account" component={AccountMain} />
+                    <Route path="/home" component={MainIndex} />
+                    <Route path="/account" component={AccountRouter} />
                     <Route path="/product" component={ProductMain} />
                     <Route path="/request" component={RequestMain} />
-                    <Route path="/advertisement" component={ADMain} />
+                    <Route path="/advertisement" component={ADMain2} />
+                    <Route path="/connect" component={ConnectRouter} />
                     <Route path="/event" component={EventMain} />
+                    {/* <Route path="/advertisement" component={ADMain} /> */}
                 </Switch>
             </article>
         </>

@@ -1,0 +1,38 @@
+#connect > .test {
+    text-align: center;
+    padding-top: 5rem;
+    border: 1px solid #dbdbdb;
+    background-color: #fff;
+}
+#connect > .test > h2 {
+    font-size: 2.7rem;
+    margin-bottom: 1rem;
+    white-space: nowrap;
+}
+#connect > .test > div {
+    display: flex;
+    justify-content: center;
+}
+#connect > .test > div > input {
+    all: unset;
+    width: 40rem;
+    background-color: #fff;
+    border: 2px solid #dbdbdb;
+    padding: 0.7rem 1.4rem;
+    text-align: left;
+    box-shadow: 4px 24px 60px #608dad25;
+}
+#connect > .test > div > input:focus {
+    border-color: var(--base-color);
+}
+#connect > .test > div > button {
+    all: unset;
+    background-color: var(--base-color);
+    color: #fff;
+    padding: 0 1rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+#connect > .test > img {
+    vertical-align: bottom;
+}

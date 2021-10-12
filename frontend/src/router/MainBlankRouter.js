@@ -9,4 +9,4 @@ const MainBlankRouter = () => {
     )
 }
 
-export default MainBlankRouter;
+export default MainBlankRouter; 

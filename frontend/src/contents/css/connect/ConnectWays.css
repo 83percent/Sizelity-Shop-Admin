@@ -1,0 +1,51 @@
+#connect.ways {
+    margin: 1rem 0;
+}
+#connect.ways > ul {
+
+}
+#connect.ways > ul > li {
+    border-bottom: 1px solid #dbdbdb;
+    padding: 0.2rem 0.5rem;
+}
+#connect.ways > ul > li > .title {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0.4;
+    transition-duration: 0.3s;
+}
+#connect.ways > ul > li > .title > h2 {
+    flex-grow: 1;
+    margin: 0.3rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+#connect.ways > ul > li > .title:hover, #connect.ways > ul > li.active > .title {
+    opacity: 1.0;
+    color: var(--base-color);
+
+}
+#connect.ways > ul > li > .title > i {
+    transition-duration: 0.3s;
+    font-size: 2.0rem;
+
+}
+#connect.ways > ul > li.active > .title > i {
+    transform: rotate(180deg);
+}
+#connect.ways > ul > li > .more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+#connect.ways > ul > li > .more > h2 {
+    margin-bottom: 1rem;
+}
+#connect.ways > ul > li > .more > p {
+    font-size: 1.1rem;
+}
+#connect.ways > ul > li > .more > p:last-of-type {
+    margin-bottom: 2rem;
+}

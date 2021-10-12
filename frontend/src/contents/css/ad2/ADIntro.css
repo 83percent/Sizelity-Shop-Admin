@@ -1,0 +1,33 @@
+#ad-center > .event {
+    width: 100%;
+}
+#ad-center > .event > div {
+    display: flex;    
+    text-align: center;
+    min-width: 40rem;
+ 
+    margin: auto;
+}
+#ad-center > .event > div > div {
+    width: 100%;
+}
+#ad-center > .event > div > div:nth-of-type(2) {
+    border-left: 1px solid #000;
+}
+#ad-center > .event > div > div > h2 {
+    font-size: 3.5rem;
+}
+#ad-center > .event > div > div > p {
+    font-size: 1.5rem;
+    color: #0066cc60;
+}
+#ad-center > .event > div > div > h4 {
+    font-size: 2.3rem;
+    font-weight: 600;
+    color: #0066cc90;
+}
+#ad-center > .event > div > div > h3 {
+    color: #06c;
+    font-size: 4.0rem;
+    text-decoration: underline;
+}

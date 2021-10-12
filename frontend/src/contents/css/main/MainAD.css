@@ -1,0 +1,45 @@
+#main.index > .ad-panel {
+    width: 100%;
+    background-color: #fff;
+    position: relative;
+    margin-bottom: 3rem;
+}
+#main.index > .ad-panel > .slide-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+}
+#main.index > .ad-panel > .slide-container > span {
+    display: none;
+    width: 100%;
+    cursor: pointer;
+}
+#main.index > .ad-panel > .slide-container > span.active {
+    display: block;
+}
+#main.index > .ad-panel > .slide-container > span > img {
+    width: 100%;
+    height: 450px;
+    vertical-align: bottom;
+    object-fit: cover;
+}
+#main.index > .ad-panel > .dot-frame {
+    position: absolute;
+    z-index: 999;
+    bottom: 1rem;
+    right: 1rem;
+}
+#main.index > .ad-panel > .dot-frame > span {
+    border-radius: 50%;
+    display: inline-block;
+    width: 1.5rem;
+    border: 2px solid #fff;
+    height: 1.5rem;
+    margin: 0 0.3rem;
+    background-color: #fff;
+    cursor: pointer;
+}
+#main.index > .ad-panel > .dot-frame > span.active {
+    background-color: var(--base-color);
+}

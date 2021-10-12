@@ -4,9 +4,9 @@ const ENV_PATH = path.resolve(__dirname, "../../.env");
 require('dotenv').config({path : ENV_PATH});
 
 // local
-const __url = process.env.DB_LOCAL;
+//const __url = process.env.DB_LOCAL;
 // Atlas
-//const __url = process.env.DB_URL;
+const __url = process.env.DB_URL;
 
 mongoose.connect(
     __url, 

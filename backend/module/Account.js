@@ -1,7 +1,6 @@
 const ShopModel = require("../bin/model/ShopModel");
 const StatusCode = require("../lib/status-code");
 const bcrypt = require('bcrypt');
-const mongoose = require("mongoose");
 const saltRounds = 10;
 
 async function setInit(id, data) {
@@ -23,10 +22,11 @@ async function setInit(id, data) {
 async function getShopInfo(id) {
     try {
         let shop = await ShopModel.findById(id);
-        if(!shop) return StatusCode.noData;
+        if(!shop) return StatusCode.noData; // 204
         else {
             shop = shop.toObject();
             delete shop.password;
+            delete shop.state;
             return shop;
         }
     } catch(err) {
@@ -34,6 +34,33 @@ async function getShopInfo(id) {
     }
     
 }
+
+async function changePassword({id, oldPwd, newPwd}) {
+    try {
+        const shop = await ShopModel.findById(id);
+        if(bcrypt.compareSync(oldPwd, shop.password)) {
+            const salt = bcrypt.genSaltSync(saltRounds);
+            const hash = bcrypt.hashSync(newPwd, salt);
+            shop.password = hash;
+            return StatusCode.success; // 200
+        } else {
+            return StatusCode.auth; //401
+        }
+    } catch(error) {
+        return StatusCode.error;
+    }
+}
+
+async function changeInfo({id, data}) {
+    try {
+        const shop = await ShopModel.findByIdAndUpdate(id, {info : data});
+        if(!shop) return StatusCode.error;
+        else return StatusCode.success;
+    } catch {
+        return StatusCode.error;
+    }
+}
+
 // Plan Handler
 const Plan = {
     add : async function(id, planValue, type) {
@@ -94,6 +121,7 @@ const Plan = {
 module.exports = {
     setInit,
     getShopInfo,
-
+    changePassword,
+    changeInfo,
     Plan
 }

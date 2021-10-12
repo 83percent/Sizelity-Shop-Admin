@@ -160,12 +160,6 @@ section#product-main > article.search > .result-wrapper > table > tbody > tr.che
     border-bottom: 1px solid #fff;
     color: #fff;
 }
-section#product-main > article.search > .result-wrapper > table > tbody > tr > td:first-child {
-    border-radius: 2rem 0 0 2rem;
-}
-section#product-main > article.search > .result-wrapper > table > tbody > tr > td:last-child {
-    border-radius: 0 2rem 2rem 0;
-}
 section#product-main > article.search > .result-wrapper > table th, section#product-main > article.search > .result-wrapper > table td {
     padding: 0 2rem;
     min-width: 2rem;
@@ -177,6 +171,9 @@ section#product-main > article.search > .result-wrapper > table th.option, secti
     width: 2rem;
     min-width: unset;
     padding: 0 1rem;
+}
+section#product-main > article.search > .result-wrapper > table td.option > div {
+    display: flex;
 }
 section#product-main > article.search > .result-wrapper > table td.check > input[type="checkbox"] {
     cursor: pointer;
@@ -190,13 +187,13 @@ section#product-main > article.search > .result-wrapper > table td.pname {
     cursor: pointer;
     
 }
-section#product-main > article.search > .result-wrapper > table td.option > button {
+section#product-main > article.search > .result-wrapper > table td.option > div > button {
     all: unset;
     cursor: pointer;
     opacity: 0.4;
-    padding: 0 1rem;
+    padding: 0 0.3rem;
 }
-section#product-main > article.search > .result-wrapper > table td.option > button:hover {
+section#product-main > article.search > .result-wrapper > table td.option > div > button:hover {
     opacity: 1;
 }
 section#product-main > article.search > .result-wrapper > table td {

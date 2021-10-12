@@ -1,0 +1,68 @@
+#account.edit {
+    min-height: 100vh;
+}
+#account.edit > header {
+    padding: 2rem 2rem 1rem 2rem;
+}
+#account.edit > header > h1 {
+    font-size: 3.0rem;
+}
+#account.edit > div {
+    padding: 0 1rem;
+    display: flex;
+}
+#account.edit > div > section {
+    position: relative;
+    width: 100%;
+    padding: 1rem 1rem 4rem 1rem;
+    background-color: #ffffff;
+    margin: 0.5rem;
+    border: 1px solid #dbdbdb;
+    
+}
+#account.edit > div > section > h2 {
+    font-size: 2.0rem;
+    margin-bottom: 1rem;
+}
+#account.edit > div > section > div {
+    margin-bottom: 1rem;
+}
+#account.edit > div > section > div > p {
+    color: #dd1818;
+}
+#account.edit > div > section > div > p:first-of-type {
+    margin-top: 0.8rem;
+}
+#account.edit > div > section > div > ul > li {
+    margin-bottom: 0.8rem;
+}
+#account.edit > div > section > div > ul > li > h3 {
+    font-size: 1.1rem;
+    color: #555;
+}
+#account.edit > div > section > div > ul > li > input {
+    all: unset;
+    border-bottom: 2px solid #dbdbdb;
+    width: 100%;
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+}
+#account.edit > div > section > div > ul > li > input:disabled {
+    background: #dbdbdb;
+    text-decoration: line-through;
+}
+#account.edit > div > section > div.btn-frame {
+    position: absolute;
+    bottom: 0rem;
+    right: 1rem;
+}
+#account.edit > div > section > div.btn-frame > button {
+    all: unset;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    background-color: var(--base-color);
+    cursor: pointer;
+}

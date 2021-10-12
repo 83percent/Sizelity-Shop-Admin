@@ -49,6 +49,8 @@ const ProductAdd = ({history, location}) => {
                 if(urlModule === null) urlModule = new URLModule();
                 const _urlData = urlModule.get(value);
                 
+                
+
                 if(_urlData.domain !== user.domain) {
                     this.setURLCaution("다른 쇼핑몰의 상품입니다.");
                     _setProductURL(null);
@@ -275,6 +277,7 @@ const ProductRateAdd = ({type, send}) => {
     // State
     const [_sizeList, _setSizeList] = useState([]);
     const [loader, setLoader] = useState(false);
+    
     // Ref
     const sizeFormat = useRef({});
     const sizeCaution = useRef(null);

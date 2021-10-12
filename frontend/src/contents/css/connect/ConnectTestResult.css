@@ -1,0 +1,38 @@
+#connect.result > header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0 3rem 0;
+    text-align: center;
+}
+#connect.result > header > i {
+    font-size: 8rem;
+    margin-bottom: 0.5rem;
+}
+#connect.result > header > h1 {
+    font-size: 2.0rem;
+}
+#connect.result > header > p {
+    font-size: 1.1rem;
+}
+#connect.result > header > a, #connect.result > header > button {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #06c;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+#connect.result > header > a > p, #connect.result > header > button > p {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+#connect.result > header > a:hover > p, #connect.result > header > button:hover > p {
+    text-decoration: underline;
+}
+#connect.result > header > a > i, #connect.result > header > button > i {
+    font-size: 1.8rem;
+    margin-left: 5px
+}

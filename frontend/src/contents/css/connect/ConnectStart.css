@@ -1,0 +1,130 @@
+#connect.start {
+    background-color: #fff;
+    min-height: 100vh;
+}
+#connect.start > header {
+    text-align: center;
+    padding: 4rem 0 3rem 0;
+}
+#connect.start > header > .logo {
+    background-color: var(--base-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem auto;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.3rem;
+    
+}
+#connect.start > header > .logo > i {
+    font-size: 1.6rem;
+    color: #fff;
+}
+#connect.start > header > h1 {
+    font-size: 2.7rem;
+}
+#connect.start > article.dev {
+    margin: 0 7%;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    background-color: var(--system-gray-1);
+}
+#connect.start > article.dev > div {
+    flex-grow: 1;
+}
+#connect.start > article.dev > div > h2 {
+    font-size: 1.6rem;
+}
+#connect.start > article.dev > a {
+    all: unset;
+    background-color: var(--system-link-1);
+    color: #fff;
+    padding: 0.5rem 1.2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+#connect.start > ul {
+    margin: 0 7%;
+    padding: 2rem 0;
+}
+#connect.start > ul > li {
+    margin-bottom: 4rem;
+}
+#connect.start > ul > li > .title {
+    display: flex;
+    align-items: center;
+}
+#connect.start > ul > li > .title > h3 {
+    font-size: 1.8rem;
+    margin-left: 1rem;
+}
+#connect.start > ul > li > .title > p {
+    margin-left: 1rem;
+}
+#connect.start > ul > li > .title > h4 {
+    background-color: var(--base-color);
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+}
+#connect.start > ul > li > .sub-title {
+    margin-top: 1rem;
+}
+#connect.start > ul > li > .sub-title > p {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+#connect.start > .help {
+    text-align: center;
+    padding: 4rem 0;
+    background-color: var(--system-gray-1);
+}
+#connect.start > .help > h2 {
+    font-size: 2.0rem;
+}
+#connect.start > .help > h2:last-of-type {
+    margin-bottom: 1rem;
+}
+#connect.start > .help > a {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--system-link-1);
+}
+#connect.start > .su {
+    text-align: center;
+    padding: 5rem 0;
+}
+#connect.start > .su > h3 {
+    font-size: 1.5rem;
+}
+#connect.start > .su > h2 {
+    font-size: 2.0rem;
+}
+#connect.start > .su > a {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #06c;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+#connect.start > .su > a > p { 
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+#connect.start > .su > a:hover > p {
+    text-decoration: underline;
+}
+#connect.start > .su > a > i {
+    font-size: 1.8rem;
+    margin-left: 5px
+}

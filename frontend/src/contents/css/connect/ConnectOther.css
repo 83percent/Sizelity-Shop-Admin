@@ -1,0 +1,82 @@
+#connect.other {
+    
+}
+#connect.other > header {
+    padding: 2rem 3rem;
+}
+#connect.other > header > h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+#connect.other > header > p {
+    margin-bottom: 3px;
+    font-size: 1.1rem;
+}
+#connect.other > section {
+    background-color: #fff;
+    padding: 1rem 3rem;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    margin-bottom: 2rem;
+}
+#connect.other > section > .title {
+    display: flex;
+    align-items: center;
+}
+#connect.other > section > .title > .icon-frame {
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--base-color);
+    margin-right: 1rem;
+}
+#connect.other > section > .title > .icon-frame > i {
+    color: #fff;
+    font-size: 1.9rem;
+}
+#connect.other > section > .title > h2 {
+    font-size: 1.9rem;
+    font-weight: 700;
+}
+#connect.other > section > .explain {
+    padding-left: 3.6rem;
+    margin-top: 0.2rem;
+}
+#connect.other > section > ul {
+    margin-top: 1rem;
+    padding-left: 0.2rem
+}
+#connect.other > section > ul > li {
+    margin-bottom: 1rem;
+}
+#connect.other > section > ul > li > .title {
+    display: flex;
+    align-items: center;
+}
+#connect.other > section > ul > li > .title > div {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--system-gray-2);
+    margin-right: 0.6rem;
+}
+#connect.other > section > ul > li > .title > div > i {
+    color: #000;
+}
+#connect.other > section > ul > li > .title > h3 {
+    font-size: 1.5rem;
+}
+#connect.other > section > ul > li > .explain {
+    padding-left: 2.8rem;
+    margin-top: 0.3rem;
+}
+#connect.other > section > ul > li > .explain > h4 {
+    margin-top: 1rem;
+}

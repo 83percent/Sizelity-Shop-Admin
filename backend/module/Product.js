@@ -28,7 +28,7 @@ async function set(id, data) {
         
     }
 }
-const limitNumber = 20;
+const MAX_COUNT = 20;
 async function search(id, data) {
     let {way, ptype, date, count} = data;
     let query = {
@@ -95,12 +95,56 @@ async function search(id, data) {
         }
         query["reg_date"] = {$gte : _d}
     }
-    
     if(count == undefined) count = 0;
-    return await ProductModel.find(query,["info","reg_date","size"]).limit(limitNumber).skip(count);
+    return await ProductModel.find(query).limit(MAX_COUNT).skip(count);
 }
+
+async function getList(id, count) {
+    try {
+        const products = await ProductModel.find({shopRef : id}).limit(MAX_COUNT).skip(count);
+        return products;
+    } catch(error) {
+        return StatusCode.error;
+    }
+    
+}
+
+async function removes(deleteArray) {
+    try {
+        const deletes = await ProductModel.deleteMany({_id: { $in : deleteArray}}).exec();
+        if(deletes?.deletedCount > 0) {
+            return StatusCode.success;
+        } else return StatusCode.error;
+    } catch {
+        return StatusCode.error;
+    }
+}
+
+async function edit({id, editData}) {
+    try {
+        let product = await ProductModel.findById(id);
+        if(!product) return StatusCode.noData;
+
+        product.size = editData.size;
+        if(editData.info?.pname) product.info.pname = editData.info.pname;
+        if(editData.info?.subtype) product.info.subtype = editData.info.subtype;
+        if(editData.praw) {
+            product.praw.code = editData.praw.code;
+            product.praw.full = editData.praw.full;
+        }
+        product = await product.save();
+        console.log(product);
+        return StatusCode.success;
+    } catch {
+        return StatusCode.error;
+    }
+}
+
 
 module.exports = {
     set,
-    search
+    search,
+    getList,
+    removes,
+    edit
 }

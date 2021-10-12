@@ -1,0 +1,128 @@
+#product.edit {
+    padding: 0 2rem;
+    margin-bottom: 2rem;
+}
+#product.edit > h2 {
+    font-size: 2.3rem;
+    margin-left: 0.5rem;
+}
+#product.edit > section {
+    display: flex;
+}
+#product.edit > section > div {
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    padding: 1rem;
+    width: 100%;
+    margin: 0.5rem;
+    width: 100%;
+}
+#product.edit > section > div > .title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+#product.edit > section > div > .title > .dot {
+    margin-right: 0.5rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background-color: var(--base-color);
+}
+#product.edit > section > div > .title > h3 {
+    font-size: 1.7rem;
+}
+#product.edit > section > div > ul > li {
+    margin-bottom: 1.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#product.edit > section > div > ul > li > h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+#product.edit > section > div > ul > li > p {
+    color: #555;
+
+}
+#product.edit > section > div > ul > li > input {
+    all: unset;
+    flex-grow: 1;
+    border-bottom: 2px solid #ccc;
+    margin-top: 0.5rem;
+    padding: 0 0.5rem;
+    font-size: 1.1rem;
+}
+#product.edit > section > div > ul > li > input:disabled {
+    background-color: #dbdbdb;
+    text-decoration: line-through;
+}
+
+/*
+    Size Input
+*/
+
+#product.edit > section > div > .size-input {
+    overflow: auto;
+    padding: 1rem 0;
+}
+#product.edit > section > div > .size-input > table {
+    border-collapse: collapse;
+    text-align: center;
+    margin: 1rem 0;
+}
+#product.edit > section > div > .size-input > table > thead {
+    border-bottom: 2px solid #ccc;
+    padding: 0.3rem 0;
+}
+#product.edit > section > div > .size-input > table > thead > tr > th {
+    padding: 0.3rem 0;
+    font-size: 0.95rem;
+}
+#product.edit > section > div > .size-input > table td {
+    padding: 0 0.5rem;
+}
+#product.edit > section > div > .size-input > table input {
+    all: unset;
+    width: 7rem;
+    text-align: center;
+    font-size: 1.1rem;
+    font-family: 'Montserrat';
+    border-bottom: 2px solid #ddd;
+    padding: 0.3rem 0;
+}
+#product.edit > section > div > .btn-frame {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+#product.edit > section > div > .btn-frame > button {
+    all: unset;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#product.edit > section > div > .btn-frame > button > i {
+    font-size: 1.7rem;
+}
+#product.edit > section > div > .send-frame {
+    width: 100%;
+    text-align: right;
+}
+#product.edit > section > div > .send-frame > button {
+    all: unset;
+    background-color: var(--base-color);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.7rem 2.8rem;
+    border-radius: 8px;
+}

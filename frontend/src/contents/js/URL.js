@@ -8,6 +8,8 @@ class SizelityURL {
         www.?product_no=[code]
         www./product/.../[code]
         www./products/[code]
+
+        www.?goodsNo
     */
 
     // logNo - 네이버이지만 query 중 proxy 지우면 url 변경됨
@@ -15,7 +17,7 @@ class SizelityURL {
         let isFind = false;
         const result = {domain:undefined, code:undefined, type:undefined, full:undefined};
         const _pris = ["blog","smartstore"];
-        const _codeParams = ['branduid', 'product_no', 'logNo', 'index_no'];
+        const _codeParams = ['branduid', 'product_no', 'logNo', 'index_no', 'goodsNo', 'pno'];
         const _pathParams = ['products','product'];
         try {
             if(_url.indexOf("http") === -1) {
@@ -25,7 +27,7 @@ class SizelityURL {
             //console.log("URL : ",url);
             const params = new URLSearchParams(url.search);
             for(const codeParam of _codeParams) {
-                // 1. branduid, product_no, logNo 있는지 확인
+                // 1. branduid, product_no, logNo, index_no, goodsNo 있는지 확인
                 if(params.has(codeParam)) {
                     isFind = true;
                     
@@ -132,7 +134,6 @@ class SizelityURL {
             else return null;
             
         } catch(error) {
-            console.error(error);
             return null;
         }
     }

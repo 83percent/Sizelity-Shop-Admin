@@ -36,30 +36,6 @@ const ShopSchema = new Mongoose.Schema({
         type: Number,
         default: -1
     },
-    pay : {
-        credit : {
-            type: Number,
-            default: 0
-        },
-        freetier: {
-            type: Number,
-            default: 0
-        },
-    },
-    plan : {
-        popup : {
-            type: Number,
-            default : 0
-        },
-        event : {
-            type: Number,
-            default : 0
-        },
-        product : {
-            type: Number,
-            default : 0
-        }
-    },
     reg_date : {
         type: Date,
         default: Date.now()
