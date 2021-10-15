@@ -1,8 +1,10 @@
 import axios from 'axios';
 import URLModule from '../../contents/js/URL';
 import ProductType from '../../contents/js/ProductType';
+import ProductModule from '../../contents/js/product/Product';
+
 // CSS
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import '../../contents/css/product/ProductAdd.css';
 
 // Context 
@@ -18,8 +20,14 @@ const ProductAdd = ({history, location}) => {
     // Context
     const server = useContext(ServerContext);
     const { user } = useContext(UserContext);
-
     
+    // memo
+    const productModule = useMemo(() => {
+        return new ProductModule(server);
+    }, [server]);
+
+    console.log(user);
+
     // Ref
     const urlInputRef = useRef(null);
     const cautionRef = useRef(null);
@@ -30,48 +38,94 @@ const ProductAdd = ({history, location}) => {
         ptype : "",
         subtype : ""
     });
-
-    
     
     const event = {
-        getProductURL : function(value) {
+        getProductURL : async function(value) {
             if(value.length < 15) {
                 this.setURLCaution("너무 짧습니다.");
                 return;
-            } else {
-                try {
-                    new URL(value);
-                } catch {
-                    this.setURLCaution("주소 형식을 입력해주세요. (http://example.com/path?query=123)");
-                    _setProductURL(null);
-                    return;
-                }
-                if(urlModule === null) urlModule = new URLModule();
-                const _urlData = urlModule.get(value);
-                
-                
+            }
+            try {
+                new URL(value);
+            } catch {
+                this.setURLCaution("주소 형식을 입력해주세요. (http://example.com/path?query=123)");
+                _setProductURL(null);
+                return;
+            }
 
+            const _urlData = this.checkURL(value);
+
+            if(!_urlData || !_urlData.code) {
+                if(!window.confirm("입력하신 상품 주소로는 내보내기 기능만이 사용가능합니다.\n계속 진행하겠습니까?")) {
+                    _setProductInfo(null);
+                    return;
+                } else {
+                    // 지원하지 않는 형식의 상품 생성
+                    const response = await productModule.getNextProductIndex();
+                    switch(response.type) {
+                        case 'success' : {
+                            try {
+                                if(Number(response.data?.lastIndex) >= 0) {
+                                    // 라스트 인덱스 데이터 정상 유입
+                                    _setProductURL({
+                                        domain: user.domain,
+                                        type: "auto",
+                                        code: Number(response.data.lastIndex)+1,
+                                        full: value
+                                    });
+                                    this.setURLCaution("", false);
+                                } else {
+                                    window.alert("문제가 발생했습니다.");
+                                    _setProductURL(null);
+                                    return;
+                                }
+                            } catch(err) {
+                                console.log(err)
+                                window.alert("문제가 발생했습니다.");
+                                _setProductURL(null);
+                                return;
+                            }
+                            break;
+                        }
+                        case 'error' :
+                        default : {
+                            return window.alert(response?.msg || "문제가 발생했습니다.");
+                        }
+                    }
+                }
+            } else {
+                // 분석 결과 null 아님
                 if(_urlData.domain !== user.domain) {
                     this.setURLCaution("다른 쇼핑몰의 상품입니다.");
                     _setProductURL(null);
                     return;
                 }
-
-                _setProductURL(_urlData);
-                if(_urlData) {
-                    this.setURLCaution("", false);
-                } else {
-                    this.setURLCaution("지원하지 않는 형식의 주소입니다.");
-                }
-                
+                _setProductURL(_urlData)
             }
             
         }, // getProductURL(value)
+        checkURL : function(url) {
+            if(urlModule === null) urlModule = new URLModule();
+            const _urlData = urlModule.get(url);
+
+            try {
+                // 지원하는 쇼핑몰
+                if(_urlData?.code) {
+                    return _urlData;
+                }
+                return null;
+            } catch {
+                return null;
+            } 
+        },
+        setNotSupportProduct : function(url) {
+            
+        },
         setURLCaution : function(msg, toggle) {
             if(toggle !== false) {
                 cautionRef.current.innerHTML = msg;
             } else {
-                cautionRef.current.innerHTML = "";
+                cautionRef.current.innerHTML = "";  
             }
 
             

@@ -1,6 +1,12 @@
+import { Route, Switch } from "react-router-dom";
+import HelpIndex from "../component/help/HelpIndex";
+
+
 const HelpRouter = () => {
     return (
-        <h1>Help Router</h1>
+        <Switch>
+            <Route path="/help" component={HelpIndex}/>
+        </Switch>
     )
 }
 export default HelpRouter;

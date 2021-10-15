@@ -13,7 +13,6 @@ const ProductSchema = new Mongoose.Schema({
         },
         type : {
             type: String,
-            required : true
         },
         code : {
             type: String,

@@ -1,0 +1,112 @@
+#ad-center > .start {
+    margin: 0 2rem;
+}
+#ad-center > .start > .title {
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+#ad-center > .start > .title > h1 {
+    font-weight: 700;
+    font-size: 2.0rem;
+}
+#ad-center > .start > article {
+    margin-bottom: 2rem;
+}
+#ad-center > .start > article.ways {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 1rem;
+}
+#ad-center > .start > article.ways > h2 {
+    padding: 0 2rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+#ad-center > .start > article.ways > div > ul {
+    padding: 0.5rem 0;
+}
+#ad-center > .start > article.ways > div > ul > li {
+    margin-bottom: 0.5rem;
+}
+#ad-center > .start > article.ways > div > ul > li > p {
+    font-size: 1.15rem;
+}
+#ad-center > .start > article.ways > div > ul > li > p > strong {
+    color: var(--base-color);
+}
+#ad-center > .start > article.ways > div > ul > li > p > a {
+    all: unset;
+    text-decoration: underline;
+    color: #06c;
+    font-weight: 700;
+    cursor: pointer;
+}
+#ad-center > .start > article.ways > div > ul > li > .example {
+    margin: 0.3rem 1.5rem 1rem 1.5rem;
+}
+#ad-center > .start > article.ways > div > p {
+    color: #dd1818;
+}
+#ad-center > .start > article.file > .title {
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+#ad-center > .start > article.file > .title > h2 {
+    font-size: 2.0rem;
+}
+#ad-center > .start > article.file > .title > p {
+    font-size: 1.15rem;
+}
+#ad-center > .start > article.file > section {
+    display: flex;
+}
+#ad-center > .start > article.file > section > div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 1rem;
+}
+#ad-center > .start > article.file > section > div > h3 {
+    font-size: 1.7rem;
+}
+#ad-center > .start > article.file > section > div > p {
+    font-size: 1.1rem;
+    color: #666;
+}
+#ad-center > .start > article.file > section > div > ul {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+#ad-center > .start > article.file > section > div > ul > li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 0.5rem;
+}
+#ad-center > .start > article.file > section > div > ul > li > p {
+    margin-right: 1rem;
+    font-size: 1.1rem;
+}
+#ad-center > .start > article.file > section > div > ul > li > p > i {
+    font-size: 0.85rem;
+}
+#ad-center > .start > article.file > section > div > ul > li > button, #ad-center > .start > article.file > section > div > ul > li > a {
+    all: unset;
+    background-color: var(--base-color);
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 0.7rem 1rem;
+    min-width: 9rem;
+    text-align: center;
+    border-radius: 1rem;
+    cursor: pointer;
+}

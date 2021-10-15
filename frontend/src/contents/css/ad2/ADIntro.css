@@ -1,33 +1,97 @@
-#ad-center > .event {
-    width: 100%;
+#ad-center > .intro {
+    
 }
-#ad-center > .event > div {
-    display: flex;    
-    text-align: center;
-    min-width: 40rem;
- 
-    margin: auto;
+#ad-center > .intro > section {
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+    
+    margin: 2rem;
+    background-color: #ffffff;
+    border: 1px solid #dbdbdb;
+    border-radius: 1rem;
 }
-#ad-center > .event > div > div {
-    width: 100%;
+#ad-center > .intro > section.popup > img {
+    width: 25rem;
+    margin-right: 2rem;
 }
-#ad-center > .event > div > div:nth-of-type(2) {
-    border-left: 1px solid #000;
+#ad-center > .intro > section.top > img {
+    width: 25rem;
+    margin-left: 4rem;
+
 }
-#ad-center > .event > div > div > h2 {
-    font-size: 3.5rem;
+#ad-center > .intro > section > div {
+    
 }
-#ad-center > .event > div > div > p {
-    font-size: 1.5rem;
-    color: #0066cc60;
+#ad-center > .intro > section.top > div {
+    text-align: right;
 }
-#ad-center > .event > div > div > h4 {
-    font-size: 2.3rem;
+#ad-center > .intro > section > div > h2 {
+    font-size: 3.0rem;
+    margin-top: 3rem;
+} 
+#ad-center > .intro > section > div > p {
+    font-size: 1.15rem;
+    color: #00000090;
+    font-weight: 500;
+}
+#ad-center > .intro > section > div > button {
+    all: unset;
+    margin-top: 1rem;
+    padding: 0.5rem 2rem;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1.2rem;
+    background-color: #00966B;
+    cursor: pointer;
+}
+#ad-center > .intro > section > div > ul {
+    margin-top: 1.5rem;
+}
+#ad-center > .intro > section > div > ul > li {
+    display: flex;
+    align-items: center;
+}
+#ad-center > .intro > section > div > ul > li > p {
+    width: 9rem;
+    text-align: right;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+#ad-center > .intro > section > div > ul > li > h4 {
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+#ad-center > .intro > section > div > ul > li.pure > h4 {
+    text-decoration: line-through;
+    
+}
+#ad-center > .intro > section > div > ul > li > h4 > strong {
     font-weight: 600;
-    color: #0066cc90;
+    font-size: 1.5rem;
+    color: var(--base-color);
 }
-#ad-center > .event > div > div > h3 {
-    color: #06c;
-    font-size: 4.0rem;
-    text-decoration: underline;
+#ad-center > .intro > section > div > i {
+    font-size: 0.9rem;
+    color: #000000;
+    margin-left: 10rem;
+}
+#ad-center > .intro > section.center > div {
+    text-align: center;
+}
+#ad-center > .intro > section.center > div > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0 2rem 0;
+}
+#ad-center > .intro > section.center > div > div > p {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+#ad-center > .intro > section.center > div > div > h4 {
+    font-weight: 500;
+    font-size: 1.3rem;
+    
 }

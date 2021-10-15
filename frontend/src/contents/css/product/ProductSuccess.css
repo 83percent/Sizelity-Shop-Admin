@@ -30,7 +30,7 @@ section#product-main > article#success > .link > .explain {
     overflow-y: hidden;
 }
 section#product-main > article#success > .link.on > .explain {
-    height: 9rem;
+    height: 11.5rem;
 }
 section#product-main > article#success > .link > .explain > p {
     font-size: 1.1rem;
@@ -40,6 +40,7 @@ section#product-main > article#success > .link > .explain > div {
     align-items: center;
     justify-content: center;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     border: 1px solid #e3e8ee;
     background-color: #ffffff;
     padding: 1rem;
@@ -53,6 +54,26 @@ section#product-main > article#success > .link > .explain > div > p {
 section#product-main > article#success > .link > .explain > div > button {
     all: unset;
     cursor: pointer;
+}
+section#product-main > article#success > .link > .explain > a {
+    all: unset;
+    color: #06c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+section#product-main > article#success > .link > .explain > a > p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding-right: 6px;
+}
+section#product-main > article#success > .link > .explain > a > i {
+    position: relative;
+    top: -1px;
+}
+section#product-main > article#success > .link > .explain > a:hover > p {
+    text-decoration: underline;
 }
 section#product-main > article#success > a {
     all: unset;

@@ -3,6 +3,20 @@ const router = express.Router();
 const Product = require("../module/Product");
 const StatusCode = require("../lib/status-code");
 
+router.get("/next", async (req, res) => {
+    const result = await Product.nextIndex(req.user._id);
+
+    if(typeof result === 'object') {
+        return res.send(result);
+    } else {
+        switch(result) {
+            case 500 :
+            default : {
+                return res.status(500).send({error: '서버에 문제가 발생했습니다.'});
+            }
+        }
+    }
+});
 
 router.get("/list/:count", async(req, res) => {
     const count = req.params.count || 0;

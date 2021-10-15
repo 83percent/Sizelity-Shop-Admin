@@ -16,9 +16,10 @@ import RequestMain from '../component/request/Request';
 import EventMain from '../component/event/EventMain';
 
 /* import ADMain from '../component/ad/ADMain'; */
-import ADMain2 from '../component/ad2/ADIndex';
+import ADRouter from './ADRouter';
 import MainIndex from '../component/main/MainIndex';
 import ConnectRouter from './ConnectRouter';
+import HelpIndex from '../component/help/HelpIndex';
 
 const HomeRouter = ({history}) => {
     const {user:userInfo} = useContext(UserContext);
@@ -39,9 +40,10 @@ const HomeRouter = ({history}) => {
                     <Route path="/account" component={AccountRouter} />
                     <Route path="/product" component={ProductMain} />
                     <Route path="/request" component={RequestMain} />
-                    <Route path="/advertisement" component={ADMain2} />
+                    <Route path="/advertisement" component={ADRouter} />
                     <Route path="/connect" component={ConnectRouter} />
                     <Route path="/event" component={EventMain} />
+                    <Route path="/help" component={HelpIndex} />
                     {/* <Route path="/advertisement" component={ADMain} /> */}
                 </Switch>
             </article>

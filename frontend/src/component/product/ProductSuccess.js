@@ -1,5 +1,7 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
+
+// CSS
 import '../../contents/css/product/ProductSuccess.css';
 
 const ProductSuccess = ({history, location}) => {
@@ -48,9 +50,13 @@ const ProductSuccess = ({history, location}) => {
                     <div>
                         <p ref={linkRef}>https://www.sizelity.com/compare?shop={shop}&no={code}</p>
                         <button onClick={() => event.copy()}>
-                            <i className="material-icons">content_copy  </i>
+                            <i className="material-icons">content_copy</i>
                         </button>
                     </div>
+                    <Link to="/connect">
+                        <p>자동연결 설정하기</p>
+                        <i className="material-icons">arrow_forward_ios</i>
+                    </Link>
                 </div>
             </div>
             <Link to="/product/add">계속 추가하기</Link>

@@ -1,5 +1,5 @@
 #ad-center {
-
+    min-height: 100vh;
 }
 #ad-center > header {
     padding: 2rem 1rem 1rem 2rem;

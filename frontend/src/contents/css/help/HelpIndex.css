@@ -1,0 +1,12 @@
+#help {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#help > .title {
+    text-align: center;
+    padding: 2rem 0;
+}
+#help > .title > h1 {
+    font-size: 2.7rem;
+}

@@ -139,12 +139,20 @@ async function edit({id, editData}) {
         return StatusCode.error;
     }
 }
-
+async function nextIndex(id) {
+    try {
+        const allProductCount = await ProductModel.count({shopRef: id});
+        return {lastIndex : allProductCount};
+    } catch {
+        return StatusCode.error;
+    }
+}
 
 module.exports = {
     set,
     search,
     getList,
     removes,
-    edit
+    edit,
+    nextIndex
 }
