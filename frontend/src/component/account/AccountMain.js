@@ -10,7 +10,6 @@ import '../../contents/css/account/AccountMain.css';
 
 const AccountMain = ({history}) => {
     const [shopInfo, setShopInfo] = useState(undefined);
-    console.log(history);
     const server = useContext(ServerContext);
 
     // Memo
