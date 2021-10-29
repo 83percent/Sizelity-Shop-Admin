@@ -32,18 +32,21 @@ const ADEventRouter = require('./router/ADEventRouter');
 const ADRouter = require('./router/ADRouter');
 const NoticeRouter = require('./router/NoticeRouter');
 
+const copsOption = {
+    //origin : 'https://admin.sizelity.com',
+    origin: 'http://localhost:3000',
+    credentials :true
+}
+
+
 server.use(express.static('public'));
 server.use(cookieParser({secret: '83percent'}));
 server.use(cookieSession({
     name: 'shop',
     keys: ['83percent']
 })); 
-server.use(cors({
-    //origin: 'https://www.sizelity.com',
-    origin: 'http://localhost:3000',
-    methods: ['GET', 'PUT', 'POST', 'DELETE', 'PATCH', 'OPTIONS'],
-    credentials: true
-}));
+
+server.use(cors(copsOption));
 server.use(express.json());
 server.use(session({
     resave: false,
@@ -55,14 +58,6 @@ server.use(session({
 }));
 server.use(passport.initialize());
 server.use(passport.session());
-
-// Cors Option
-server.use(cors({
-    //origin: 'https://www.sizelity.com',
-    origin: 'http://localhost:3000',
-    methods: ['GET', 'PUT', 'POST', 'DELETE', 'PATCH', 'OPTIONS'],
-    credentials: true
-}));
 
 /* ================================
             Server start

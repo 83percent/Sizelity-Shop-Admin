@@ -100,6 +100,15 @@ const ProductAdd = ({history, location}) => {
                     _setProductURL(null);
                     return;
                 }
+                
+                const exist = await productModule.isExist(_urlData.code);
+                console.log(exist.data.exist);
+                if(exist.data.exist) {
+                    // 데이터 존재.
+                    this.setURLCaution("이미 존재하는 상품입니다.");
+                    _setProductURL(null);
+                    return;
+                }
                 _setProductURL(_urlData)
             }
             
@@ -479,9 +488,7 @@ const ProductRateAdd = ({type, send}) => {
                     <button className="fa" onClick={() => sizeEvent.removeList()}>
                         <i className="material-icons">remove</i>
                     </button>
-                    <button onClick={() => console.log("데이터 : ", _sizeList)}>
-                        <i className="material-icons">comment</i>
-                    </button>
+
                 </div>
                 <p ref={sizeCaution}></p>
             </div>

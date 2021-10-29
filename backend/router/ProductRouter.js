@@ -33,6 +33,19 @@ router.get("/list/:count", async(req, res) => {
     }
 
 });
+router.get("/check/:code", async(req, res) => {
+    const domain = req.user?.domain;
+    const code = req.params?.code;
+    if(!domain || !code) return res.status(StatusCode.invalid).send({error : "잘못된 요청입니다."}); // 400
+    
+    const result = await Product.isExist(domain, code);
+    switch(result) {
+        case 200 : return res.status(200).send({exist: true});
+        case 419 : return res.status(200).send({exist: false});
+        case 500 :
+        default : return res.status(500).send({error: '서버에 문제가 발생했습니다.'});
+    }
+});
 router.post("/", async (req, res) => {
     const { shopRef } = req.body;
     if(shopRef !== req.user.id) {

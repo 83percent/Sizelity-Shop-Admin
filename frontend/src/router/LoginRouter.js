@@ -17,6 +17,9 @@ const LoginRouter = ({history, match}) => {
     const server = useContext(ServerContext)
     const { setUser } = useContext(UserContext);
 
+
+    console.log(server);
+
     // Field
     const __id = match.params.id;
     if(__id.length < 20) history.replace("/wrong");
@@ -79,7 +82,7 @@ const LoginRouter = ({history, match}) => {
                 <p ref={cautionRef}></p>
             </article>
             <footer>
-                <Link to="/help">도움이 필요하신가요?</Link>
+                <Link to="/help/a">도움이 필요한가요?</Link>
                 
             </footer>
         </main>

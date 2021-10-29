@@ -1,6 +1,7 @@
 import { createContext, useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
+import dotenv from 'dotenv';
 
 // Font
 import './contents/fonts/AppleSDGothicNeo.css';
@@ -14,10 +15,14 @@ import HomeRouter from './router/HomeRouter';
 import InitRouter from './router/InitRouter';
 import MainBlankRouter from './router/MainBlankRouter';
 
+
 // Context
 export const ServerContext = createContext(null);
 export const UserContext = createContext(null);
-const __server = 'http://localhost:3003';
+
+dotenv.config();
+
+const __server = process.env.REACT_APP_SERVER_URL;
 
 function App() {
   const [user, __setUser] = useState(() => JSON.parse(sessionStorage.getItem("authSizelity")));
@@ -26,6 +31,7 @@ function App() {
     __setUser(data);
   }
   
+
   return (
     <UserContext.Provider value={{user, setUser}}>
       <ServerContext.Provider value={__server}>

@@ -147,12 +147,21 @@ async function nextIndex(id) {
         return StatusCode.error;
     }
 }
-
+async function isExist(domain, code) {
+    try {
+        const product = await ProductModel.findOne({'praw.domain' : domain, 'praw.code' : code});
+        if(product) return StatusCode.success; // 200
+        else return StatusCode.already; // 419
+    } catch {
+        return StatusCode.error; // 500
+    }
+}
 module.exports = {
     set,
     search,
     getList,
     removes,
     edit,
-    nextIndex
+    nextIndex,
+    isExist
 }
