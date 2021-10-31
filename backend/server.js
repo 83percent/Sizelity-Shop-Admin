@@ -8,7 +8,7 @@
 // Middle Ware
 const express = require('express');
 const cors = require('cors');
-const __Mongoose = require('./config/Mongo');
+const __Mongoose = require('./config/mongo');
 
 const bodyParser = require('body-parser');
 const passport = require('passport');
@@ -33,7 +33,7 @@ const ADRouter = require('./router/ADRouter');
 const NoticeRouter = require('./router/NoticeRouter');
 
 const copsOption = {
-    //origin : 'https://admin.sizelity.com',
+    //origin : 'https://adminserver.sizelity.com',
     origin: 'http://localhost:3000',
     credentials :true
 }
