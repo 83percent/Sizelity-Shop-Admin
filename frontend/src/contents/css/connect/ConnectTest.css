@@ -1,19 +1,35 @@
 #connect > .test {
-    text-align: center;
-    padding-top: 5rem;
-    border: 1px solid #dbdbdb;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #fff;
-}
-#connect > .test > h2 {
-    font-size: 2.7rem;
-    margin-bottom: 1rem;
-    white-space: nowrap;
 }
 #connect > .test > div {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+#connect > .test > div > h2 {
+    font-size: 2.7rem;
+    margin-bottom: 0.2rem;
+    padding-top: 2rem;
+    white-space: nowrap;
+}
+#connect > .test > div > p {
+    font-size: 1.1rem;
+    margin-bottom: 3px;
+}
+#connect > .test > div > p:last-of-type {
+    margin-bottom: 1.5rem;
+}
+#connect > .test > div > div {
+    display: flex;
     justify-content: center;
 }
-#connect > .test > div > input {
+#connect > .test > div > div > input {
     all: unset;
     width: 40rem;
     background-color: #fff;
@@ -22,10 +38,10 @@
     text-align: left;
     box-shadow: 4px 24px 60px #608dad25;
 }
-#connect > .test > div > input:focus {
+#connect > .test > div > div > input:focus {
     border-color: var(--base-color);
 }
-#connect > .test > div > button {
+#connect > .test > div > div > button {
     all: unset;
     background-color: var(--base-color);
     color: #fff;

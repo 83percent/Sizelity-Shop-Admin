@@ -82,3 +82,26 @@ aside:hover > ul > li.element > a > p {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+/*
+    talk
+*/
+#contact {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 999;
+}
+#contact > a {
+    all: unset;
+    cursor: pointer;
+}
+#contact > a > i {
+    background-color: var(--base-color);
+    color: #fff;
+    width: 4rem;
+    height: 4rem;
+    font-size: 2.0rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 4rem;
+}

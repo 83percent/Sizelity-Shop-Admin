@@ -66,6 +66,12 @@
     font-weight: 500;
     
 }
+#custom-design > div > .handler > ul > li > div > p.caution {
+    color: var(--base-red);
+    font-size: 0.9rem;
+    width: auto;
+    margin-left: 1rem;
+}
 #custom-design > div > .handler > ul > li > div > h4 {
     font-size: 1.2rem;
     font-weight: 500;
@@ -107,4 +113,29 @@
 }
 #custom-design > button.copy:hover {
     opacity: 1.0;
+}
+
+#custom-design > div > .handler > ul > li.icon > label {
+    cursor: pointer;
+    opacity: 0.4;
+}
+#custom-design > div > .handler > ul > li.icon > label > span > input {
+    display: none;
+}
+#custom-design > div > .handler > ul > li.icon > label > span > i {
+    width: 3.3rem;
+    height: 3.3rem;
+    border: 3px solid #00000000;
+    text-align: center;
+    line-height: 3.3rem;
+    font-size: 2.5rem;
+    margin-right: 0.5rem;
+}
+#custom-design > div > .handler > ul > li.icon > label:hover, #custom-design > div > .handler > ul > li.icon > label.active {
+    opacity: 1.0;
+}
+#custom-design > div > .handler > ul > li.icon > label.active > span > i {
+    border-color: var(--base-color);
+    background-color: var(--base-color);
+    color: #ffffff;
 }

@@ -10,7 +10,6 @@ import './contents/fonts/Montserrat.css'
 // Router
 import LoginRouter from './router/LoginRouter';
 import WrongAccess from './router/WrongAccess';
-import HelpRouter from './router/HelpRouter';
 import HomeRouter from './router/HomeRouter';
 import InitRouter from './router/InitRouter';
 import MainBlankRouter from './router/MainBlankRouter';
@@ -36,8 +35,7 @@ function App() {
     <UserContext.Provider value={{user, setUser}}>
       <ServerContext.Provider value={__server}>
         <Switch>
-          <Route exact path="/help/a" component={HelpRouter} />
-          <Route path={["/home", "/product", "/account", "/request", "/event", "/advertisement", "/connect","/help"]} component={HomeRouter} />
+          <Route path={["/home", "/product", "/account", "/request", "/event", "/advertisement", "/connect"]} component={HomeRouter} />
           <Route exact path="/wrong" component={WrongAccess} />
           <Route exact path="/init" component={InitRouter} />
           <Route exact path="/:id" component={LoginRouter} />

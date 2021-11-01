@@ -82,8 +82,7 @@ const LoginRouter = ({history, match}) => {
                 <p ref={cautionRef}></p>
             </article>
             <footer>
-                <Link to="/help/a">도움이 필요한가요?</Link>
-                
+                <a href="http://pf.kakao.com/_xfvrYs/chat" target="_blank" title="파트너 채널">도움이 필요한가요?</a>
             </footer>
         </main>
     )

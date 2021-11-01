@@ -57,14 +57,6 @@ const Menu = () => {
                         <p>광고 센터</p>
                     </NavLink>
                 </li>
-                <li className="element">
-                    <NavLink to="/help">
-                        <div>
-                            <i className="material-icons">help</i>
-                        </div>
-                        <p>문의하기</p>
-                    </NavLink>
-                </li>
             </ul>
         </aside>
     )

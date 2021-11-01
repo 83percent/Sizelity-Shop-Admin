@@ -12,7 +12,7 @@ const ConnectStart = () => {
                 <div className="logo">
                     <i className="material-icons">sell</i>
                 </div>
-                <h1>자동연결 가이드</h1>
+                <h1>쇼핑몰 연동 가이드</h1>
             </header>
             {/* <article className="dev">
                 <div>
@@ -25,8 +25,8 @@ const ConnectStart = () => {
                 <li>
                     <div className="title">
                         <h4>1</h4>
-                        <h3>사이즈비교 버튼 디자인</h3>
-                        <p>여러분의 쇼핑몰에 어울리는 디자인을 만들어보세요.</p>
+                        <h3>나만의 "사이즈리티 연동 버튼" 만들기</h3>
+                        <p>여러분의 쇼핑몰에 어울리는 디자인으로 만들어보세요.</p>
                     </div>
                     <div className="custom-design-wrapper">
                         <CustomButtonDesign/>

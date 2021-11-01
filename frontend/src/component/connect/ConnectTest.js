@@ -39,14 +39,19 @@ const ConnectTest = ({history}) => {
     }
     return (
         <article className="test">
-            <h2>자동연결이 가능한지 확인합니다.</h2>
             <div>
-                <input
-                    ref={testURLInput}
-                    onKeyPress={e => {if(e.key === 'Enter') check(e.target.value)}}
-                    type="text"
-                    placeholder="쇼핑몰의 상품 상세보기 주소를 입력해주세요."/>
-                <button onClick={() => check(testURLInput.current.value)}>확인</button>
+                <h2>쇼핑몰 연동 확인</h2>
+                <p>쇼핑몰이 사이즈리티로의 연동이 가능한지 확인합니다.</p>
+                <p>사이즈리티와 연동될 페이지는 쇼핑몰 상품의 "상세 보기" 페이지입니다.</p>
+                <p>쇼핑몰에서 아무 상품이나 눌러, "상세 보기" 페이지의 주소를 아래 붙여넣어 연동 가능 여부를 확인해주세요.</p>
+                <div>
+                    <input
+                        ref={testURLInput}
+                        onKeyPress={e => {if(e.key === 'Enter') check(e.target.value)}}
+                        type="text"
+                        placeholder="쇼핑몰의 상품 상세보기 주소를 입력해주세요."/>
+                    <button onClick={() => check(testURLInput.current.value)}>확인</button>
+                </div>
             </div>
             <img src={ConnectExampleImage} alt="상세보가 주소 예시" title="상세보기 주소 예시"/>
         </article>

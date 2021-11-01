@@ -19,7 +19,6 @@ import EventMain from '../component/event/EventMain';
 import ADRouter from './ADRouter';
 import MainIndex from '../component/main/MainIndex';
 import ConnectRouter from './ConnectRouter';
-import HelpIndex from '../component/help/HelpIndex';
 
 const HomeRouter = ({history}) => {
     const {user:userInfo} = useContext(UserContext);
@@ -43,10 +42,14 @@ const HomeRouter = ({history}) => {
                     <Route path="/advertisement" component={ADRouter} />
                     <Route path="/connect" component={ConnectRouter} />
                     <Route path="/event" component={EventMain} />
-                    <Route path="/help" component={HelpIndex} />
                     {/* <Route path="/advertisement" component={ADMain} /> */}
                 </Switch>
             </article>
+            <nav id="contact">
+                <a href="http://pf.kakao.com/_xfvrYs/chat" target="_blank" title="파트너 채널">
+                    <i className="material-icons">chat_bubble</i>
+                </a>
+            </nav>
         </>
     )
 }
