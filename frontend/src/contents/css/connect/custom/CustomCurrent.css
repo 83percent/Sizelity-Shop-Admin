@@ -1,0 +1,41 @@
+
+#custom-current > .title > p {
+    margin-left: 0.5rem;
+    letter-spacing: 2px;
+}
+#custom-current > main > ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.5rem 0;
+}
+#custom-current > main > ul > li {
+    position: relative;
+    margin: 0.5rem;
+}
+#custom-current > main > ul > li > div > button {
+    cursor: pointer;
+    opacity: 0.3;
+}
+#custom-current > main > ul > li > div > button:hover {
+    opacity: 1.0
+}
+#custom-current > main > ul > li > .close {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    cursor: pointer;
+}
+#custom-current > main > ul > li > .close:hover > i {
+    opacity: 1.0;    
+}
+#custom-current > main > ul > li > .close > i {
+    width: 1.3rem;
+    height: 1.3rem;
+    opacity: 0.3;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    line-height: 1.3rem;
+    background-color: var(--base-red);
+    font-size: 1rem;
+}

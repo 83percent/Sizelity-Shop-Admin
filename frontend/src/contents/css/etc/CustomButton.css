@@ -1,0 +1,245 @@
+section.custom-button {
+    border-bottom: 1px solid #dbdbdb;
+    padding: 0.5rem 0;
+}
+section.custom-button > main {
+    padding: 0 1rem;
+}
+section.custom-button > main > .preview {
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section.custom-button > main > ul > li {
+    border-bottom: 1px solid #dbdbdb;
+}
+section.custom-button > main > ul > li.on {
+    border: none;
+}
+section.custom-button > main > ul > li > .sub-title {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 0.7rem 0;
+    opacity: 0.5;
+}
+section.custom-button > main > ul > li.on > .sub-title {
+    opacity: 1.0;
+}
+section.custom-button > main > ul > li > .sub-title > .dot {
+    opacity: 0;
+}
+section.custom-button > main > ul > li.on > .sub-title > .dot {
+    opacity: 1.0;
+}
+section.custom-button > main > ul > li > .sub-title > h3 {
+    flex-grow: 1;
+    font-size: 1.3rem;
+}
+section.custom-button > main > ul > li > .sub-title > i {
+    font-size: 1.4rem;
+}
+section.custom-button > main > ul > li.on > .sub-title > i {
+    transform: rotate(180deg);
+}
+section.custom-button > main > ul > li > .frame {
+    height: 0;
+    padding: 0 1.5rem;
+    border-radius: 0.8rem;
+    background: var(--system-gray-1);
+    overflow: hidden;
+}
+section.custom-button > main > ul > li.on > .frame {
+    height: auto;
+}
+section.custom-button > main > ul > li.on > .frame > *:first-of-type {
+    margin-top: 1rem;
+}
+section.custom-button > main > ul > li.on > .frame > *:last-of-type {
+    margin-bottom: 1rem;
+}
+section.custom-button > main > ul > li > .frame > div:not(:first-of-type) {
+    padding-top: 0.8rem;
+}
+section.custom-button > main > ul > li > .frame > .select-row {
+    display: flex;
+    align-items: center;
+}
+section.custom-button > main > ul > li > .frame > .select-row > h3 {
+    width: 6.3rem;
+    font-size: 1.1rem;
+    text-align: center;
+}
+section.custom-button > main > ul > li > .frame > .select-row > label {
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+section.custom-button > main > ul > li > .frame > .select-row > label > input {
+    display: none;
+}
+section.custom-button > main > ul > li > .frame > .select-row > label > div {
+    border: 2px solid #dbdbdb
+}
+section.custom-button > main > ul > li > .frame > .select-row > label > div > i {
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    line-height: 3rem;
+    font-size: 2.0rem;
+    opacity: 0.3;
+}
+section.custom-button > main > ul > li > .frame > .select-row > label > div.active {
+    background-color: #dbdbdb;
+}
+section.custom-button > main > ul > li > .frame > .select-row > label > div > i:hover {
+    opacity: 1.0;
+}
+section.custom-button > main > ul > li > .frame > .select-row > label > div.active > i {
+    opacity: 1.0;
+}
+
+/*
+    Color
+*/
+section.custom-button > main > ul > li > .frame > div.select-color {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+}
+section.custom-button > main > ul > li > .frame > div.select-color > .color-view {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 2px solid #dbdbdb;
+}
+/*
+    Range
+*/
+section.custom-button > main > ul > li > .frame > .select-range {
+    display: flex;
+    align-items: center;
+}
+section.custom-button > main > ul > li > .frame > .select-range > h3 {
+    width: 5.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-right: 1rem;
+    text-align: center;
+    white-space: nowrap;
+}
+section.custom-button > main > ul > li > .frame > .select-range > p {
+    width: 8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+section.custom-button > main > ul > li > .frame > .select-range > input {
+    flex-grow: 1;
+}
+/*
+    Select Checkbox
+*/
+section.custom-button > main > ul > li > .frame > .select-checkbox > label {
+    cursor: pointer;
+}
+section.custom-button > main > ul > li > .frame > .select-checkbox > label > input {
+    display: none;
+}
+section.custom-button > main > ul > li > .frame > .select-checkbox > label > p {
+    width: 8rem;
+    padding: 0.5rem 0;
+    text-align: center;
+    border: 1px solid #dbdbdb;
+    color: #00000060;
+}
+section.custom-button > main > ul > li > .frame > .select-checkbox.on > label > p {
+    background-color: #dbdbdb;
+    color: #000;
+}
+/*
+    input
+*/
+section.custom-button > main > ul > li > .frame > .input {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+section.custom-button > main > ul > li > .frame > .input > h3 {
+    width: 6.3rem;
+    font-size: 1.1rem;
+    text-align: center;
+}
+section.custom-button > main > ul > li > .frame > .input > input {
+    all: unset;
+    flex-grow: 1;
+    background-color: var(--system-gray-2);
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;
+}
+/*
+    Button Align
+*/
+
+section.custom-button > main > ul > li > .frame > .select-row > label > .align {
+    width: 3rem;
+    height: 3rem;
+    padding: 3px;
+    display: flex;
+    align-items: flex-end;
+    opacity: 0.3;
+}
+section.custom-button > main > ul > li > .frame > .select-row > label > .align.on, section.custom-button > main > ul > li > .frame > .select-row > label > .align:hover {
+    opacity: 1.0;
+}
+section.custom-button > main > ul > li > .frame > .select-row > label > .align.left {
+    justify-content: flex-start;
+}
+section.custom-button > main > ul > li > .frame > .select-row > label > .align.right {
+    justify-content: flex-end;
+}
+section.custom-button > main > ul > li > .frame > .select-row > label > .align > div {
+    width: 1rem;
+    height: 1rem;
+    background-color: #000;
+    border-radius: 50%;
+}
+section.custom-button > main > ul > li > .frame > .select-row > label > .align.on > div {
+    background-color: var(--base-color);
+}
+
+/*
+    handler button
+*/
+section.custom-button > main > ul > li.button-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    border: none;
+}
+section.custom-button > main > ul > li.button-wrapper > button {
+    all: unset;
+    text-align: center;
+    padding: 0.5rem 0;
+    margin: 0 0.1rem;
+    cursor: pointer;
+    opacity: 0.4;
+    font-weight: 400;
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+section.custom-button > main > ul > li.button-wrapper > button:hover {
+    opacity: 1.0;
+}
+section.custom-button > main > ul > li.button-wrapper > button.apply {
+    flex-grow: 5;
+    background-color: var(--base-color);
+    color: #fff;
+}
+section.custom-button > main > ul > li.button-wrapper > button.save {
+    flex-grow: 1;
+    background-color: var(--system-gray-2);
+}
+section.custom-button > main > ul > li.button-wrapper > button.reset {
+    flex-grow: 1;
+    background-color: var(--system-gray-2);
+}

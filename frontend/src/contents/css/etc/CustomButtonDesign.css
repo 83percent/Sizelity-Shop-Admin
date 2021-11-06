@@ -27,6 +27,7 @@
 #custom-design > div > .handler {
     display: flex;
     flex-direction: column;
+    width: 35rem;
     margin-left: 2rem;
     padding-left: 2rem;
     border-left: 1px solid #dbdbdb;
@@ -45,7 +46,7 @@
     align-items: center;
     margin-bottom: 0.3rem;
 }
-#custom-design > div > .handler > ul > li > .title > .dot {
+#custom-design > div > .handler .dot {
     background-color: var(--base-color);
     padding: 0.3rem;
     margin-right: 8px;
@@ -138,4 +139,26 @@
     border-color: var(--base-color);
     background-color: var(--base-color);
     color: #ffffff;
+}
+#custom-design > div > .handler > section > .title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+}
+#custom-design > div > .handler > section > .title > h2 {
+    flex-grow: 1;
+}
+#custom-design > div > .handler > section > .title > i {
+    font-size: 2.0rem;
+}
+#custom-design > div > .handler > section > main {
+    height: 0;
+    overflow: hidden;
+}
+#custom-design > div > .handler > section.on > main {
+    height: auto;
+}
+#custom-design > div > .handler > section.on > .title > i {
+    transform: rotate(180deg);
 }

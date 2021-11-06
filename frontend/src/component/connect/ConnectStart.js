@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // CSS
 import '../../contents/css/connect/ConnectStart.css';
 import ConnectWays from './ConnectWays';
-import CustomButtonDesign from './CustomButtonDesign';
+import CustomIndex from './CustomButton/CustomIndex';
 
 const ConnectStart = () => {
     return (
@@ -29,7 +29,7 @@ const ConnectStart = () => {
                         <p>여러분의 쇼핑몰에 어울리는 디자인으로 만들어보세요.</p>
                     </div>
                     <div className="custom-design-wrapper">
-                        <CustomButtonDesign/>
+                        <CustomIndex/>
                     </div>
                 </li>
                 <li>
