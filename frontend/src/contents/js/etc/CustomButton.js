@@ -17,6 +17,6 @@ function remove(index) {
     localStorage.setItem("CustomButton", JSON.stringify(__save));
 }
 
-module.exports = {
+export default {
     set, get, remove
 }
