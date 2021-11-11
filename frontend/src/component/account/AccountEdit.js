@@ -198,7 +198,7 @@ const AccountEdit = ({history, location}) => {
                                         placeholder="ex) 서울시 XXX XXX XXX"/>
                                 </li>
                                 <li>
-                                    <h3>사업자 번호</h3>
+                                    <h3>사업자 번호(</h3>
                                     <input
                                         type="text"
                                         name="reg_number"

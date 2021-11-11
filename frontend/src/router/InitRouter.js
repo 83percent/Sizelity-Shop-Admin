@@ -47,7 +47,7 @@ const InitRouter = ({history}) => {
                 this.setCaution("대표자 명을 입력해주세요.");
                 return;
             }
-            if(info.tel < 9) {
+            if(info.tel.length < 9) {
                 this.setCaution("전화번호는 9자리 이상 입력해주세요.");
                 return;
             }
@@ -107,19 +107,19 @@ const InitRouter = ({history}) => {
                 <section>
                     <h2>쇼핑몰 정보</h2>
                     <p>쇼핑몰 식별을 위한 정보를 입력합니다.</p>
-                    <h3>대표자 명</h3>
+                    <h3>대표자 명<p>(필수)</p></h3>
                     <input type="text" onChange={(e) => data.current.info.ceo = e.target.value} />
 
-                    <h3>연락가능한 연락처</h3>
+                    <h3>연락가능한 연락처<p>(필수)</p></h3>
                     <input type="number" placeholder="(-) 를 제외한 번호" onChange={(e) => data.current.info.tel = e.target.value} />
 
-                    <h3>이메일</h3>
+                    <h3>이메일<p>(필수)</p></h3>
                     <input type="email" onChange={(e) => data.current.info.email = e.target.value} />
 
-                    <h3>사업지 주소</h3>
+                    <h3>사업지 주소<p>(선택)</p></h3>
                     <input type="text" onChange={(e) => data.current.info.address = e.target.value} />
 
-                    <h3>사업자 번호</h3>
+                    <h3>사업자 번호<p>(선택)</p></h3>
                     <input type="text" onChange={(e) => data.current.info.reg_number = e.target.value} />
                     
                 </section>

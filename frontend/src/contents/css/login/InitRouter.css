@@ -54,9 +54,16 @@ main#init > article > section > p {
     color: #333;
 }
 main#init > article > section > h3 {
+    display: flex;
+    align-items: center;
     font-size: 1.1rem;
     margin-bottom: 0.3rem;
     color: #00000080;
+}
+main#init > article > section > h3 > p {
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-left: 0.3rem;
 }
 main#init > article > section > input {
     all: unset;
