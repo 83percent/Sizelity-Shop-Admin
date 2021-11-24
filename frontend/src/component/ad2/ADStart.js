@@ -31,7 +31,7 @@ const ADStart = () => {
                             <p>2. 광고 노출을 원하는 성별과 날짜에 광고 <strong>예약이 가능한지 확인</strong>해주세요. </p>
                         </li>
                         <li>
-                            <p>3. <a href="http://pf.kakao.com/_xfvrYs" target="_blank">카카오톡 파트너 센터</a> 메뉴에 "광고 문의" 를 눌러주세요.</p>
+                            <p>3. <a href="http://pf.kakao.com/_xfvrYs" rel="noreferrer" target="_blank">카카오톡 파트너 센터</a> 메뉴에 "광고 문의" 를 눌러주세요.</p>
                         </li>
                         <li>
                             <p>4. 그 후 광고 이미지, 클릭 시 이동할 페이지 링크, 결제와 관련된 내용을 전달해드릴게요.</p>
@@ -90,7 +90,7 @@ const ADStart = () => {
                         <ul>
                             <li>
                                 <p>1개월 70,000원<br /><i>(부가세 별도)</i></p>
-                                <a href="http://pf.kakao.com/_xfvrYs" target="_blank">카카오톡 채널로 신청하기</a>
+                                <a href="http://pf.kakao.com/_xfvrYs" rel="noreferrer" target="_blank">카카오톡 채널로 신청하기</a>
                             </li>
                         </ul>
                     </div>

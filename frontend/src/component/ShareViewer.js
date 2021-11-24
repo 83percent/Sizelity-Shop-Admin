@@ -90,7 +90,7 @@ const ShareViewer = ({value, setValue}) => {
                         <div className="info">
                             <pre>
                                 <div href={`https://www.sizelity.com/compare?shop=${shop}&no=${no}`} target="_blank">
-                                    <img src="https://sizelityimagebucket.s3.ap-northeast-2.amazonaws.com/systemimage/sizelity_link_service_front_image.png" style={{}}/>
+                                    <img src="https://sizelityimagebucket.s3.ap-northeast-2.amazonaws.com/systemimage/sizelity_link_service_front_image.png" alt="사이즈리티" style={{}}/>
                                 </div>
                                 <div className="_b">
                                     <p>{sname}</p>
