@@ -3,14 +3,17 @@ const StatusCode = require("../lib/status-code");
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
+const PriceModule = require("../lib/Price");
+
 async function setInit(id, data) {
     const shop = await ShopModel.findById(id);
-    
+
     if(!shop) return StatusCode.auth;
     try {
         const salt = bcrypt.genSaltSync(saltRounds);
         const hash = bcrypt.hashSync(data.password, salt);
         shop.password = hash;
+        shop.price = PriceModule.getPrice(data.price);
         shop.info = data.info;
         shop.state = 1;
         return await shop.save();

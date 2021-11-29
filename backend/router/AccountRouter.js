@@ -22,7 +22,7 @@ router.post("/init", async (req, res) => {
     const result = await AccountModule.setInit(id, req.body);
     if(typeof result === 'object') {
         res.sendStatus(200);
-    } else res.status(result).send({error : "서버에 문제가 발생했습니다."});
+    } else res.status(500).send({error : "서버에 문제가 발생했습니다."});
 });
 
 router.post("/chpwd", async (req, res) => {

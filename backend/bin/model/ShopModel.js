@@ -3,6 +3,7 @@ const COLL_NAME = 'shop';
 const ShopSchema = new Mongoose.Schema({
     sname : {
         type: String,
+        trim : true,
         required: true
     },
     password : {
@@ -21,6 +22,54 @@ const ShopSchema = new Mongoose.Schema({
         email: {type: String},
         tel : {type: String},
         address : {type: String}
+    },
+    count : {
+        provide : 0,
+        compare : 0
+    },
+    price : {
+        name : {
+            type: String,
+            enum: ['basic','standard','deluxe','premium'],
+            default: 'basic'
+        },
+        base : {
+            type: Number,
+            default : 0
+        },
+        price : {
+            type: Number,
+            default : 1.2
+        },
+        income : {
+            type: Number,
+            default: 0.4
+        },
+        expire : {
+            type: Number,
+            default : 0
+        },
+        free_count : {
+            type: Number,
+            default : 0
+        },
+        pre_pay : {
+            price : {
+                type: Number,
+                default: 0
+            },
+            check : {
+                type: Boolean,
+                default: false
+            },
+            pay_date: {
+                type: Date
+            }
+        },
+        start_date : {
+            type: Date,
+            required: true
+        }
     },
     product : {
         count : {
