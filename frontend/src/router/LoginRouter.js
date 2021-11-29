@@ -1,4 +1,4 @@
-import { useContext, useRef } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import axios from 'axios';
 
 // CSS
@@ -10,14 +10,10 @@ const LoginRouter = ({history, match}) => {
     // Ref
     const cautionRef = useRef(null);
     const inputRef = useRef(null);
-    
 
     // Context
     const server = useContext(ServerContext)
     const { setUser } = useContext(UserContext);
-
-
-    console.log(server);
 
     // Field
     const __id = match.params.id;
@@ -64,10 +60,35 @@ const LoginRouter = ({history, match}) => {
             cautionRef.current.innerHTML = text;
         }
     }
-
+    useEffect(() => {
+        const article = document.querySelector('article');
+        setTimeout(() => {
+            if(article) {
+                article.classList.add("on");
+                setTimeout(() => {
+                    article.classList.add("move");
+                }, 1000);
+            }
+        }, 1000);
+    })
     return (
         <main id="login">
-            <header>
+            <article>
+                <i className="material-icons">sell</i>
+                <h1>반가워요!</h1>
+            </article>
+            <section>
+                <div>
+                    <label className="input">
+                        <p>비밀번호</p>
+                        <input type="password" ref={inputRef} onKeyUp={(e) => {if(e.key === 'Enter') event.login(e.target.value)}}/>
+                    </label>
+                    <button onClick={() => event.login(inputRef.current.value)}>로그인</button>
+                    <p ref={cautionRef}></p>
+                    <a href="http://pf.kakao.com/_xfvrYs/chat" target="_blank" rel="noreferrer" title="파트너 채널">도움이 필요한가요?</a>
+                </div>
+            </section>
+            {/* <header>
                 <div>
                     <i className="material-icons">sell</i>
                 </div>
@@ -82,7 +103,7 @@ const LoginRouter = ({history, match}) => {
             </article>
             <footer>
                 <a href="http://pf.kakao.com/_xfvrYs/chat" target="_blank" title="파트너 채널">도움이 필요한가요?</a>
-            </footer>
+            </footer> */}
         </main>
     )
 }

@@ -1,38 +1,70 @@
 main#login {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-main#login > header {
-    margin-top: 3rem;
-}
-main#login > header > div {
-    width: 3.5rem;
-    height: 3.5rem;
-    background: #00966B;
-    border-radius: 0.4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-main#login > header > div > i {
-    color: #ffffff;
-    font-size: 2.0rem;
+    height: 100vh;
 }
 main#login > article {
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    background-color: var(--base-color);
+    transition-duration: 0.8s;
 }
-main#login > article > label {
+main#login > article > h1 {
+    font-size: 4.0rem;
+    white-space: nowrap;
+    opacity: 0.0;
+    transition-duration: 0.7s;
+}
+main#login > article.on > h1 {
+    opacity: 1.0;
+}
+main#login > article > i {
+    opacity: 0.0;
+    font-size: 2.0rem;
+    margin-bottom: 0.5rem;
+    transition-duration: 0.7s;
+}
+main#login > article.on > i {
+    opacity: 1.0;
+}
+main#login > article.move {
+    width: 40%;
+}
+
+/*
+    Section
+*/
+main#login > section {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 888;
+}
+main#login > section > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 100%;
+}
+main#login > section > div > label {
     margin-top: 1rem;
 }
-main#login > article > label > p {
+main#login > section > div > label > p {
     font-size: 0.9rem;
     margin-bottom: 0.3rem;
 }
-main#login > article > label > input {
+main#login > section > div > label > input {
     width: 15rem;
     font-size: 1.1rem;
     padding: 0.3rem 0.6rem;
@@ -40,7 +72,7 @@ main#login > article > label > input {
     border-radius: 0.5rem;
     outline: none;
 }
-main#login > article > button {
+main#login > section > div > button {
     all: unset;
     background: #00966B;
     margin-top: 0.5rem;
@@ -50,11 +82,18 @@ main#login > article > button {
     border-radius: 0.5rem;
     cursor: pointer;
 }
-main#login > article > p {
+main#login > section > div > p {
     margin-top: 0.3rem;
     font-size: 0.9rem;
     color: tomato;
 }
-main#login > footer {
+main#login > section > div > a {
+    all: unset;
+    color: #06c;
     margin-top: 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+main#login > section > div > a:hover {
+    text-decoration: underline;
 }
