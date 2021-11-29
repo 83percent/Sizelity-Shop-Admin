@@ -15,10 +15,9 @@ import ProductMain from '../component/product/ProductMain';
 import RequestMain from '../component/request/Request';
 import EventMain from '../component/event/EventMain';
 
-/* import ADMain from '../component/ad/ADMain'; */
-import ADRouter from './ADRouter';
 import MainIndex from '../component/main/MainIndex';
 import ConnectRouter from './ConnectRouter';
+import ServiceRouter from './ServiceRouter';
 
 const HomeRouter = ({history}) => {
     const {user:userInfo} = useContext(UserContext);
@@ -36,17 +35,16 @@ const HomeRouter = ({history}) => {
             <article id="home">
                 <Switch>
                     <Route path="/home" component={MainIndex} />
+                    <Route path="/service" component={ServiceRouter} />
                     <Route path="/account" component={AccountRouter} />
                     <Route path="/product" component={ProductMain} />
                     <Route path="/request" component={RequestMain} />
-                    <Route path="/advertisement" component={ADRouter} />
                     <Route path="/connect" component={ConnectRouter} />
                     <Route path="/event" component={EventMain} />
-                    {/* <Route path="/advertisement" component={ADMain} /> */}
                 </Switch>
             </article>
             <nav id="contact">
-                <a href="http://pf.kakao.com/_xfvrYs/chat" target="_blank" title="파트너 채널">
+                <a href="http://pf.kakao.com/_xfvrYs/chat" target="_blank" rel="noreferrer" title="파트너 채널">
                     <i className="material-icons">chat_bubble</i>
                 </a>
             </nav>

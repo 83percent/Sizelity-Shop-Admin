@@ -1,0 +1,82 @@
+#init {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#init.step-wrapper > nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+}
+#init.step-wrapper > nav > .dot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem;
+    background-color: #aaa;
+    transition-duration: 0.3s;
+}
+#init.step-wrapper > nav > .dot.pass {
+    background-color: var(--base-color);
+}
+#init.step-wrapper > nav > .dot > i {
+    width: 0rem;
+    height: 0rem;
+    overflow: hidden;
+    text-align: center;
+    line-height: 1.5rem;
+    color: #fff;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    transition-duration: 0.3s;
+}
+#init.step-wrapper > nav > .dot.pass > i {
+    width: 1.6rem;
+    height: 1.6rem;
+
+}
+#init.step-wrapper > nav > .line {
+    width: 1rem;
+    height: 4px;
+    background-color: #aaa;
+}
+#init.step-wrapper > nav > .line.pass {
+    background-color: var(--base-color);
+}
+#init > section > header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+#init > section > header > h1 {
+    font-size: 2.5rem;
+}
+#init.step-wrapper > section > div {
+    text-align: center;
+}
+#init.step-wrapper > section > div.btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#init.step-wrapper > section > div.btn-wrapper > button {
+    all: unset;
+    cursor: pointer;
+}
+#init.step-wrapper > section > div.btn-wrapper > button.next > i {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--base-color);
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 3rem;
+}
+#init.step-wrapper > section > div.btn-wrapper > button.previous {
+    margin: 1rem;
+}
+#init.step-wrapper > section > div.btn-wrapper > button.previous:hover {
+    text-decoration: underline;
+}

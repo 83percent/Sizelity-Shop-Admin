@@ -1,0 +1,96 @@
+#init > .step3-wrapper > article {
+    text-align: center;
+    color: var(--base-color);
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+#init > .step3-wrapper > section.price > ul {
+    display: flex;
+    justify-content: center;
+}
+#init > .step3-wrapper > section.price > ul > li {
+    padding: 1rem;
+    background: #ffffff;
+    border: 1px solid #e3e8ee;
+    box-sizing: border-box;
+    width: 15rem;
+    margin: 0 0.5rem;
+    text-align: center;
+    cursor: pointer;
+}
+#init > .step3-wrapper > section.price > ul > li:not(:first-of-type):hover, #init > .step3-wrapper > section.price > ul > li.select {
+    background-color: var(--base-color);
+    color: #fff;
+}
+#init > .step3-wrapper > section.price > ul > li:first-of-type {
+    border: none;
+    background: none;
+    text-align: right;
+    width: auto;
+    cursor: default;
+}
+#init > .step3-wrapper > section.price > ul > li > h3 {
+    font-size: 1.3rem;
+    height: 3rem;
+    line-height: 3rem;
+}
+#init > .step3-wrapper > section.price > ul > li > p {
+    height: 3rem;
+    line-height: 3rem;
+    white-space: nowrap;
+}
+
+#init > .step3-wrapper > section.price > ul > li:first-of-type > h3 {
+    opacity: 0;
+}
+#init > .step3-wrapper > section.price > div {
+    text-align: right;
+    margin: 0.5rem;
+}
+#init > .step3-wrapper > section.price > div > p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+#init > .step3-wrapper > section.expire {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0 1rem 0;
+}
+#init > .step3-wrapper > section.expire > .title {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+#init > .step3-wrapper > section.expire > .title > h2 {
+    font-size: 1.7rem;
+    margin-bottom: 0.3rem;
+}
+#init > .step3-wrapper > section.expire > ul {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+#init > .step3-wrapper > section.expire > ul > li {
+    background-color: #fff;
+    border: 1px solid #e3e8ee;
+    width: 15rem;
+    flex-grow: 1;
+    margin: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+}
+#init > .step3-wrapper > section.expire > ul > li:hover, #init > .step3-wrapper > section.expire > ul > li.select {
+    background-color: var(--base-color);
+    color: #ffffff;
+}
+#init > .step3-wrapper > section.expire > ul > li > h3 {
+    font-size: 1.3rem;
+    height: 3rem;
+    line-height: 3rem;
+    font-weight: 600;
+}
+#init > .step3-wrapper > section.expire > ul > li > p {
+    margin-bottom: 5px;
+}
