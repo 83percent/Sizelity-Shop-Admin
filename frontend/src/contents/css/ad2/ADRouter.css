@@ -1,9 +1,0 @@
-#ad-center {
-    min-height: 100vh;
-}
-#ad-center > header {
-    padding: 2rem 1rem 1rem 2rem;
-}
-#ad-center > header > h1 {
-    font-size: 2.5rem;
-}

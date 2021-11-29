@@ -1,0 +1,46 @@
+#service.index {
+    min-height: 100vh;
+    background-color: #fff;
+}
+#service.index > header {
+    padding: 2rem 3rem;
+}
+#service.index > header > h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+#service.index > section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#service.index > section > div {
+    width: 50%;
+    height: 100%;
+    padding: 1rem;
+}
+#service.index > section > div:first-of-type {
+    border-right: 1px solid #dbdbdb;
+}
+#service.index > section > div > .count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#service.index > section > div > .count > h3 {
+    font-weight: 500;
+    font-size: 2.5rem;
+}
+#service.index > section > div > .count > p {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    color: #555;
+}
+#service.index > section > div > h4 {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 8px;
+    
+}

@@ -18,6 +18,14 @@ const Menu = () => {
                     </NavLink>
                 </li>
                 <li className="element">
+                    <NavLink to="/service">
+                        <div>
+                            <i className="material-icons">bar_chart</i>
+                        </div>
+                        <p>서비스 이용현황</p>
+                    </NavLink>
+                </li>
+                <li className="element">
                     <NavLink to="/connect">
                         <div>
                             <i className="material-icons">autorenew</i>
@@ -47,14 +55,6 @@ const Menu = () => {
                             <i className="material-icons">celebration</i>
                         </div>
                         <p>쇼핑몰 이벤트</p>
-                    </NavLink>
-                </li>
-                <li className="element">
-                    <NavLink to="/advertisement">
-                        <div>
-                            <i className="material-icons">paid</i>
-                        </div>
-                        <p>광고 센터</p>
                     </NavLink>
                 </li>
             </ul>

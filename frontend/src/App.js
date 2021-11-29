@@ -35,7 +35,7 @@ function App() {
     <UserContext.Provider value={{user, setUser}}>
       <ServerContext.Provider value={__server}>
         <Switch>
-          <Route path={["/home", "/product", "/account", "/request", "/event", "/advertisement", "/connect"]} component={HomeRouter} />
+          <Route path={["/home", "/service","/product", "/account", "/request", "/event", "/connect"]} component={HomeRouter} />
           <Route exact path="/wrong" component={WrongAccess} />
           <Route exact path="/init" component={InitRouter} />
           <Route exact path="/:id" component={LoginRouter} />
