@@ -10,19 +10,11 @@ const Menu = () => {
             </div>
             <ul>
                 <li className="element">
-                    <NavLink to="/account">
+                    <NavLink to="/service">
                         <div>
                             <i className="material-icons">person</i>
                         </div>
-                        <p>가입정보</p>
-                    </NavLink>
-                </li>
-                <li className="element">
-                    <NavLink to="/service">
-                        <div>
-                            <i className="material-icons">bar_chart</i>
-                        </div>
-                        <p>서비스 이용현황</p>
+                        <p>가입 / 이용</p>
                     </NavLink>
                 </li>
                 <li className="element">

@@ -21,6 +21,21 @@ export default class Product {
             else return {type: 'error', msg: "네트워크 연결을 확인하세요."}
         })
     }
+    create(productObject) {
+        return axios({
+            method: 'POST',
+            url : `${this.server}/product`,
+            data : productObject,
+            withCredentials: true,
+            timeout: 4500
+        }).then(response => {
+            if(response.status === 200) return response.data;
+            else return false;
+        }).catch(error => {
+            console.log(error);
+            return false;
+        })
+    }
     getNextProductIndex() {
         return axios({
             method: 'GET',
@@ -78,6 +93,21 @@ export default class Product {
             else return {type: 'error', msg: response.data?.error || "서버에 문제가 발생했습니다.\n잠시 후 다시 시도해주세요."};
         }).catch(err => {
             if(err?.response?.data?.error) return {type: 'error', msg: err.response.data.error};
+            else return {type: 'error', msg: "네트워크 연결을 확인하세요."}
+        })
+    }
+    search(data) {
+        return axios({
+            method : "post",
+            url : `${this.server}/product/search`,
+            data : data,
+            withCredentials: true,
+            timeout: 5000
+        }).then(response => {
+            if(response.status === 200) return {type: 'success', data : response.data}
+            else return {type: 'error', msg: ""}
+        }).catch(error => {
+            if(error?.response?.data?.error) return {type: 'error', msg: error.response.data.error};
             else return {type: 'error', msg: "네트워크 연결을 확인하세요."}
         })
     }

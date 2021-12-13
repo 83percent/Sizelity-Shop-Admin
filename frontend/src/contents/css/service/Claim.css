@@ -1,0 +1,129 @@
+#service > .claim {
+
+}
+#service > .claim > section.claim-frame {
+    margin-bottom: 1rem;
+}
+#service > .claim > section.claim-frame > h3 {
+    font-size: 1.0rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+#service > .claim > section.claim-frame > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40rem;
+    border: 1px solid #dbdbdb;
+    border-radius: 0.7rem;
+    padding: 1rem 1.8rem;
+}
+#service > .claim > section.claim-frame > div.pre {
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+#service > .claim > section.claim-frame > div.pre:hover {
+    border-color: var(--base-color);
+}
+#service > .claim > section.claim-frame > div > h4 {
+    flex-grow: 1;
+    text-align: right;
+    font-size: 1.9rem;
+    font-weight: 500;
+}
+#service > .claim > section.claim-frame > div > p.check {
+    color: var(--base-color);
+}
+#service > .claim > section.claim-frame > div > p.wrong {
+    color: #dd1919;
+}
+#service > .claim > section.claim-frame > div > p.per {
+    margin-left: 0.5rem;
+}
+
+/*
+    pre
+*/
+#service > .claim > section {
+    margin: 1rem 0;
+}
+#service > .claim > section > p {
+    text-align: center;
+}
+#service > .claim > section > h3 {
+    text-align: center;
+    margin: 1.5rem 0 0.5rem 0;
+}
+#service > .claim > section > ul > li {
+    display: flex;
+    align-items: center;
+}
+#service > .claim > section > ul > li > h4 {
+    width: 15rem;
+    text-align: right;
+    border-right: 1px solid #00000030;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+}
+#service > .claim > section > ul > li > p {
+    width: 15rem;
+    margin-left: 1rem;
+}
+
+/*
+    bill
+*/
+#service > .claim > .bill {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border: 1px solid #dbdbdb;
+    padding: 1.5rem;
+    width: 45rem;
+}
+#service > .claim > .bill > .detail {
+
+}
+#service > .claim > .bill > .detail > div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 0.4rem;
+}
+#service > .claim > .bill > .detail > div > p {
+    font-size: 0.9rem;
+    padding-left: 1rem;
+    color: #888;
+}
+#service > .claim > .bill > .detail > div > p:last-of-type {
+    width: 5rem;
+    text-align: right;
+}
+#service > .claim > .bill > .detail > div.under {
+    border-bottom: 1px solid #dbdbdb;
+    padding-bottom: 0.4rem;
+}
+#service > .claim > .bill > .result {
+    width: 100%;
+    border-bottom: 1px solid #dbdbdb;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+#service > .claim > .bill > .result > h4 {
+    font-weight: 500;
+    font-size: 2.0rem;
+}
+#service > .claim > .bill > .result > p {
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+}
+#service > .claim > .bill .caution {
+    margin-top: 1rem;
+    color: #888;
+}
+#service > .claim > .bill .caution > p {
+    text-align: right;
+    font-size: 0.85rem;
+}

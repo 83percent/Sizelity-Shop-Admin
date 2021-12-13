@@ -1,11 +1,15 @@
 #main.index > .ad-panel {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: #fff;
     position: relative;
     margin-bottom: 3rem;
+
+    border: 1px solid red;
 }
 #main.index > .ad-panel > .slide-container {
-    width: 100%;
     position: relative;
     overflow: hidden;
     margin: auto;

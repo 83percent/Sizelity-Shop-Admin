@@ -106,7 +106,7 @@ class SizelityURL {
                                     if(hostNameArr[1] === blog) {
                                         result.domain = pathArr[1];
                                         result.code = pathArr[2];
-                                        result.type = `blog.${blog}`;
+                                        result.type = `blog`;
                                         result.full = `blog.${blog}.com/${pathArr[1]}/${pathArr[2]}`;
                                         isFind = true;
                                         break;

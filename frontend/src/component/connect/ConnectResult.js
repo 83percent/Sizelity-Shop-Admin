@@ -3,14 +3,13 @@ import { Link } from 'react-router-dom';
 // CSS
 import '../../contents/css/connect/ConnectTestResult.css';
 
-export default ({location}) => {
+ const  ConnectResult = ({location}) => {
     const result = useMemo(() => location.state?.result, [location]);
     if(result) {
         return (
             <Success />
-        )
+        )   
     } else {
-
         return (
             <Fail />
         )
@@ -49,3 +48,4 @@ const Fail = () => {
         </main>
     )
 }
+export default ConnectResult;

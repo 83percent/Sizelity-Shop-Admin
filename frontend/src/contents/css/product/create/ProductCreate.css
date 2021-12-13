@@ -1,0 +1,476 @@
+#product.create {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#product.create > header {
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+}
+#product.create > header > h1 {
+    font-size: 2.2rem;
+}
+#product.create > nav {
+    display: flex;
+    align-items: center;
+}
+#product.create > nav > p {
+    overflow: hidden;
+    color: #ffffff00;
+    background-color: #ccc;
+    width: 1rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 500;
+    font-size: 1rem;
+    transition-duration: 0.3s;
+}
+#product.create > nav > div {
+    width: 1rem;
+    padding: 2px 0;
+    background-color: #ccc;
+    transition-duration: 0.3s;
+}
+#product.create > nav > p.on {
+    width: 2rem;
+    height: 2rem;
+    color: #ffffff;
+    background-color: var(--base-color);
+}
+#product.create > nav > div.on {
+    background-color: var(--base-color);
+}
+
+#product.create > section {
+    margin-top: 2rem;
+}
+#product.create > section > .btn-frame > .next {
+    all: unset;
+}
+#product.create > section > .btn-frame > .next > i {
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: var(--base-color);
+    opacity: 1.0;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+#product.create > section > .btn-frame > .next:disabled > i {
+    cursor: default;
+    background-color: #555;
+    opacity: 0.4;
+}
+#product.create > section > .btn-wrapper {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0;
+}
+#product.create > section > .btn-wrapper > button {
+    all: unset;
+    display: flex;
+    align-items: center;
+    color: #06c;
+    cursor: pointer;
+}
+#product.create > section > .btn-wrapper > button > p {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+#product.create > section > .btn-wrapper > button:hover > p {
+    text-decoration: underline;
+}
+#product.create > section > .btn-wrapper > button > i {
+    font-size: 1.4rem;
+}
+/*
+    step1
+*/
+#product.create > section {
+    text-align: center;
+}
+#product.create > .step1 > p {
+    font-size: 0.9rem;
+    margin: 4px 0;
+}
+#product.create > .step1 > p.caution {
+    color: #dd1919;
+    margin-bottom: 0.5rem;
+
+}
+#product.create > .step1 > .input-frame {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #aaa;
+    padding: 0.15rem 0.5rem;
+    margin: 1rem 0 0.5rem 0;
+}
+#product.create > .step1 > .input-frame > input {
+    all: unset;
+    resize: horizontal;
+    width: 100%;
+    font-size: 0.95rem;
+}
+#product.create > .step1 > .input-frame > button {
+    all: unset;
+    position: absolute;
+    right: -4.5rem;
+    color: #fff;
+    background-color: var(--base-color);
+    font-size: 0.9rem;
+    font-weight: 300;
+    padding: 0.3rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#product.create > .step1 > .fnc-wrapper {
+    position: relative;
+    margin-top: 3rem;
+}
+#product.create > .step1 > .fnc-wrapper > div {
+    position: relative;
+    bottom: -2rem;
+    opacity: 0;
+    transition-duration: 0.3s;
+}
+#product.create > .step1 > .fnc-wrapper > div.active {
+    bottom: 0rem;
+    opacity: 1.0;
+}
+#product.create > .step1 > .fnc-wrapper > div > h3 {
+    margin-bottom: 1.5rem;
+}
+#product.create > .step1 > .fnc-wrapper > div > ul {
+    display: flex;
+    justify-content: space-between;
+}
+#product.create > .step1 > .fnc-wrapper > div > ul > li {
+    width: 11rem;
+    color: var(--base-color);
+    border-left: 1px solid #ccc;
+}
+#product.create > .step1 > .fnc-wrapper > div > ul > li:first-of-type {
+    border-left: none;
+}
+#product.create > .step1 > .fnc-wrapper > div > ul > li.off {
+    opacity: 0.4;
+    color: #000;
+}
+#product.create > .step1 > .fnc-wrapper > div > ul > li > i {
+    font-size: 2.3rem;
+}
+#product.create > .step1 > .fnc-wrapper > div > ul > li > h4 {
+    margin: 0.5rem 0;
+}
+#product.create > .step1 > .fnc-wrapper > div > ul > li > p {
+    font-size: 0.85rem;
+    margin: 0 5px;
+}
+#product.create > .step1 > .fnc-wrapper > div > button {
+    all: unset;
+    margin: 2rem 0;
+    cursor: pointer;
+}
+#product.create > .step1 > .fnc-wrapper > div > button > i {
+    background-color: #888;
+    color: #fff;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 3rem;
+    font-size: 1.4rem;
+    opacity: 0.5;
+    transition-duration: 0.3s;
+}
+#product.create > .step1 > .fnc-wrapper > div > button > i:hover {
+    background-color: var(--base-color);
+    opacity: 1.0;
+}
+/*
+    step2
+*/
+#product.create > .step2 {
+}
+#product.create > .step2 > .type-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+#product.create > .step2 > .type-list-wrapper:last-of-type {
+    border-top: 1px solid #dbdbdb;
+    padding: 1rem;
+    margin-top: 0;
+}
+#product.create > .step2 > .type-list-wrapper > p {
+    color: #888;
+    font-size: 0.85rem;
+}
+#product.create > .step2 > .type-list-wrapper > ul > li {
+    display: flex;
+    align-items: center;
+    width: 17rem;
+    padding: 0.7rem 0.5rem;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #dbdbdb;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+#product.create > .step2 > .type-list-wrapper > ul > li:hover, #product.create > .step2 > .type-list-wrapper > ul > li.before {
+    background-color: var(--base-color);
+    color: #fff;
+}
+#product.create > .step2 > .type-list-wrapper > ul > li > h4 {
+    flex-grow: 1;
+    padding-left: 0.5rem;
+    text-align: left;
+}
+#product.create > .step2 > .type-list-wrapper > ul > li > i {
+    font-size: 1.5rem;
+}
+/*
+    step3
+*/
+#product.create > .step3 > label {
+    
+}
+#product.create > .step3 > label > h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+#product.create > .step3 > label > p {
+    font-size: 0.9rem;
+    margin-bottom: 3px;
+}
+#product.create > .step3 > label > p.wrong {
+    color: #dd1919;
+}
+#product.create > .step3 > label > p.ok {
+    color: var(--base-color);
+}
+#product.create > .step3 > label > input {
+    all: unset;
+    border-bottom: 1px solid #aaa;
+    padding: 0.15rem 0.5rem;
+    width: 20rem;
+    cursor: auto;
+}
+#product.create > .step3 > label > input.wrong {
+    border-color: #dd1919;
+}
+#product.create > .step3 > .next-wrapper {
+    margin-top: 1rem;
+}
+#product.create > .step3 > .next-wrapper > button {
+    all: unset;
+    cursor: pointer;
+}
+#product.create > .step3 > .next-wrapper > button > i {
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: var(--base-color);
+    opacity: 1.0;
+}
+/*
+    step4
+*/
+#product.create > .step4 > .input-wrapper {
+    margin-top: 1rem;
+}
+#product.create > .step4 > .input-wrapper > ul {
+
+}
+#product.create > .step4 > .input-wrapper > ul > li {
+    display: flex;
+    align-items: center;
+}
+#product.create > .step4 > .input-wrapper > ul > li > div {
+    width: 8rem;
+    text-align: center;
+    margin: 0.3rem 0;
+}
+#product.create > .step4 > .input-wrapper > ul > li > div > p {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+#product.create > .step4 > .input-wrapper > ul > li > div > input {
+    all: unset;
+    width: 7rem;
+    padding: 3px 0;
+    border-bottom: 1px solid #dbdbdb;
+}
+#product.create > .step4 > .input-wrapper > ul > li > div.delete {
+    width: 3rem;
+    text-align: left;
+}
+#product.create > .step4 > .input-wrapper > ul > li > div.delete > button {
+    all: unset;
+    cursor: pointer;
+}
+#product.create > .step4 > .input-wrapper > ul > li > div.delete > button > i {
+    font-size: 1.5rem;
+    opacity: 0.3;
+    padding: 0 0.3rem;
+}
+#product.create > .step4 > .input-wrapper > ul > li > div.delete > button > i:hover {
+    opacity: 1.0;
+}
+#product.create > .step4 > .input-wrapper > .add-wrapper {
+
+}
+#product.create > .step4 > .input-wrapper > .add-wrapper > button {
+    all: unset;
+    margin-top: 6px;
+}
+#product.create > .step4 > .input-wrapper > .add-wrapper > button > i {
+    font-size: 1.7rem;
+    padding: 3px;
+    opacity: 0.3;
+    cursor: pointer;
+}
+#product.create > .step4 > .input-wrapper > .add-wrapper > button > i:hover {
+    opacity: 1;
+}
+#product.create > .step4 > .save-wrapper {
+    margin-top: 2rem;   
+}
+#product.create > .step4 > .save-wrapper > button {
+    all: unset;
+    cursor: pointer;
+}
+#product.create > .step4 > .save-wrapper > button > i {
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: var(--base-color);
+    opacity: 1.0;
+}
+/*
+    step5
+*/
+#product.create > .step5 {
+    
+}
+#product.create > .step5 > .loader-wrapper {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#product.create > .step5 > .loader-wrapper > .loader {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid #888;
+    border-bottom-color: #00000000;
+}
+#product.create > .step5 > .success-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#product.create > .step5 > .success-wrapper > .link {
+    margin: 2rem 0 5rem 0;
+}
+#product.create > .step5 > .success-wrapper > .link > p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+#product.create > .step5 > .success-wrapper > .link > div {
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding-left: 2rem;
+}
+#product.create > .step5 > .success-wrapper > .link > div > p {
+    padding: 0.4rem 0;
+}
+#product.create > .step5 > .success-wrapper > .link > div > button {
+    all: unset;
+    margin-left: 2rem;
+    cursor: pointer;
+}
+#product.create > .step5 > .success-wrapper > .link > div > button > i {
+    background-color: #ccc;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+}
+#product.create > .step5 > .success-wrapper > .connect {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+#product.create > .step5 > .success-wrapper > .connect > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30rem;
+}
+#product.create > .step5 > .success-wrapper > .connect > div:first-of-type {
+    padding: 1rem 0;
+    border-right: 1px solid #dbdbdb;
+}
+#product.create > .step5 > .success-wrapper > .connect > div > p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+#product.create > .step5 > .success-wrapper > .connect > div > a, #product.create > .step5 > .success-wrapper > .connect > div > button {
+    all: unset;
+    display: flex;
+    align-items: center;
+    color: #06c;
+    cursor: pointer;
+}
+#product.create > .step5 > .success-wrapper > .connect > div > a > p, #product.create > .step5 > .success-wrapper > .connect > div > button > p {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-left: 3px;
+
+}
+#product.create > .step5 > .success-wrapper > .connect > div > a > i, #product.create > .step5 > .success-wrapper > .connect > div > button > i {
+    font-size: 1.4rem;
+}
+#product.create > .step5 > .success-wrapper > .connect > div > a:hover > p, #product.create > .step5 > .success-wrapper > .connect > div > button:hover > p {
+    text-decoration: underline;
+}
+#product.create > .step5 > .success-wrapper > button {
+    all: unset;
+    background-color: #888;
+    color: #fff;
+    padding: 0.5rem 3rem;
+    border-radius: 8px;
+    opacity: 0.5;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+#product.create > .step5 > .success-wrapper > button:hover {
+    background-color: var(--base-color);
+    opacity: 1;
+}

@@ -6,7 +6,7 @@ import ServiceIndex from "../component/service/ServiceIndex";
 const ServiceRouter = () => {
     return (
         <Switch>
-            <Route exact path="/service" component={ServiceIndex} />
+            <Route path={["/service/:page", "/service"]} component={ServiceIndex} />
         </Switch>
     )
 }

@@ -1,5 +1,4 @@
 import '../contents/css/WrongAccess.css';
-
 const WrongAccess = () => {
     return (
         <article id="wrong-access">

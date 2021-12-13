@@ -33,7 +33,7 @@ const InitPrice = ({next, priceSetting, setSetting}) => {
                 __before.classList.remove("select");
             }
 
-            if(option?.price === 'basic') {
+            if(value > 0 && option?.price === 'basic') {
                 return window.alert("베이직 요금은 기본요금 선결제를 설정할 수 없습니다.");
             }
             

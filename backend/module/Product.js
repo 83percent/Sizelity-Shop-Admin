@@ -7,19 +7,16 @@ async function set(id, data) {
     if(!shop) return StatusCode.noData;
     if(shop.domain !== data.praw.domain) return StatusCode.otherShopRequest;
     try {
+        const {praw, info, size} = data;
         const product = new ProductModel({
             shopRef : shop._id,
-            praw : data.praw,
-            info : data.info,
-            size : data.size
+            praw, info, size
         });
         const result = await product.save();
-        if(!result) {
-            return StatusCode.error;
-        }
+        if(!result) return StatusCode.error;
         else {
             shop.product.count++;
-            shop.save(); // async
+            await shop.save(); // async
             return {shop : result.praw.domain, code : result.praw.code};
         }
     } catch(err) {
@@ -28,7 +25,7 @@ async function set(id, data) {
         
     }
 }
-const MAX_COUNT = 20;
+const MAX_COUNT = 40;
 async function search(id, data) {
     let {way, ptype, date, count} = data;
     let query = {
@@ -109,7 +106,7 @@ async function getList(id, count) {
     
 }
 
-async function removes(deleteArray) {
+async function removes({id, deleteArray}) {
     try {
         const deletes = await ProductModel.deleteMany({_id: { $in : deleteArray}}).exec();
         if(deletes?.deletedCount > 0) {

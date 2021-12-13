@@ -70,7 +70,7 @@ const InitPassword = ({next, passwordSetting, setPassword}) => {
                             <div className="sub-title">
                                 <p>비밀번호 확인</p>
                             </div>
-                            <input type="password" maxLength="25" ref={rePassword}/>
+                            <input type="password" maxLength="25" ref={rePassword} onKeyDown={e => {if(e.key === "Enter") pass()}}/>
                         </label>
                     </li>
                 </ul>

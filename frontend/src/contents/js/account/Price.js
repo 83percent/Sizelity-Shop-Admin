@@ -3,6 +3,7 @@ class Price {
         this.name = name;
         this.expire = expire;
     }
+    
     getBenefit(__expire) {
         let expire = undefined;
         if(__expire === 0 || __expire) {
@@ -120,6 +121,33 @@ class Price {
             default : return null;
         }
         return priceObject;
+    }
+    getPriceName() {
+        switch(this.name) {
+            case 'basic' : return '베이직';
+            case 'standard' : return '스탠다드';
+            case 'deluxe' : return '디럭스';
+            case 'premium' : return '프리미엄';
+            default : return null;
+        }
+    }
+    getPrePay() {
+        const discount = this.getBenefit().discount;
+        const base = this.getPrice().base;
+        return {
+            expire : this.expire,
+            name : this.getPriceName(),
+            base,
+            discount: {
+                per : discount,
+                price : (base/100) * discount
+            },  
+            vat : {
+                per : 10,
+                price : ((base - (base/100) * discount) / 100) * 10
+            },
+            result : ((base - (base/100) * discount) + ((base - (base/100) * discount) / 100) * 10) * this.expire
+        }    
     }
 }
 

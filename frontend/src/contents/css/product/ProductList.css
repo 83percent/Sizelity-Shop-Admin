@@ -1,145 +1,82 @@
-#product.list {
-    background-color: #ffffff;
-    padding: 2rem 1rem;
-    border: 1px solid #dbdbdb;
-    margin: 0 2rem 2rem 2rem;
-}
-#product.list > .loader-frame {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#product.list > .loader-frame > .loader {
-    padding-top: 3rem;
-    padding: 1.5rem;
-    border: 3px solid #aaa;
-    border-bottom: 3px solid #00000000;
-}
-/*
-    No Product Data
-*/
-#product.list > .none {
-    background-color: #ffffff;
+#product.list  {
     display: flex;
     flex-direction: column;
-    padding: 4rem 0;
-    border: 1px solid #dbdbdb;
-    justify-content: center;
-    align-items: center;
 }
-#product.list > .none > h2 {
-    font-size: 2.1rem;
+#product.list > section > div > .loader {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid var(--base-color);
+    border-bottom-color: #00000000;
 }
-#product.list > .none > a {
+#product.list > section > div > a {
     all: unset;
-    padding: 0.5rem;
     display: flex;
     align-items: center;
+    color: #06c;
+    margin-top: 1rem;
     cursor: pointer;
-    color: var(--base-color);
 }
-#product.list > .none > a > p {
-    font-size: 1.4rem;
-    font-weight: 600;
-}
-#product.list > .none > a:hover > p {
-    text-decoration: underline;
-}
-#product.list > .none > a > i {
-    font-size: 2.0rem;
-}
-#product.list > table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 1rem;
+#product.list > section > div > a > p {
     font-size: 1.1rem;
 }
-
-#product.list > table > tbody > tr:hover {
-    border-radius: 3rem;
-    background: #00966B40;
+#product.list > section > div > a:hover > p {
+    text-decoration: underline;
 }
-#product.list > table > tbody > tr.check {
-    background: #00966B;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    color: #fff;
-}
-
-#product.list > table th, #product.list > table td {
-    padding: 0 2rem;
-    min-width: 2rem;
-    text-align: center;
-}
-#product.list > table th.check, #product.list > table td.check,
-#product.list > table th.no, #product.list > table td.no,
-#product.list > table th.option, #product.list > table td.option {
-    width: 2rem;
-    min-width: unset;
-    padding: 0 1rem;
-}
-#product.list > table td.option > div {
-    display: flex;
-}
-#product.list > table td.check > input[type="checkbox"] {
-    cursor: pointer;
-}
-#product.list > table th.pname, #product.list > table td.pname {
-    width: 40vw;
-    padding: 0 1rem;
-}
-#product.list > table td.pname {
-    text-align: left;
-    cursor: pointer;
-    
-}
-#product.list > table td.option > div > button {
-    all: unset;
-    cursor: pointer;
-    opacity: 0.4;
-    padding: 0 0.3rem;
-}
-#product.list > table td.option > div > button:hover {
-    opacity: 1;
-}
-#product.list > table td.option > div > button > i {
+#product.list > section > div > a > i {
     font-size: 1.6rem;
 }
-#product.list > table td {
-    padding: 0.5rem 0;
+#product.list > ul > li {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #dbdbdb;
+    height: 3.4rem;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    cursor: pointer;
 }
-#product.list > .more-btn {
-    width: 100%;
+#product.list > ul > li.remove {
+    height: 0;
+    opacity: 0;
+}
+#product.list > ul > li > p {
+    width: 10rem;
+    font-size: 0.9rem;
     text-align: center;
 }
-#product.list > .more-btn > button {
+#product.list > ul > li > div {
+    display: flex;
+    justify-content: center;
+    width: 10rem;
+}
+#product.list > ul > li > div > button, #product.list > ul > li > div > a {
     all: unset;
-    width: auto;
-    cursor: pointer;
-    padding: 0.5rem 2rem;
-    font-size: 1.1rem;
-    opacity: 0.7;
-}
-#product.list > .more-btn > button:hover {
-    opacity: 1.0;
-    text-decoration: underline;
-}
-#product.list > .delete-btn {
-    text-align: right;
-    margin-top: 2rem;
-}
-#product.list > .delete-btn > button {
-    all: unset;
-    padding: 0.3rem 3rem 0.2rem 3rem;
-    border-radius: 0.3rem;
     opacity: 0.3;
-    color: #fff;
-    text-align: center;
-    background: #dd1818;
-    transition-duration: 0.4s;
-    cursor: default;
+    padding: 0 5px;
+    transition-duration: 0.3s;
 }
-#product.list > .delete-btn > button.active {
+#product.list > ul > li > div > button:hover, #product.list > ul > li > div > a:hover {
+    opacity: 1;
+    color: var(--base-color);
+}
+#product.list > ul > li > div > button > i, #product.list > ul > li > div > a > i {
+    font-size: 1.3rem;
+}
+#product.list > ul > li > h4 {
+    flex-grow: 1;
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: 600;
+}
+#product.list > button {
+    all: unset;
+    margin: 0 auto;
+    padding: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.5;
+    transition-duration: 0.3s;
     cursor: pointer;
-    opacity: 0.9;
+}
+#product.list > button:hover {
+    opacity: 1.0;
 }

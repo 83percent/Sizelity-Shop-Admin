@@ -1,7 +1,11 @@
-function transformDate(value) {
+function transformDate(value, expire) {
     if(value === undefined) return null;
     if(value.constructor !== Date)  value = new Date(value);
+    if(expire) {
+        value.setMonth(value.getMonth() + expire);
+    }
     return `${value.getFullYear()}-${value.getMonth() >= 9 ? value.getMonth()+1 : "0"+(value.getMonth()+1)}-${value.getDate() >= 10 ? value.getDate() : "0"+value.getDate()}`
+    
 }
 
 function eventDay(date) {

@@ -1,235 +1,209 @@
-section#product-main > article.search {
-    margin: 2rem;
-    margin-top: 1rem; 
+#product.search {
+    min-height: 100vh;
 }
-section#product-main > article.search > .search-wrapper {
-    background-color: #ffffff;
-    border: 1px solid #e3e8ee;
-}
-section#product-main > article.search > .search-wrapper > .search-input-frame {
+#product.search > nav#search-wrapper {
     display: flex;
-    padding: 1rem;
+    flex-direction: column;
+    position: fixed;
+    z-index: 888;
+    width: 96%;
+}
+#product.search > nav#search-wrapper > #input-wrapper {
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    z-index: 887;
+    border-bottom: 1px solid #dbdbdb;
+    background-color: #fff;
+}
+#product.search > nav#search-wrapper > #input-wrapper > div {
+    display: flex;
+    align-items: center;
+}
+#product.search > nav#search-wrapper > #input-wrapper > .input-frame {
+    flex-grow: 1;
     
 }
-section#product-main > article.search > .search-wrapper > .search-input-frame > div {
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    padding: 0.3rem 0.5rem;
-    border: 1px solid #aaa;
-    flex-grow: 1;
-}
-section#product-main > article.search > .search-wrapper > .search-input-frame > div > i {
-    color: #00000080;
-    font-size: 1.6rem;
-}
-section#product-main > article.search > .search-wrapper > .search-input-frame > div > input {
-    all: unset;
-    width: 100%;
-    font-size: 1.1rem;
-    margin-left: 0.5rem;
-}
-
-section#product-main > article.search > .search-wrapper > .search-input-frame > button {
-    all: unset;
-    cursor: pointer;
-    margin-left: 1rem;
-    padding: 0 1rem;
-    margin-right: 1rem;
-    background: #ffffff;
-    border: 1px solid #aaa;
-    font-size: 1.1rem;
-    font-weight: 400;
-}
-section#product-main > article.search > .search-wrapper > ul {
-    display: flex;
-    margin-left: 1rem;
-    padding-bottom: 1rem;
-}
-section#product-main > article.search > .search-wrapper > ul > li {
-    display: flex;
-    align-items: center;
-    margin-right: 2rem;
-}
-section#product-main > article.search > .search-wrapper > ul > li > p {
+#product.search > nav#search-wrapper > #input-wrapper > .input-frame > i {
+    font-size: 1.7rem;
+    padding-left: 4%;
     padding-right: 1rem;
 }
-section#product-main > article.search > .search-wrapper > ul > li > select {
-    width: 10rem;
-    font-size: 1.0rem;
-    border: 1px solid #aaa;
-    padding: 0.3rem 0.4rem;
-}
-section#product-main > article.search > .search-wrapper > p {
-    padding-left: 1rem;
-    padding-bottom: 1rem;
-    color: #ff6347;
-}
-/*
-    loader
-*/
-section#product-main > article.search > .loader-frame {
+#product.search > nav#search-wrapper > #input-wrapper > .input-frame > input {
+    all: unset;
     width: 100%;
-    height: 0rem;
+    margin-right: 2rem;
+}
+#product.search > nav#search-wrapper > #input-wrapper > .btn-frame {
+    height: 100%;
+}
+#product.search > nav#search-wrapper > #input-wrapper > .btn-frame > button {
+    all: unset;
     display: flex;
     align-items: center;
-    justify-content: center;
+    height: 100%;
+    border-left: 1px solid #dbdbdb;
+    cursor: pointer;
+    padding-left: 1.5rem;
+    padding-right: 4.5rem;
+}
+#product.search > nav#search-wrapper > #input-wrapper > .btn-frame > button > p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #888;
+}
+#product.search > nav#search-wrapper > #input-wrapper > .btn-frame > button:hover > p, #product.search > nav#search-wrapper > #input-wrapper > .btn-frame > button.active > p {
+    color: var(--base-color);
+}
+#product.search > nav#search-wrapper > #input-wrapper > .btn-frame > button > i {
+    color: var(--base-color);
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
+#product.search > nav#search-wrapper > #filter-wrapper {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0rem;
+    z-index: 886;
+    width: 100%;
+    height: 3.5rem;
     background-color: #fff;
-    margin: 0.5rem 0;    
+    border-bottom: 1px solid #dbdbdb;
     transition-duration: 0.4s;
-    -webkit-transition-duration: 0.4s;
-    -moz-transition-duration: 0.4s;
-    -o-transition-duration: 0.4s;
-    overflow: hidden;
 }
-section#product-main > article.search > .loader-frame.on {
-    height: 5rem;
-    border: 1px solid #e3e8ee;
+#product.search > nav#search-wrapper > #filter-wrapper.active {
+    top: 4rem;
 }
-section#product-main > article.search > .loader-frame > div {
-    width: 2rem;
-    height: 2rem;
-    margin: auto;
-    border: 1px solid #00966B;
-    border-bottom: 1px solid #00000000;
-    opacity: 0;
-    transition-duration: 0.6s;
-    -webkit-transition-duration: 0.6s;
-    -moz-transition-duration: 0.6s;
-    -o-transition-duration: 0.6s;
+#product.search > nav#search-wrapper > #filter-wrapper > li {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-right: 1px solid #dbdbdb;
 }
-section#product-main > article.search > .loader-frame.on > div {
-    opacity: 1;
+#product.search > nav#search-wrapper > #filter-wrapper > li > h3 {
+    text-align: right;
+    font-size: 1.0rem;
+    font-weight: 400;
+    padding: 0 2rem 0 2rem;
+    color: #888;
 }
-
+#product.search > nav#search-wrapper > #filter-wrapper > li > label {
+    display: flex;
+    align-items: center;
+    border-left: 1px solid #dbdbdb;
+    height: 100%;
+    flex-grow: 1;
+}
+#product.search > nav#search-wrapper > #filter-wrapper > li > label > select {
+    all: unset;
+    flex-grow: 1;
+    height: 100%;
+    text-align: center;
+    line-height: 3.5rem;
+    cursor: pointer;
+}
+#product.search > nav#search-wrapper > #filter-wrapper > li > label > i {
+    margin: 0 0.7rem;
+    color: var(--base-color);
+}
 /*
     Result
 */
-section#product-main > article.search > .no-result-frame {
-    width: 100%;
-    padding: 2rem 0;
-    background-color: #ffffff;
-    border: 1px solid #e3e8ee;
+#product.search > section {
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    transition-duration: 0.4s;
+}
+#product.search > section.activeFilter {
+    padding-top: 8.5rem;
+}
+#product.search > section > div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 }
-section#product-main > article.search > .no-result-frame > h3 {
-    font-size: 2.0rem;
+#product.search > section > div > p {
+    padding-top: 10rem;
 }
-section#product-main > article.search > .no-result-frame > a {
+#product.search > section > div > .loader {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid var(--base-color);
+    border-bottom-color: #00000000;
+}
+#product.search > section > div > a {
     all: unset;
-    color: #00966B;
     display: flex;
     align-items: center;
+    color: #06c;
     margin-top: 1rem;
     cursor: pointer;
 }
-section#product-main > article.search > .no-result-frame > a > p {
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-section#product-main > article.search > .no-result-frame > a > i {
-    position: relative;
-    top: -1px;
-}
-section#product-main > article.search > .result-wrapper {
-    background: #ffffff;
-    border: 1px solid #e3e8ee;
-    padding: 1rem;
-    margin-bottom: 20rem;
-}
-/*
-    table
-*/
-section#product-main > article.search > .result-wrapper > table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 1rem;
+#product.search > section > div > a > p {
     font-size: 1.1rem;
 }
-
-section#product-main > article.search > .result-wrapper > table > tbody > tr:hover {
-    border-radius: 3rem;
-    background: #00966B40;
-}
-section#product-main > article.search > .result-wrapper > table > tbody > tr.check {
-    background: #00966B;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    color: #fff;
-}
-section#product-main > article.search > .result-wrapper > table th, section#product-main > article.search > .result-wrapper > table td {
-    padding: 0 2rem;
-    min-width: 2rem;
-    text-align: center;
-}
-section#product-main > article.search > .result-wrapper > table th.check, section#product-main > article.search > .result-wrapper > table td.check,
-section#product-main > article.search > .result-wrapper > table th.no, section#product-main > article.search > .result-wrapper > table td.no,
-section#product-main > article.search > .result-wrapper > table th.option, section#product-main > article.search > .result-wrapper > table td.option {
-    width: 2rem;
-    min-width: unset;
-    padding: 0 1rem;
-}
-section#product-main > article.search > .result-wrapper > table td.option > div {
-    display: flex;
-}
-section#product-main > article.search > .result-wrapper > table td.check > input[type="checkbox"] {
-    cursor: pointer;
-}
-section#product-main > article.search > .result-wrapper > table th.pname, section#product-main > article.search > .result-wrapper > table td.pname {
-    width: 40vw;
-    padding: 0 1rem;
-}
-section#product-main > article.search > .result-wrapper > table td.pname {
-    text-align: left;
-    cursor: pointer;
-    
-}
-section#product-main > article.search > .result-wrapper > table td.option > div > button {
-    all: unset;
-    cursor: pointer;
-    opacity: 0.4;
-    padding: 0 0.3rem;
-}
-section#product-main > article.search > .result-wrapper > table td.option > div > button:hover {
-    opacity: 1;
-}
-section#product-main > article.search > .result-wrapper > table td {
-    padding: 0.5rem 0;
-}
-section#product-main > article.search > .result-wrapper > .more-btn {
-    width: 100%;
-    text-align: center;
-}
-section#product-main > article.search > .result-wrapper > .more-btn > button {
-    all: unset;
-    width: auto;
-    cursor: pointer;
-    padding: 0.5rem 2rem;
-    font-size: 1.1rem;
-    opacity: 0.7;
-}
-section#product-main > article.search > .result-wrapper > .more-btn > button:hover {
-    opacity: 1.0;
+#product.search > section > div > a:hover > p {
     text-decoration: underline;
 }
-section#product-main > article.search > .result-wrapper > .delete-btn {
-    text-align: right;
+#product.search > section > div > a > i {
+    font-size: 1.6rem;
 }
-section#product-main > article.search > .result-wrapper > .delete-btn > button {
-    all: unset;
-    padding: 0.3rem 3rem 0.2rem 3rem;
-    border-radius: 0.3rem;
-    opacity: 0.3;
-    color: #fff;
-    text-align: center;
-    background: #dd1818;
-    transition-duration: 0.4s;
-    cursor: default;
-}
-section#product-main > article.search > .result-wrapper > .delete-btn > button.active {
+#product.search > section > ul > li {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #dbdbdb;
+    height: 3.4rem;
+    transition-duration: 0.3s;
+    overflow: hidden;
     cursor: pointer;
-    opacity: 0.9;
+}
+#product.search > section > ul > li.remove {
+    height: 0;
+    opacity: 0;
+}
+#product.search > section > ul > li > p {
+    width: 10rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+#product.search > section > ul > li > div {
+    display: flex;
+    justify-content: center;
+    width: 10rem;
+}
+#product.search > section > ul > li > div > button, #product.search > section > ul > li > div > a {
+    all: unset;
+    opacity: 0.3;
+    padding: 0 5px;
+    transition-duration: 0.3s;
+}
+#product.search > section > ul > li > div > button:hover, #product.search > section > ul > li > div > a:hover {
+    opacity: 1;
+    color: var(--base-color);
+}
+#product.search > section > ul > li > div > button > i, #product.search > section > ul > li > div > a > i {
+    font-size: 1.3rem;
+}
+#product.search > section > ul > li > h4 {
+    flex-grow: 1;
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: 600;
+}
+#product.search > section > button {
+    all: unset;
+    margin: 0 auto;
+    padding: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.5;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+#product.search > section > button:hover {
+    opacity: 1.0;
 }

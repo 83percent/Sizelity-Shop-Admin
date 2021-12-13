@@ -55,9 +55,9 @@ router.post("/", async (req, res) => {
     } else {
         const result = await Product.set(shopRef, req.body.data);
         if(typeof result != 'number') {
-            res.send(result);
+            return res.send(result);
         } else {
-            res.sendStatus(result);
+            return res.sendStatus(result);
         }
 
     }
@@ -78,13 +78,17 @@ router.post("/search", async (req, res) => {
 
 router.delete("/", async (req, res) => {
     const deletes = req.body.deletes;
-    const result = await Product.removes(deletes);
-    switch(result) {
-        case 200 : return res.sendStatus(result);
-        case 500 :
-        default : {
-            return res.status(500).send({error: '서버에 문제가 발생했습니다.'});
+    if(deletes?.length > 0) {
+        const result = await Product.removes({id : req.user.id, deleteArray: deletes});
+        switch(result) {
+            case 200 : return res.sendStatus(result);
+            case 500 :
+            default : {
+                return res.status(500).send({error: '서버에 문제가 발생했습니다.'});
+            }
         }
+    } else {
+        return res.status(400).send({error: '삭제할 데이터를 선택해주세요.'});
     }
 });
 

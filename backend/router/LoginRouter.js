@@ -12,12 +12,15 @@ const StatusCode = require("../lib/status-code");
 router.post('/', passport.authenticate('local'),
     function(req, res) {
         if(req.user) {
-            res.send({
+            const shop = JSON.parse(JSON.stringify(req.user));
+            delete shop.password;
+            res.send(shop);
+            /* res.send({
                 _id: req.user._id,
                 sname: req.user.sname,
                 state: req.user.state,
                 domain: req.user.domain
-            });
+            }); */
         } else {
             res.sendStatus(StatusCode.noData); // 204
         }
@@ -58,7 +61,7 @@ passport.use(new LocalStrategy (
     }
 ));
 passport.serializeUser((user, done) => {
-    done(null, user._id);
+    done(null, user);
 });
 passport.deserializeUser((id, done) => {
     ShopModel.findById(id, (err, user) => {

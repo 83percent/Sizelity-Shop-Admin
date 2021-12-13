@@ -43,7 +43,7 @@ const MainAD = ({server}) => {
     }, [activeIndex, ad]);
 
     useEffect(() => {
-        getAD();
+        //getAD();
     }, [getAD]);
     useEffect(() => {
         let timer = setTimeout(() => slider.next(), 4000);

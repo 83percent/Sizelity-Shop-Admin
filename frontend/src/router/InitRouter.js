@@ -24,9 +24,9 @@ const InitRouter = ({history}) => {
     });
 
     // Context
-    const {user} = useContext(UserContext);
+    const { user } = useContext(UserContext);
 
-    if(user.status !== 0) {
+    if(user?.state !== 0) {
         history.replace("/wrong");
     }
 
@@ -80,20 +80,20 @@ const InitRouter = ({history}) => {
                     </div>
                 </nav>
                 <section className={`step${step}-wrapper`}>
-                    <InitSteps step={step} setting={setting} event={event}/>
+                    <InitSteps step={step} setting={setting} event={event} goHome={() => history.replace("/home")}/>
                 </section>
             </main>
         )
     }
 }
 
-const InitSteps = ({step, setting, event}) => {
+const InitSteps = ({step, setting, event, goHome}) => {
     switch(step) {
         case 1 : return (<InitPassword next={event.next} passwordSetting={setting.password} setPassword={event.setPassword}/>);
         case 2 : return (<InitInfo next={event.next} infoSetting={setting.info} setInfo={event.setInfo}/>);
         case 3 : return (<InitPrice next={event.next} priceSetting={setting.price} setSetting={event.setPrice}/>);
         case 4 : return (<InitCheck next={event.next} setting={setting} />);
-        case 5 : return (<InitEnd setting={setting} />);
+        case 5 : return (<InitEnd next={event.next} goHome={goHome} setting={setting} />);
         default : return null;
     }
 }

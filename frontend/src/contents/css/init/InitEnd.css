@@ -21,34 +21,3 @@
     border: 2px solid var(--base-color);
     border-top: 2px solid #00000000;
 }
-#init > .step5-wrapper > article > div.success-frame {
-    opacity: 0.0;
-    text-align: center;
-    transition-duration: 0.5s;
-}
-#init > .step5-wrapper > article > div.success-frame.on {
-    opacity: 1.0;
-}
-#init > .step5-wrapper > article > div.success-frame > h1 {
-    font-size: 2.5rem;
-    margin: 2rem 0;
-}
-
-#init > .step5-wrapper > article > div.success-frame > a {
-    all: unset;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: #fff;
-    background-color: #06c;
-    padding: 0.3rem;
-    border-radius: 4rem;
-}
-#init > .step5-wrapper > article > div.success-frame > a > p {
-    font-size: 1.3rem;
-    font-weight: 600;
-}
-#init > .step5-wrapper > article > div.success-frame > a > i {
-    font-size: 1.6rem;
-}

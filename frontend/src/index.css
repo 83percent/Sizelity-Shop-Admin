@@ -6,7 +6,7 @@
 html, body, #root {
   width: 100%;
   min-height: 100vh;
-  background: #f0f2f5;
+  background: #fff;
   box-sizing: border-box;
 }
 body {
@@ -46,6 +46,12 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+
+/*
+  loader
+*/
+
 div.loader {
   border-radius: 50%;
   animation: spin 1.5s linear infinite;

@@ -28,7 +28,7 @@ const ConnectWays = () => {
                     <div className="more">
                         {
                             onWay === "cafe24" ? (
-                                <img src={"https://sizelityimagebucket.s3.ap-northeast-2.amazonaws.com/ways/%EC%9E%90%EB%8F%99%EC%97%B0%EA%B2%B0_%EC%84%A4%EC%B9%98%EB%B0%A9%EB%B2%95_(%EC%B9%B4%ED%8E%9824).jpg"} />
+                                <img alt="연결 방법" title="연결 방법" src={"https://sizelityimagebucket.s3.ap-northeast-2.amazonaws.com/ways/%EC%9E%90%EB%8F%99%EC%97%B0%EA%B2%B0_%EC%84%A4%EC%B9%98%EB%B0%A9%EB%B2%95_(%EC%B9%B4%ED%8E%9824).png"} />
                             ) : null
                         }
                     </div>
@@ -41,7 +41,7 @@ const ConnectWays = () => {
                     <div className="more">
                         {
                             onWay === "godo" ? (
-                                <img src={"https://sizelityimagebucket.s3.ap-northeast-2.amazonaws.com/ways/%EC%9E%90%EB%8F%99%EC%97%B0%EA%B2%B0_%EC%84%A4%EC%B9%98%EB%B0%A9%EB%B2%95_(%EA%B3%A0%EB%8F%84%EB%AA%B0).jpg"} />
+                                <img alt="연결 방법" title="연결 방법" src={"https://sizelityimagebucket.s3.ap-northeast-2.amazonaws.com/ways/%EC%9E%90%EB%8F%99%EC%97%B0%EA%B2%B0_%EC%84%A4%EC%B9%98%EB%B0%A9%EB%B2%95_(%EA%B3%A0%EB%8F%84%EB%AA%B0).jpg"} />
                             ) : null
                         }
                     </div>
@@ -54,7 +54,7 @@ const ConnectWays = () => {
                     <div className="more">
                         {
                             onWay === "make" ? (
-                                <img src={"https://sizelityimagebucket.s3.ap-northeast-2.amazonaws.com/ways/%EC%9E%90%EB%8F%99%EC%97%B0%EA%B2%B0_%EC%84%A4%EC%B9%98%EB%B0%A9%EB%B2%95_(%EB%A9%94%EC%9D%B4%ED%81%AC%EC%83%B5).jpg"} />
+                                <img alt="연결 방법" title="연결 방법" src={"https://sizelityimagebucket.s3.ap-northeast-2.amazonaws.com/ways/%EC%9E%90%EB%8F%99%EC%97%B0%EA%B2%B0_%EC%84%A4%EC%B9%98%EB%B0%A9%EB%B2%95_(%EB%A9%94%EC%9D%B4%ED%81%AC%EC%83%B5).jpg"} />
                             ) : null
                         }
                     </div>
@@ -67,7 +67,7 @@ const ConnectWays = () => {
                     <div className="more">
                         {
                             onWay === "wisa" ? (
-                                <img src={"https://sizelityimagebucket.s3.ap-northeast-2.amazonaws.com/ways/%EC%9E%90%EB%8F%99%EC%97%B0%EA%B2%B0_%EC%84%A4%EC%B9%98%EB%B0%A9%EB%B2%95_(%EC%9C%84%EC%82%AC).jpg"} />
+                                <img alt="연결 방법" title="연결 방법" src={"https://sizelityimagebucket.s3.ap-northeast-2.amazonaws.com/ways/%EC%9E%90%EB%8F%99%EC%97%B0%EA%B2%B0_%EC%84%A4%EC%B9%98%EB%B0%A9%EB%B2%95_(%EC%9C%84%EC%82%AC).jpg"} />
                             ) : null
                         }
                     </div>

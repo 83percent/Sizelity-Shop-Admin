@@ -1,46 +1,173 @@
 #service.index {
+    display: flex;
     min-height: 100vh;
     background-color: #fff;
 }
+/*
+    Main
+*/
 #service.index > header {
-    padding: 2rem 3rem;
+    border-right: 1px solid #e3e8ee;
 }
 #service.index > header > h1 {
     font-size: 2.2rem;
     font-weight: 700;
+    padding: 2rem 3rem;
 }
-#service.index > section {
-    width: 100%;
-    height: 100%;
+#service.index > header > div {
+    border-top: 1px solid #e3e8ee;
+}
+#service.index > header > div > a {
+    all: unset;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    cursor: pointer;
+    transition-duration: 0.1s;
 }
-#service.index > section > div {
-    width: 50%;
-    height: 100%;
-    padding: 1rem;
-}
-#service.index > section > div:first-of-type {
-    border-right: 1px solid #dbdbdb;
-}
-#service.index > section > div > .count {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#service.index > section > div > .count > h3 {
-    font-weight: 500;
-    font-size: 2.5rem;
-}
-#service.index > section > div > .count > p {
+#service.index > header > div > a > h2 {
     font-size: 1rem;
-    margin-left: 0.5rem;
-    color: #555;
+    font-weight: 500;
+    border-bottom: 1px solid #e3e8ee;
+    flex-grow: 1;
+    padding: 0.7rem 3rem;
 }
-#service.index > section > div > h4 {
+#service.index > header > div > a > div {
+    width: 5px;
+    transition-duration: 0.1s;
+}
+#service.index > header > div > a:hover,#service.index > header > div > a.active {
+    background-color: #00966B30;
+}
+#service.index > header > div > a:hover > div, #service.index > header > div > a.active > div {
+    background-color: var(--base-color);
+}
+/*
+    Container
+*/
+#service.index > .wrapper { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+/*
+    Common
+*/
+#service.index > .wrapper > p {
+    padding-top: 5rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+#service.index > .wrapper > h2 {
+    font-size: 3.2rem;
+    font-weight: 600;
+}
+
+#service.index > .wrapper > a {
+    all: unset;
+    color: #06c;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+#service.index > .wrapper > a:first-of-type {
+    margin-top: 0;
+}
+#service.index > .wrapper > a:hover > p {
+    text-decoration: underline;
+}
+
+/*
+    count
+*/
+#service > .wrapper > .count-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#service > .wrapper > .count-wrapper > .count-frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+#service > .wrapper > .count-wrapper > .count-frame > p {
+    font-size: 0.9rem;
+}
+#service > .wrapper > .count-wrapper > .count-frame > div {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: default;
+}
+#service > .wrapper > .count-wrapper > .count-frame > div > h2 {
+    font-size: 4.0rem;
+    font-weight: 500;
+}
+#service > .wrapper > .count-wrapper > .count-frame > div > p {
+    position: relative;
+    margin: 0 1rem;
+}
+#service > .wrapper > .count-wrapper > .caution {
+    border-top : 1px solid #dbdbdb;
     text-align: center;
-    font-size: 1.1rem;
-    margin-top: 8px;
-    
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+}
+#service > .wrapper > .count-wrapper > button {
+    all: unset;
+    color: #06c;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+#service > .wrapper > .count-wrapper > button:first-of-type {
+    margin-top: 0;
+}
+#service > .wrapper > .count-wrapper > button:hover > p {
+    text-decoration: underline;
+}
+
+#service > .wrapper > .count-wrapper > .count-frame > div > i {
+    color: #fff;
+    font-size: 1.5rem;
+    background-color: var(--base-color);
+    padding: 0.3rem;
+    border-radius: 50%;
+}
+#service > .wrapper > .count-wrapper > .count-frame > div > .bubble {
+    position: absolute;
+    text-align: center;
+    background-color: var(--base-color);
+    padding: 1rem 2rem;
+    color: #fff;
+    border-radius: 0 2rem 2rem 2rem;;
+    left: 3rem;
+    bottom: -7rem;
+    opacity: 0;
+    transition: opacity 0.3s, left 0.3s;
+}
+#service > .wrapper > .count-wrapper > .count-frame > div:hover > .bubble {
+    left: 1rem;
+    opacity: 1.0;
+}
+#service > .wrapper > .count-wrapper > .count-frame > div > .bubble > h2 {
+    font-size: 2.3em;
+    font-weight: 500;
+    white-space: nowrap;
+}
+#service > .wrapper > .count-wrapper > .count-frame > div > .bubble > p {
+    white-space: nowrap;
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
 }

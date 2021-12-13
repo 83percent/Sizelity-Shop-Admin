@@ -61,7 +61,7 @@ const ConnectStart = () => {
             <article className="help">
                 <h2>추가 중 문제가 발생했나요?</h2>
                 <h2>또는 도움이 필요하신가요?</h2>
-                <a href="http://pf.kakao.com/_xfvrYs" target="_blank">문의하기</a>
+                <a href="http://pf.kakao.com/_xfvrYs" rel="noreferrer" target="_blank">문의하기</a>
             </article>
             <article className="su">
                 <h3>추가가 완료 되었나요?</h3>
