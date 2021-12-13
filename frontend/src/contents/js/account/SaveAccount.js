@@ -59,7 +59,7 @@ function removeAccount(index, id) {
         return false;
     }
 }
-module.exports = {
+export default {
     getAccounts,
     setAccount,
     removeAccount
