@@ -2,7 +2,7 @@
 > SIZELITY(사이즈리티) 사이즈 비교 서비스를 적용하는 쇼핑몰이 사용할 수 있는 쇼핑몰 관리자 프로그램입니다.
 > 실제 쇼핑몰에게 제공되는 관리자 프로그램으로, 서비스 신청 이후 제공되는 고유 아이디 및 초기 비밀번호를 통해 로그인할 수 있습니다.
 > + URL : https://shop.sizelity.com
-
+> + 사용 신청 : https://official.sizelity.com
 ## Stack
 ### Front-End
 > #### AWS Amplify
